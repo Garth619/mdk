@@ -2,7 +2,8 @@
 /*
 !.gitignore
 !readme.md
-!pq16starter.sql
+!local.sql.gz
+!local.sql
 !wp-content/
 
 # ignore everything in the "wp-content" directory, except:
