@@ -88,6 +88,10 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
   <header>
 
+    <div id='header-inner'>
+
+    </div><!-- header-inner -->
+
     <?php //wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
 
   </header>
