@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('../assets/fonts/Avenir-Heavy.woff2') format('woff2')
+}
+
+.bugherd-logo {
+    padding: 2rem 0 0   ;
+    max-width: 125px;
+    width: 125px;
+}
+
+.bugherd-tagline {
+    font-family: 'Avenir', 'sans-serif';
+    font-size: 2.5em;
+    line-height: 1.25em;
+    margin: 1rem 0;
+}
+
+.bugherd-container {
+    max-width: 550px;
+}
+
+.bugherd-container .form-table th {
+    display: none;
+}
+
+.bugherd-container .form-table td {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bugherd-container #bugherd-project-key-description {
+    display: block;
+    font-weight: 600;
+}
+
+.bugherd-container .regular-text {
+    width: 100%;
+}
+
+.bugherd-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

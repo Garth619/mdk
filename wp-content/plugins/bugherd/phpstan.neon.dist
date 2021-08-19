@@ -1,0 +1,9 @@
+includes:
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+parameters:
+    level: max
+    paths:
+        - bugherd.php
+        - includes/settings.php
+        - includes/scripts.php
+    checkMissingIterableValueType: false

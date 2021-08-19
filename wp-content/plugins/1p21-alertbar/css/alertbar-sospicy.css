@@ -1,0 +1,62 @@
+
+#onep21-alertbar {
+    display: none;
+    background: #f43d3d;
+    color: #fff;
+    padding: 10px 50px 2px 30px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 99999;
+}
+
+#onep21-alertbar p {
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1.3em;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+#onep21-alertbar a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#onep21-alertbar a:hover {
+    color: #f43d3d;
+    background-color: rgba(255,255,255,0.8);
+    text-decoration: none;
+}
+
+@media (max-width:700px) {
+    #onep21-alertbar {
+        padding: 15px 40px 5px 20px;
+    }
+    #onep21-alertbar p {
+        text-align: left;
+    }
+}
+
+#onep21-alertbar .onep21-close-icon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 5px 10px;
+
+}
+#onep21-alertbar .onep21-close-icon:hover {
+
+}
+#onep21-alertbar .onep21-close-icon svg {
+    width: 15px;
+    height: 15px;
+}
+#onep21-alertbar .onep21-close-icon svg path {
+    fill: #fff;
+}
+#onep21-alertbar .onep21-close-icon:hover svg path {
+    fill: #f43d3d;
+}

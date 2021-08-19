@@ -1,0 +1,25 @@
+body.toplevel_page_alertbar-settings .wrap h1 {
+    font-weight: bold;
+}
+
+body.toplevel_page_alertbar-settings #poststuff h2 {
+    background-color: #012f62;
+    color: #ffffff;
+}
+
+body.toplevel_page_alertbar-settings div[data-name="onep21_preset_styles"] .acf-input .acf-radio-list img {
+    margin: 5px 0 10px;
+    max-width: 100%;
+    width: 400px;
+    vertical-align: middle;
+    display: block;
+}
+
+body.toplevel_page_alertbar-settings div[data-name="onep21_preset_styles"] ul.acf-radio-list li:first-child {
+
+    border: #EEE solid 1px;
+    border-width: 0 0 1px 0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+}

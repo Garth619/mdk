@@ -1,0 +1,43 @@
+////////////////////////////////////////////////////////////////////
+// Media Queries
+////////////////////////////////////////////////////////////////////
+
+$mobile: 530px;
+$large_mobile: 675px;
+$small_tablet: 768px;
+$tablet: 1066px;
+$small_laptop: 1170px;
+$large_laptop: 1380px;
+$small_monitor: 1695px;
+$monitor: 1800px;
+$large_monitor: 2050px;
+
+$media_queries: (
+  mobile: (
+    breakpoint: "(min-width: #{$mobile})",
+  ),
+  large_mobile: (
+    breakpoint: "(min-width: #{$large_mobile})",
+  ),
+  small_tablet: (
+    breakpoint: "(min-width: #{$small_tablet})",
+  ),
+  tablet: (
+    breakpoint: "(min-width: #{$tablet})",
+  ),
+  small_laptop: (
+    breakpoint: "(min-width: #{$small_laptop})",
+  ),
+  large_laptop: (
+    breakpoint: "(min-width: #{$large_laptop})",
+  ),
+  small_monitor: (
+    breakpoint: "(min-width: #{$small_monitor})",
+  ),
+  monitor: (
+    breakpoint: "(min-width: #{$monitor})",
+  ),
+  large_monitor: (
+    breakpoint: "(min-width: #{$large_monitor})",
+  ),
+);

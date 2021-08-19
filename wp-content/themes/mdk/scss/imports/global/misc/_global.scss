@@ -1,0 +1,18 @@
+#internal-main {
+}
+
+.gform_body .gform_fields .gfield ::-webkit-input-placeholder {
+  color: #656565;
+}
+.gform_body .gform_fields .gfield ::-moz-placeholder {
+  color: #656565;
+}
+.gform_body .gform_fields .gfield :-moz-placeholder {
+  color: #656565;
+}
+.gform_body .gform_fields .gfield :-ms-input-placeholder {
+  color: #656565;
+}
+.gform_body .gform_fields .gfield ::-moz-placeholder {
+  opacity: 1;
+}

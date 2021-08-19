@@ -1,0 +1,33 @@
+.wp-block-image {
+  figure {
+    &.alignleft {
+      @media screen and (min-width: 1100px) {
+        img {
+          float: left;
+          margin-right: 39px;
+        }
+      }
+    }
+    &.aligncenter {
+      img {
+        @include margin_lr();
+      }
+    }
+    &.alignright {
+      @media screen and (min-width: 1100px) {
+        img {
+          float: right;
+          margin-left: 39px;
+        }
+      }
+    }
+    img {
+      margin-bottom: 20px;
+      @include image();
+      @include mq(small_tablet) {
+        margin-top: 60px;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

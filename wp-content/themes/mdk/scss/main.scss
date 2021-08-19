@@ -1,0 +1,47 @@
+// vars/mixins
+
+@import "imports/global/fonts/variables", "imports/global/colors/variables",
+  "imports/global/mediaqueries/variables", "imports/utils/mixins_do_not_edit";
+
+// third party files
+
+@import "imports/vendors/slick", "imports/vendors/lity";
+
+// reset
+
+@import "imports/base/reset";
+
+// global
+
+@import "imports/global/content/content", "imports/global/misc/global";
+
+// components
+
+@import "imports/components/buttons/buttons",
+  "imports/components/internal_forms/internal_content_forms";
+
+// layout
+
+@import "imports/layout/header/header", "imports/layout/navigation/navigation",
+  "imports/layout/internalbanner/internal-banner",
+  "imports/layout/sidebar/sidebar", "imports/layout/footer/footer";
+
+// page templates
+
+@import "imports/templates/homepage/sectionone/section_one",
+  "imports/templates/homepage/sectiontwo/section_two",
+  "imports/templates/homepage/sectionthree/section_three",
+  "imports/templates/homepage/sectionfour/section_four",
+  "imports/templates/homepage/sectionfive/section_five",
+  "imports/templates/homepage/sectionsix/section_six",
+  "imports/templates/pa-directory/template-pa-directory",
+  "imports/templates/testimonials/template-testimonials",
+  "imports/templates/about/template-about",
+  "imports/templates/attorneyprofile/template-attbio",
+  "imports/templates/meetteam/template-meetteam",
+  "imports/templates/caseresults/template-caseresults",
+  "imports/templates/videocenter/template-video",
+  "imports/templates/contactpage/contact",
+  "imports/templates/blog/template-blog", "imports/templates/404/not-found";
+
+@import "imports/layout/animations";
