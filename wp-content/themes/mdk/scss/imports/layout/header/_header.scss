@@ -1,0 +1,118 @@
+header {
+  @include box(100%, auto);
+  @include fixed(0, null, null, 0);
+}
+
+#header-inner {
+  @include flex(space-between);
+  flex-wrap: wrap;
+}
+
+#header-left {
+  padding: 16px;
+  order: 1;
+  a {
+    display: block;
+    position: relative;
+    width: 137px;
+    padding-top: 64px / 137px * 100%;
+    img {
+      width: 100%;
+      @include abs(0, null, null, 0);
+    }
+  }
+}
+
+#header-middle {
+  order: 3;
+  width: 100%;
+  padding: 5px 25px 0px;
+}
+
+#cta-wrapper {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 22px;
+  text-align: center;
+  #cta {
+    display: inline-block;
+    width: 100%;
+    span {
+      @include type(
+        (
+          size: 15px,
+          family: $primaryfont,
+          color: $white,
+        )
+      );
+      &::after {
+        vertical-align: top;
+        background: $red;
+        margin: 5px 4px 0 8px;
+        @include box(5px, 5px);
+        @include contentdisplay(inline-block);
+      }
+      &:last-of-type {
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  a#phone {
+    display: block;
+    margin-top: 10px;
+    @include type(
+      (
+        size: 33px,
+        family: $secondaryfont,
+        color: $white,
+        weight: 800,
+      )
+    );
+  }
+}
+
+#header-right {
+  order: 2;
+  height: 85px;
+  @include flex();
+  #spanish-cta {
+    background: $red;
+    @include box(54px, 100%);
+    @include flex(center, center);
+    @include type(
+      (
+        size: 16px,
+        family: $secondaryfont,
+        color: $white,
+        weight: 500,
+        transform: uppercase,
+      )
+    );
+  }
+  #menu-wrapper {
+    background: $white;
+    cursor: pointer;
+    @include flex(center, center, column);
+    @include box(65px, 100%);
+    span {
+      display: block;
+      &.menu-bar {
+        margin-bottom: 3px;
+        background: $bluelight;
+        @include box(33px, 3px);
+      }
+      &#menu-title {
+        padding-top: 3px;
+        @include type(
+          (
+            size: 12px,
+            family: $secondaryfont,
+            color: $bluelight,
+            weight: 500,
+          )
+        );
+      }
+    }
+  }
+}

@@ -90,8 +90,56 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
     <div id='header-inner'>
 
-    </div><!-- header-inner -->
+      <div id='header-left'>
 
-    <?php //wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
+        <a href='<?php bloginfo('bloginfo');?>'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/mdk-logo.svg' alt='' />
+
+        </a>
+
+      </div><!-- header-left -->
+
+      <div id='header-middle'>
+
+        <nav>
+
+          <?php wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
+
+        </nav>
+
+        <div id='cta-wrapper'>
+
+          <div id='cta'>
+
+            <span id='available'>Available 24/7</span><!-- available -->
+
+            <span id='free-consultation'>Free Consultation</span><!-- available -->
+
+          </div><!-- cta -->
+
+          <a id='phone' href='tel:6232255635'>(623) 225-5635</a><!-- phone -->
+
+        </div><!-- cta-wrapper -->
+
+      </div><!-- header-middle -->
+
+      <div id='header-right'>
+
+        <a id='spanish-cta' href=''>ES</a><!-- spanish-cta -->
+
+        <div id='menu-wrapper'>
+
+          <span class='menu-bar'></span><!-- menu-bar -->
+          <span class='menu-bar'></span><!-- menu-bar -->
+          <span class='menu-bar'></span><!-- menu-bar -->
+
+          <span id='menu-title'>Menu</span><!-- menu-title -->
+
+        </div><!-- menu-wrapper -->
+
+      </div><!-- header-right -->
+
+    </div><!-- header-inner -->
 
   </header>
