@@ -220,9 +220,12 @@ jQuery(document).ready(function ($) {
 
   //$('nav ul.menu > li.current-menu-ancestor > a').addClass('active');
 
-  $("#menu").on("click", function (e) {
-    $("nav").toggleClass("open");
-    $("#menu-bars, #menu-open, #menu-close").toggleClass("fade");
+  $("#menu-wrapper").on("click", function (e) {
+    $("nav").addClass("open");
+  });
+
+  $("#close-wrapper").on("click", function (e) {
+    $("nav").removeClass("open");
   });
 
   function navDesktop() {

@@ -1,5 +1,158 @@
 // navigation - refer to the resize functions in js->custom.js
 
 nav {
-  display: none;
+  background: $white;
+  padding: 32px 32px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-30px);
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out,
+    transform 800ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  @include box(100%, 100vh);
+  @include fixed(0, null, null, 0);
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+  .menu-header {
+    margin-top: 34px;
+  }
+  ul {
+    list-style: none;
+    li {
+      @include type(
+        (
+          size: 16px,
+          height: 20px,
+          family: $secondaryfont,
+          weight: 500,
+        )
+      );
+      a {
+        display: block;
+        color: $bluelight;
+        text-decoration: none;
+        transition: all 200ms ease-in-out;
+      }
+    }
+  }
+  ul.menu {
+    > li {
+      &.menu-item-has-children {
+        > a {
+          @include flex(null, center);
+          &.active {
+            color: $red;
+            &::after {
+              @include tri(down, 4px, 6px, $red);
+            }
+          }
+          &::after {
+            vertical-align: top;
+            margin-left: 10px;
+            display: inline-block;
+            transition: all 200ms ease-in-out;
+            @include tri(down, 4px, 6px, $bluelight);
+            @include contentdisplay();
+          }
+        }
+      }
+      &.current-menu-ancestor {
+        > a {
+          color: $red;
+          &::after {
+            @include tri(down, 4px, 6px, $red);
+          }
+        }
+      }
+      &:last-of-type {
+        > a {
+          border-bottom: 1px solid transparent;
+        }
+      }
+      > a {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid rgba(142, 153, 172, 0.5);
+        padding: 20px 25px;
+      }
+    }
+  }
+  ul.sub-menu {
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    border-bottom: 1px solid transparent;
+    //transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out,
+    // border-bottom 200ms ease-in-out,
+    //max-height 900ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    &.active {
+      padding: 18px 0;
+      max-height: 3000px;
+      opacity: 1;
+      visibility: visible;
+      border-bottom: 1px solid rgba(142, 153, 172, 0.5);
+    }
+    li {
+      &.current-menu-item {
+        a {
+          color: $red;
+        }
+      }
+      a {
+        padding: 5px 25px;
+      }
+    }
+  }
+}
+
+nav.nav-desktop {
+  ul {
+    li {
+      a {
+        transition: all 200ms ease-in-out;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+#close-wrapper {
+  cursor: pointer;
+  @include abs(26px, 32px, null, null);
+  span {
+    display: block;
+    &#closex {
+      @include box(33px);
+      &::before,
+      &::after {
+        background: $bluelight;
+        @include abs(12px, null, null, 0);
+        @include box(100%, 4px);
+        @include contentdisplay();
+      }
+      &::before {
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+    &#close-title {
+      margin-top: 7px;
+      @include type(
+        (
+          size: 14px,
+          family: $secondaryfont,
+          color: $bluelight,
+          weight: 500,
+        )
+      );
+    }
+  }
 }
