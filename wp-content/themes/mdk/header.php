@@ -92,7 +92,7 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
       <div id='header-left'>
 
-        <a href='<?php bloginfo('bloginfo');?>'>
+        <a href='<?php bloginfo('url');?>'>
 
           <img src='<?php bloginfo('template_directory');?>/images/mdk-logo.svg' alt='' />
 
@@ -101,20 +101,6 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
       </div><!-- header-left -->
 
       <div id='header-middle'>
-
-        <nav>
-
-          <div id='close-wrapper'>
-
-            <span id='closex'></span><!-- close -->
-
-            <span id='close-title'>Close</span><!-- close-title -->
-
-          </div><!-- close -->
-
-          <?php wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
-
-        </nav>
 
         <div id='cta-wrapper'>
 
@@ -130,11 +116,25 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
         </div><!-- cta-wrapper -->
 
+        <nav>
+
+          <div id='close-wrapper'>
+
+            <span id='closex'></span><!-- close -->
+
+            <span id='close-title'>Close</span><!-- close-title -->
+
+          </div><!-- close -->
+
+          <?php wp_nav_menu(array('container_class' => 'menu-header', 'theme_location' => 'main_menu'));?>
+
+        </nav>
+
       </div><!-- header-middle -->
 
       <div id='header-right'>
 
-        <a id='spanish-cta' href=''>ES</a><!-- spanish-cta -->
+        <a id='spanish-cta' href=''></a><!-- spanish-cta -->
 
         <div id='menu-wrapper'>
 

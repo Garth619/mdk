@@ -12,13 +12,42 @@ nav {
     transform 800ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
   @include box(100%, 100vh);
   @include fixed(0, null, null, 0);
+  @media screen and (min-width: 675px) {
+    width: 463px;
+    transform: translate(50%, 0px);
+    @include fixed(0, 0, null, auto);
+  }
+  @include mq(small_laptop) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    background: transparent;
+    padding: 0;
+    position: static;
+    overflow-y: unset;
+    max-width: 700px;
+    margin-right: -115px;
+    @include box(100%, auto);
+  }
   &.open {
     opacity: 1;
     visibility: visible;
     transform: translateY(0px);
+    @media screen and (min-width: 675px) {
+      transform: translate(0, 0px);
+    }
+  }
+  &::after {
+    background: rgba(255, 255, 255, 0.5);
+    @include box(100%, 1px);
+    @include contentdisplay();
   }
   .menu-header {
     margin-top: 34px;
+    @include mq(small_laptop) {
+      padding: 0 30px 0 90px;
+      margin-top: 16px;
+    }
   }
   ul {
     list-style: none;
@@ -33,15 +62,39 @@ nav {
       );
       a {
         display: block;
-        color: $bluelight;
+        cursor: pointer;
+        color: $bluedark;
         text-decoration: none;
         transition: all 200ms ease-in-out;
+        &:hover {
+          @include mq(small_laptop) {
+            color: $red;
+          }
+        }
       }
     }
   }
   ul.menu {
+    @include mq(small_laptop) {
+      @include flex(space-between);
+    }
     > li {
+      @include mq(small_laptop) {
+        position: relative;
+        padding-bottom: 17px;
+      }
       &.menu-item-has-children {
+        &:hover {
+          > a {
+            &::after {
+              @include tri(down, 4px, 6px, $red);
+            }
+          }
+          ul.sub-menu {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
         > a {
           @include flex(null, center);
           &.active {
@@ -57,6 +110,10 @@ nav {
             transition: all 200ms ease-in-out;
             @include tri(down, 4px, 6px, $bluelight);
             @include contentdisplay();
+            @include mq(small_laptop) {
+              margin-left: 3px;
+              @include tri(down, 4px, 6px, $white);
+            }
           }
         }
       }
@@ -77,6 +134,17 @@ nav {
         border-top: 1px solid transparent;
         border-bottom: 1px solid rgba(142, 153, 172, 0.5);
         padding: 20px 25px;
+        color: $bluedark;
+        @include mq(small_laptop) {
+          padding: 0;
+          border-bottom: none;
+          color: $white;
+        }
+        &:hover {
+          @include mq(small_laptop) {
+            color: $red;
+          }
+        }
       }
     }
   }
@@ -89,14 +157,32 @@ nav {
     //transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out,
     // border-bottom 200ms ease-in-out,
     //max-height 900ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    @include mq(small_laptop) {
+      max-height: 3000px;
+      background: $white;
+      width: 190px;
+      padding: 2px 14px;
+      transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+      @include abs(31px, null, null, -18px);
+    }
     &.active {
       padding: 18px 0;
       max-height: 3000px;
       opacity: 1;
       visibility: visible;
       border-bottom: 1px solid rgba(142, 153, 172, 0.5);
+      @include mq(small_laptop) {
+        border-bottom: transparent;
+      }
     }
     li {
+      &:last-of-type {
+        a {
+          @include mq(small_laptop) {
+            border-bottom: none;
+          }
+        }
+      }
       &.current-menu-item {
         a {
           color: $red;
@@ -104,6 +190,10 @@ nav {
       }
       a {
         padding: 5px 25px;
+        @include mq(small_laptop) {
+          padding: 10px 3px 7px;
+          border-bottom: 1px solid rgba(142, 153, 172, 0.5);
+        }
       }
     }
   }
@@ -125,6 +215,9 @@ nav.nav-desktop {
 #close-wrapper {
   cursor: pointer;
   @include abs(26px, 32px, null, null);
+  @include mq(small_laptop) {
+    display: none;
+  }
   span {
     display: block;
     &#closex {

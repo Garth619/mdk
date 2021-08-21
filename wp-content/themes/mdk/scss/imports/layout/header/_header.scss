@@ -12,11 +12,21 @@ header {
 #header-left {
   padding: 16px;
   order: 1;
+  @media screen and (min-width: 675px) {
+    padding: 33px;
+  }
+  @include mq(small_laptop) {
+    padding: 47px 0 0 35px;
+  }
   a {
     display: block;
     position: relative;
     width: 137px;
     padding-top: 64px / 137px * 100%;
+    @media screen and (min-width: 675px) {
+      padding-top: 77px / 165px * 100%;
+      width: 177px;
+    }
     img {
       width: 100%;
       @include abs(0, null, null, 0);
@@ -28,15 +38,41 @@ header {
   order: 3;
   width: 100%;
   padding: 5px 25px 0px;
+  @media screen and (min-width: 675px) {
+    order: 2;
+    flex-grow: 1;
+    padding: 5px 12px 0px;
+    @include box(auto, 85px);
+    @include flex(center, flex-end, column);
+  }
+  @include mq(small_laptop) {
+    padding: 22px 12px 0px;
+    justify-content: flex-start;
+    @include box(auto, auto);
+  }
 }
 
 #cta-wrapper {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   padding-bottom: 22px;
   text-align: center;
+  @media screen and (min-width: 675px) {
+    border-bottom: 0;
+    padding-bottom: 0px;
+  }
+  @include mq(small_laptop) {
+    margin-right: 10px;
+    @include flex(null, center);
+  }
   #cta {
     display: inline-block;
     width: 100%;
+    @include mq(small_laptop) {
+      flex-shrink: 0;
+      width: auto;
+      margin-top: 7px;
+      margin-right: 15px;
+    }
     span {
       @include type(
         (
@@ -70,6 +106,9 @@ header {
         weight: 800,
       )
     );
+    @include mq(small_laptop) {
+      flex-shrink: 0;
+    }
   }
 }
 
@@ -77,8 +116,15 @@ header {
   order: 2;
   height: 85px;
   @include flex();
+  @media screen and (min-width: 675px) {
+    order: 3;
+  }
+  @include mq(small_laptop) {
+    margin-top: 28px;
+  }
   #spanish-cta {
     background: $red;
+    transition: all 200ms ease-in-out;
     @include box(54px, 100%);
     @include flex(center, center);
     @include type(
@@ -90,12 +136,31 @@ header {
         transform: uppercase,
       )
     );
+    @include mq(small_laptop) {
+      font-size: 19px;
+      text-transform: capitalize;
+    }
+    &:hover {
+      background: $grey;
+    }
+    @include mq(small_laptop) {
+      @include box(103px, 36px);
+    }
+    &::after {
+      @include contentdisplay(block, "ES");
+      @include mq(small_laptop) {
+        @include contentdisplay(block, "Español");
+      }
+    }
   }
   #menu-wrapper {
     background: $white;
     cursor: pointer;
     @include flex(center, center, column);
     @include box(65px, 100%);
+    @include mq(small_laptop) {
+      display: none;
+    }
     span {
       display: block;
       &.menu-bar {
