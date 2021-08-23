@@ -2,6 +2,9 @@ header {
   z-index: 5;
   @include box(100%, auto);
   @include fixed(0, null, null, 0);
+  @include mq(large_laptop) {
+    overflow: hidden;
+  }
 }
 
 #header-inner {
@@ -18,6 +21,9 @@ header {
   @include mq(small_laptop) {
     padding: 47px 0 0 35px;
   }
+  @include mq(large_laptop) {
+    padding: 47px 0 0 59px;
+  }
   a {
     display: block;
     position: relative;
@@ -26,6 +32,10 @@ header {
     @media screen and (min-width: 675px) {
       padding-top: 77px / 165px * 100%;
       width: 177px;
+    }
+    @include mq(large_laptop) {
+      padding-top: 214px / 100px * 100%;
+      width: 214px;
     }
     img {
       width: 100%;
@@ -50,6 +60,13 @@ header {
     justify-content: flex-start;
     @include box(auto, auto);
   }
+  @include mq(large_laptop) {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    padding: 22px 14px 0px 72px;
+  }
 }
 
 #cta-wrapper {
@@ -64,6 +81,12 @@ header {
     margin-right: 10px;
     @include flex(null, center);
   }
+  @include mq(large_laptop) {
+    order: 2;
+    flex-shrink: 0;
+    margin-right: 0;
+    @include flex(center, center, column);
+  }
   #cta {
     display: inline-block;
     width: 100%;
@@ -72,6 +95,9 @@ header {
       width: auto;
       margin-top: 7px;
       margin-right: 15px;
+    }
+    @include mq(large_laptop) {
+      margin-right: 0px;
     }
     span {
       @include type(
@@ -121,6 +147,9 @@ header {
   }
   @include mq(small_laptop) {
     margin-top: 28px;
+  }
+  @include mq(large_laptop) {
+    margin-top: 35px;
   }
   #spanish-cta {
     background: $red;

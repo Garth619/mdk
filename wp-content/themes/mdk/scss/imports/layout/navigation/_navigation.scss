@@ -29,6 +29,20 @@ nav {
     margin-right: -115px;
     @include box(100%, auto);
   }
+  @include mq(large_laptop) {
+    margin-right: 0;
+    order: 1;
+    padding-top: 26px;
+  }
+  &::after {
+    background: rgba(255, 255, 255, 0.5);
+    @include box(100%, 1px);
+    @include contentdisplay();
+    @include mq(large_laptop) {
+      background: rgba(255, 255, 255, 0.5);
+      @include box(calc(100% + 370px), 1px);
+    }
+  }
   &.open {
     opacity: 1;
     visibility: visible;
@@ -37,16 +51,14 @@ nav {
       transform: translate(0, 0px);
     }
   }
-  &::after {
-    background: rgba(255, 255, 255, 0.5);
-    @include box(100%, 1px);
-    @include contentdisplay();
-  }
   .menu-header {
     margin-top: 34px;
     @include mq(small_laptop) {
       padding: 0 30px 0 90px;
       margin-top: 16px;
+    }
+    @include mq(large_laptop) {
+      padding: 0 55px 0 0px;
     }
   }
   ul {
@@ -60,6 +72,9 @@ nav {
           weight: 500,
         )
       );
+      @include mq(large_laptop) {
+        font-size: 17px;
+      }
       a {
         display: block;
         cursor: pointer;
@@ -187,6 +202,9 @@ nav {
       z-index: 1;
       transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
       @include abs(35px, null, null, -18px);
+    }
+    @include mq(large_laptop) {
+      top: 34px;
     }
     &.active {
       padding: 18px 0;
