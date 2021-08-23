@@ -894,7 +894,7 @@ nav {
             transform: translateY(0px);
     background: transparent;
     padding: 0;
-    position: static;
+    position: relative;
     overflow-y: unset;
     max-width: 700px;
     margin-right: -115px;
@@ -967,17 +967,26 @@ nav ul li a {
     padding-bottom: 17px;
   }
 }
-nav ul.menu > li.menu-item-has-children:hover > a::after {
-  width: 0;
-  height: 0;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-  border-top: 6px solid #c61f20;
-  border-bottom: none;
+@media screen and (min-width: 1170px) {
+  nav ul.menu > li.menu-item-has-children:hover > a {
+    color: #c61f20;
+  }
 }
-nav ul.menu > li.menu-item-has-children:hover ul.sub-menu {
-  opacity: 1;
-  visibility: visible;
+@media screen and (min-width: 1170px) {
+  nav ul.menu > li.menu-item-has-children:hover > a::after {
+    width: 0;
+    height: 0;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top: 6px solid #c61f20;
+    border-bottom: none;
+  }
+}
+@media screen and (min-width: 1170px) {
+  nav ul.menu > li.menu-item-has-children:hover ul.sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 nav ul.menu > li.menu-item-has-children > a {
   display: -webkit-flex;
@@ -1032,6 +1041,9 @@ nav ul.menu > li.current-menu-ancestor > a::after {
   border-top: 6px solid #c61f20;
   border-bottom: none;
 }
+nav ul.menu > li.current-menu-item > a {
+  color: #c61f20;
+}
 nav ul.menu > li:last-of-type > a {
   border-bottom: 1px solid transparent;
 }
@@ -1053,6 +1065,21 @@ nav ul.menu > li > a {
     color: #c61f20;
   }
 }
+nav ul.menu > li#magic-line {
+  display: none;
+}
+@media screen and (min-width: 1170px) {
+  nav ul.menu > li#magic-line {
+    background: #c61f20;
+    display: block;
+    padding-bottom: 0;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 45px;
+    height: 7px;
+  }
+}
 nav ul.sub-menu {
   padding: 0;
   max-height: 0;
@@ -1066,9 +1093,10 @@ nav ul.sub-menu {
     background: #fff;
     width: 190px;
     padding: 2px 14px;
+    z-index: 1;
     transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
     position: absolute;
-    top: 31px;
+    top: 35px;
     left: -18px;
   }
 }

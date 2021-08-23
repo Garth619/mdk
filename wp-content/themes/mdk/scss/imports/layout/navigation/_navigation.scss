@@ -23,7 +23,7 @@ nav {
     transform: translateY(0px);
     background: transparent;
     padding: 0;
-    position: static;
+    position: relative;
     overflow-y: unset;
     max-width: 700px;
     margin-right: -115px;
@@ -86,13 +86,20 @@ nav {
       &.menu-item-has-children {
         &:hover {
           > a {
+            @include mq(small_laptop) {
+              color: $red;
+            }
             &::after {
-              @include tri(down, 4px, 6px, $red);
+              @include mq(small_laptop) {
+                @include tri(down, 4px, 6px, $red);
+              }
             }
           }
           ul.sub-menu {
-            opacity: 1;
-            visibility: visible;
+            @include mq(small_laptop) {
+              opacity: 1;
+              visibility: visible;
+            }
           }
         }
         > a {
@@ -125,6 +132,11 @@ nav {
           }
         }
       }
+      &.current-menu-item {
+        > a {
+          color: $red;
+        }
+      }
       &:last-of-type {
         > a {
           border-bottom: 1px solid transparent;
@@ -146,6 +158,16 @@ nav {
           }
         }
       }
+      &#magic-line {
+        display: none;
+        @include mq(small_laptop) {
+          background: $red;
+          display: block;
+          padding-bottom: 0;
+          @include abs(null, null, -3px, 0);
+          @include box(45px, 7px);
+        }
+      }
     }
   }
   ul.sub-menu {
@@ -162,8 +184,9 @@ nav {
       background: $white;
       width: 190px;
       padding: 2px 14px;
+      z-index: 1;
       transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
-      @include abs(31px, null, null, -18px);
+      @include abs(35px, null, null, -18px);
     }
     &.active {
       padding: 18px 0;
