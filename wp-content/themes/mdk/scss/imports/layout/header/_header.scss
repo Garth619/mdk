@@ -1,7 +1,7 @@
 header {
   z-index: 5;
   @include box(100%, auto);
-  @include fixed(0, null, null, 0);
+  @include abs(0, null, null, 0);
   @include mq(large_laptop) {
     overflow: hidden;
   }
@@ -66,6 +66,9 @@ header {
     align-items: flex-start;
     position: relative;
     padding: 22px 14px 0px 72px;
+  }
+  @include mq(monitor) {
+    padding: 22px 33px 0px 72px;
   }
 }
 

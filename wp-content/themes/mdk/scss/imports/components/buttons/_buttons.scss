@@ -1,0 +1,39 @@
+.button {
+  border: 1px solid $red;
+  display: block;
+  position: relative;
+  padding: 27px 20px;
+  transition: border 200ms ease-in-out;
+  @include type(
+    (
+      size: 18px,
+      height: 20px,
+      family: $secondaryfont,
+      color: $white,
+      weight: 500,
+      spacing: 0.9px,
+      align: center,
+      transform: capitalize,
+    )
+  );
+  &::before,
+  &::after {
+    @include abs(9px, null, null, 9px, -1);
+    @include box(calc(100% - 18px), calc(100% - 18px));
+    @include contentdisplay();
+  }
+  &::before {
+    background: $red;
+  }
+  &::after {
+    background: $grey;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+  &:hover {
+    border: 1px solid $grey;
+    &::after {
+      opacity: 1;
+    }
+  }
+}

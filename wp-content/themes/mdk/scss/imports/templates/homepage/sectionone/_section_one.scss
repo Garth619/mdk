@@ -1,4 +1,64 @@
 #section-one {
   background: #000;
+  position: relative;
   @include box(100%, 1000px);
+}
+
+#sec-one-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 205px;
+}
+
+#sec-one-left {
+  text-align: center;
+  span {
+    display: block;
+  }
+}
+
+span#sec-one-subtitle {
+  max-width: 250px;
+  @include margin_lr();
+  @include type(
+    (
+      size: 15px,
+      height: 20px,
+      family: $primaryfont,
+      color: $greytwo,
+      weight: 800,
+      spacing: 2.5px,
+      transform: uppercase,
+    )
+  );
+}
+
+#sec-one-image {
+  position: relative;
+  margin-top: 20px;
+  @include margin_lr();
+  @include box(263px, 239px);
+  img {
+    width: 100%;
+    @include abs(0, null, null, 0);
+  }
+}
+
+span#sec-one-title {
+  margin-top: 18px;
+  @include type(
+    (
+      size: 33px,
+      height: 38px,
+      family: $secondaryfont,
+      color: $white,
+      weight: 800,
+    )
+  );
+}
+
+img#hero-image {
+  object-fit: cover;
+  @include box(100%, 100%);
+  @include abs(0, null, null, 0);
 }
