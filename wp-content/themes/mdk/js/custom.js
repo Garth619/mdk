@@ -122,17 +122,25 @@ jQuery(document).ready(function ($) {
   /* Slick Carousel ( http://kenwheeler.github.io/slick/ )
 --------------------------------------------------------------------------------------- */
 
-  $("#sec-one-sp-slider").slick({
+  $("#sec-one-slider").slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
     arrows: true,
-    prevArrow: "#sp-arrow-left",
-    nextArrow: "#sp-arrow-right",
+    prevArrow: ".sec-one-arrow-left",
+    nextArrow: ".sec-one-arrow-right",
     adaptiveHeight: true,
     dots: false,
     responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          adaptiveHeight: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
       {
         breakpoint: 1170,
         settings: "unslick",
@@ -140,41 +148,41 @@ jQuery(document).ready(function ($) {
     ],
   });
 
-  $("#sec-three-slider").slick({
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    mobileFirst: true,
-    arrows: false,
-    adaptiveHeight: true,
-    dots: false,
-    responsive: [
-      {
-        breakpoint: 1170,
-        settings: {
-          adaptiveHeight: false,
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          dots: false,
-          arrows: true,
-          prevArrow: "#sec-three-arrow-left",
-          nextArrow: "#sec-three-arrow-right",
-        },
-      },
-      {
-        breakpoint: 1380,
-        settings: {
-          adaptiveHeight: false,
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          dots: false,
-          arrows: true,
-          prevArrow: "#sec-three-arrow-left",
-          nextArrow: "#sec-three-arrow-right",
-        },
-      },
-    ],
-  });
+  // $("#sec-three-slider").slick({
+  //   infinite: true,
+  //   slidesToShow: 2,
+  //   slidesToScroll: 2,
+  //   mobileFirst: true,
+  //   arrows: false,
+  //   adaptiveHeight: true,
+  //   dots: false,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1170,
+  //       settings: {
+  //         adaptiveHeight: false,
+  //         slidesToShow: 2,
+  //         slidesToScroll: 2,
+  //         dots: false,
+  //         arrows: true,
+  //         prevArrow: "#sec-three-arrow-left",
+  //         nextArrow: "#sec-three-arrow-right",
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 1380,
+  //       settings: {
+  //         adaptiveHeight: false,
+  //         slidesToShow: 3,
+  //         slidesToScroll: 3,
+  //         dots: false,
+  //         arrows: true,
+  //         prevArrow: "#sec-three-arrow-left",
+  //         nextArrow: "#sec-three-arrow-right",
+  //       },
+  //     },
+  //   ],
+  // });
 
   /* Remove "#" from menu anchor items to avoid jump to the top of the page
 --------------------------------------------------------------------------------------- */

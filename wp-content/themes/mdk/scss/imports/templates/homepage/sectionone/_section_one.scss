@@ -1,19 +1,52 @@
 #section-one {
-  background: #000;
   position: relative;
-  @include box(100%, 1000px);
+  @include box(100%, auto);
 }
 
 #sec-one-inner {
   position: relative;
   z-index: 1;
-  padding-top: 205px;
 }
 
 #sec-one-left {
   text-align: center;
+  padding: 0 30px 35px;
+  position: relative;
+  padding-top: 205px;
+  @include mq(small_tablet) {
+    padding: 205px 53px 116px;
+  }
+  @media screen and (min-width: 975px) {
+    padding: 205px 53px 150px;
+  }
+  @media screen and (min-width: 1075px) {
+    padding: 205px 53px 170px;
+  }
+
+  &::after {
+    @include mq(small_tablet) {
+      display: block;
+      right: -73px;
+      bottom: -324px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 520px 476px;
+      border-color: transparent transparent $red transparent;
+      @include abs(null, 0, 0, null);
+      @include contentdisplay();
+    }
+  }
   span {
     display: block;
+  }
+}
+
+#sec-one-left-content {
+  position: relative;
+  z-index: 1;
+  @media screen and (min-width: 1075px) {
+    padding-top: 45px;
   }
 }
 
@@ -31,6 +64,15 @@ span#sec-one-subtitle {
       transform: uppercase,
     )
   );
+  @include mq(small_tablet) {
+    text-align: left;
+    max-width: 297px;
+    @include margin_lr(0);
+    @include quick_type(17px, 20px, null);
+  }
+  @media screen and (min-width: 1075px) {
+    max-width: 507px;
+  }
 }
 
 #sec-one-image {
@@ -38,6 +80,11 @@ span#sec-one-subtitle {
   margin-top: 20px;
   @include margin_lr();
   @include box(263px, 239px);
+  @include mq(small_tablet) {
+    margin-top: 0px;
+    @include box(316px, 409px);
+    @include abs(-30px, 0px, null, null, 1);
+  }
   img {
     width: 100%;
     @include abs(0, null, null, 0);
@@ -46,6 +93,9 @@ span#sec-one-subtitle {
 
 span#sec-one-title {
   margin-top: 18px;
+  margin-bottom: 20px;
+  max-width: 470px;
+  @include margin_lr();
   @include type(
     (
       size: 33px,
@@ -55,6 +105,152 @@ span#sec-one-title {
       weight: 800,
     )
   );
+  @include mq(small_tablet) {
+    text-align: left;
+    max-width: 335px;
+    margin-bottom: 15px;
+    @include margin_lr(0);
+    @include quick_type(45px, 45px, null);
+  }
+  @media screen and (min-width: 975px) {
+    max-width: 410px;
+  }
+  @media screen and (min-width: 1075px) {
+    max-width: 610px;
+  }
+}
+
+a#sec-one-button {
+  max-width: 302px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    padding: 25px 20px;
+    @include margin_lr(0);
+  }
+}
+
+#sec-one-right {
+  background: $bluedark;
+}
+
+#sec-one-right-inner {
+  text-align: center;
+  @include flex(space-between, center);
+}
+
+.sec-one-arrow {
+  background: $red;
+  flex-shrink: 0;
+  position: relative;
+  transition: background 200ms ease-in-out;
+  @include box(33px, 49px);
+  &::before,
+  &::after {
+    background: $white;
+    position: absolute;
+    left: 9px;
+    top: 20px;
+    @include box(12px, 2px);
+    @include contentdisplay();
+  }
+  &:hover {
+    background: $grey;
+  }
+  &.sec-one-arrow-left,
+  &.sec-one-arrow-right {
+    &::after {
+      top: 27px;
+    }
+  }
+  &.sec-one-arrow-left {
+    &::before {
+      transform: rotate(-45deg);
+    }
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+  &.sec-one-arrow-right {
+    &::before,
+    &::after {
+      left: 13px;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+#sec-one-slider {
+  padding: 0px 30px;
+  width: calc(100% - 66px);
+  @include mq(small_tablet) {
+    padding: 17px 30px;
+    position: relative;
+  }
+  &::after {
+    @include mq(small_tablet) {
+      background: $bluedark;
+      @include abs(0, 30px, null, null, 1);
+      @include box(4px, 100%);
+      @include contentdisplay();
+    }
+  }
+}
+
+.sec-one-single-slide {
+  padding: 42px 0;
+  @include mq(small_tablet) {
+    padding: 29px 16px 40px;
+    border-right: 1px solid #283243;
+  }
+  .sec-one-single-icon {
+    position: relative;
+    @include margin_lr();
+    @include box(33px, 38px);
+    img {
+      width: 100%;
+      @include abs(0, null, null, 0);
+    }
+  }
+  span {
+    color: $white;
+    display: block;
+    &.sec-one-single-title {
+      margin-top: 20px;
+      @include type(
+        (
+          size: 22px,
+          height: 26px,
+          family: $secondaryfont,
+          weight: 800,
+          transform: uppercase,
+        )
+      );
+    }
+    &.sec-one-single-descrip {
+      margin-top: 10px;
+      max-width: 326px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 15px,
+          height: 22px,
+          family: $primaryfont,
+          color: $greytwo,
+        )
+      );
+      @include mq(small_tablet) {
+        max-width: 290px;
+      }
+    }
+  }
+}
+
+#sec-one-triangle {
 }
 
 img#hero-image {

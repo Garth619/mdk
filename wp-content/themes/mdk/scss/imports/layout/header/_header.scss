@@ -78,6 +78,8 @@ header {
   text-align: center;
   @media screen and (min-width: 675px) {
     border-bottom: 0;
+    position: relative;
+    top: 6px;
     padding-bottom: 0px;
   }
   @include mq(small_laptop) {
