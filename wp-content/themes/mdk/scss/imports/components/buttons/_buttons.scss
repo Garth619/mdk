@@ -16,6 +16,9 @@
       transform: capitalize,
     )
   );
+  @include mq(small_laptop) {
+    @include quick_type(20px, 20px, null);
+  }
   &::before,
   &::after {
     @include abs(9px, null, null, 9px, -1);

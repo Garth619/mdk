@@ -6,6 +6,20 @@
 #sec-one-inner {
   position: relative;
   z-index: 1;
+  &::after {
+    @include mq(small_laptop) {
+      display: block;
+      right: -73px;
+      bottom: -324px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 762px 337px;
+      border-color: transparent transparent $red transparent;
+      @include abs(null, 0, 0, null);
+      @include contentdisplay();
+    }
+  }
 }
 
 #sec-one-left {
@@ -22,7 +36,9 @@
   @media screen and (min-width: 1075px) {
     padding: 205px 53px 170px;
   }
-
+  @include mq(small_laptop) {
+    padding: 205px 91px 170px 97px;
+  }
   &::after {
     @include mq(small_tablet) {
       display: block;
@@ -36,6 +52,9 @@
       @include abs(null, 0, 0, null);
       @include contentdisplay();
     }
+    @include mq(small_laptop) {
+      display: none;
+    }
   }
   span {
     display: block;
@@ -47,6 +66,9 @@
   z-index: 1;
   @media screen and (min-width: 1075px) {
     padding-top: 45px;
+  }
+  @include mq(small_laptop) {
+    padding-top: 64px;
   }
 }
 
@@ -85,6 +107,10 @@ span#sec-one-subtitle {
     @include box(316px, 409px);
     @include abs(-30px, 0px, null, null, 1);
   }
+  @include mq(small_laptop) {
+    top: 0;
+    @include box(459px, 595px);
+  }
   img {
     width: 100%;
     @include abs(0, null, null, 0);
@@ -118,6 +144,12 @@ span#sec-one-title {
   @media screen and (min-width: 1075px) {
     max-width: 610px;
   }
+  @include mq(small_laptop) {
+    margin-top: 24px;
+    margin-bottom: 26px;
+    max-width: 590px;
+    @include quick_type(60px, 60px, null);
+  }
 }
 
 a#sec-one-button {
@@ -126,6 +158,10 @@ a#sec-one-button {
   @include mq(small_tablet) {
     padding: 25px 20px;
     @include margin_lr(0);
+  }
+  @include mq(small_laptop) {
+    max-width: 356px;
+    padding: 30px 20px;
   }
 }
 
@@ -136,6 +172,9 @@ a#sec-one-button {
 #sec-one-right-inner {
   text-align: center;
   @include flex(space-between, center);
+  @include mq(small_laptop) {
+    width: calc(100% - 207px);
+  }
 }
 
 .sec-one-arrow {
@@ -144,6 +183,9 @@ a#sec-one-button {
   position: relative;
   transition: background 200ms ease-in-out;
   @include box(33px, 49px);
+  @include mq(small_laptop) {
+    display: none;
+  }
   &::before,
   &::after {
     background: $white;
@@ -191,12 +233,19 @@ a#sec-one-button {
     padding: 17px 30px;
     position: relative;
   }
+  @include mq(small_laptop) {
+    padding: 29px 0px;
+    @include flex();
+  }
   &::after {
     @include mq(small_tablet) {
       background: $bluedark;
       @include abs(0, 30px, null, null, 1);
       @include box(4px, 100%);
       @include contentdisplay();
+    }
+    @include mq(small_laptop) {
+      display: none;
     }
   }
 }
@@ -207,10 +256,19 @@ a#sec-one-button {
     padding: 29px 16px 40px;
     border-right: 1px solid #283243;
   }
+  @include mq(small_laptop) {
+    padding: 29px 37px 60px;
+  }
+  &:last-of-type {
+    border-right: none;
+  }
   .sec-one-single-icon {
     position: relative;
     @include margin_lr();
     @include box(33px, 38px);
+    @include mq(small_laptop) {
+      @include box(40px, 46px);
+    }
     img {
       width: 100%;
       @include abs(0, null, null, 0);
@@ -230,6 +288,9 @@ a#sec-one-button {
           transform: uppercase,
         )
       );
+      @include mq(small_laptop) {
+        margin-top: 25px;
+      }
     }
     &.sec-one-single-descrip {
       margin-top: 10px;
@@ -245,6 +306,9 @@ a#sec-one-button {
       );
       @include mq(small_tablet) {
         max-width: 290px;
+      }
+      @include mq(small_laptop) {
+        margin-top: 15px;
       }
     }
   }

@@ -56,7 +56,7 @@ header {
     @include flex(center, flex-end, column);
   }
   @include mq(small_laptop) {
-    padding: 22px 12px 0px;
+    padding: 16px 12px 0px;
     justify-content: flex-start;
     @include box(auto, auto);
   }
