@@ -39,6 +39,9 @@
   @include mq(small_laptop) {
     padding: 205px 91px 170px 97px;
   }
+  @include mq(large_laptop) {
+    padding: 205px 91px 189px 137px;
+  }
   &::after {
     @include mq(small_tablet) {
       display: block;
@@ -70,6 +73,9 @@
   @include mq(small_laptop) {
     padding-top: 64px;
   }
+  @include mq(large_laptop) {
+    padding-top: 27px;
+  }
 }
 
 span#sec-one-subtitle {
@@ -95,6 +101,13 @@ span#sec-one-subtitle {
   @media screen and (min-width: 1075px) {
     max-width: 507px;
   }
+  @include mq(small_laptop) {
+    @include quick_type(17px, 20px, null);
+  }
+  @include mq(large_laptop) {
+    max-width: 537px;
+    @include quick_type(18px, 20px, null);
+  }
 }
 
 #sec-one-image {
@@ -110,6 +123,10 @@ span#sec-one-subtitle {
   @include mq(small_laptop) {
     top: 0;
     @include box(459px, 595px);
+  }
+  @include mq(large_laptop) {
+    top: -20px;
+    @include box(492px, 638px);
   }
   img {
     width: 100%;
@@ -150,6 +167,9 @@ span#sec-one-title {
     max-width: 590px;
     @include quick_type(60px, 60px, null);
   }
+  @include mq(large_laptop) {
+    @include quick_type(65px, 70px, null);
+  }
 }
 
 a#sec-one-button {
@@ -174,6 +194,9 @@ a#sec-one-button {
   @include flex(space-between, center);
   @include mq(small_laptop) {
     width: calc(100% - 207px);
+  }
+  @include mq(large_laptop) {
+    width: calc(100% - 385px);
   }
 }
 
@@ -237,6 +260,9 @@ a#sec-one-button {
     padding: 29px 0px;
     @include flex();
   }
+  @include mq(large_laptop) {
+    padding: 33px 0px 50px;
+  }
   &::after {
     @include mq(small_tablet) {
       background: $bluedark;
@@ -258,6 +284,9 @@ a#sec-one-button {
   }
   @include mq(small_laptop) {
     padding: 29px 37px 60px;
+  }
+  @include mq(large_laptop) {
+    padding: 29px 40px 35px;
   }
   &:last-of-type {
     border-right: none;

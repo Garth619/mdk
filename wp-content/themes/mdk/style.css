@@ -1387,6 +1387,11 @@ nav.nav-desktop ul li a:hover {
     padding: 205px 91px 170px 97px;
   }
 }
+@media screen and (min-width: 1380px) {
+  #sec-one-left {
+    padding: 205px 91px 189px 137px;
+  }
+}
 @media screen and (min-width: 768px) {
   #sec-one-left::after {
     display: block;
@@ -1427,6 +1432,11 @@ nav.nav-desktop ul li a:hover {
     padding-top: 64px;
   }
 }
+@media screen and (min-width: 1380px) {
+  #sec-one-left-content {
+    padding-top: 27px;
+  }
+}
 
 span#sec-one-subtitle {
   max-width: 250px;
@@ -1457,6 +1467,19 @@ span#sec-one-subtitle {
     max-width: 507px;
   }
 }
+@media screen and (min-width: 1170px) {
+  span#sec-one-subtitle {
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  span#sec-one-subtitle {
+    max-width: 537px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
 
 #sec-one-image {
   position: relative;
@@ -1482,6 +1505,13 @@ span#sec-one-subtitle {
     top: 0;
     width: 459px;
     height: 595px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-one-image {
+    top: -20px;
+    width: 492px;
+    height: 638px;
   }
 }
 #sec-one-image img {
@@ -1535,6 +1565,12 @@ span#sec-one-title {
     line-height: 60px;
   }
 }
+@media screen and (min-width: 1380px) {
+  span#sec-one-title {
+    font-size: 65px;
+    line-height: 70px;
+  }
+}
 
 a#sec-one-button {
   max-width: 302px;
@@ -1571,6 +1607,11 @@ a#sec-one-button {
 @media screen and (min-width: 1170px) {
   #sec-one-right-inner {
     width: calc(100% - 207px);
+  }
+}
+@media screen and (min-width: 1380px) {
+  #sec-one-right-inner {
+    width: calc(100% - 385px);
   }
 }
 
@@ -1641,6 +1682,11 @@ a#sec-one-button {
     display: flex;
   }
 }
+@media screen and (min-width: 1380px) {
+  #sec-one-slider {
+    padding: 33px 0px 50px;
+  }
+}
 @media screen and (min-width: 768px) {
   #sec-one-slider::after {
     background: #07121c;
@@ -1672,6 +1718,11 @@ a#sec-one-button {
 @media screen and (min-width: 1170px) {
   .sec-one-single-slide {
     padding: 29px 37px 60px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .sec-one-single-slide {
+    padding: 29px 40px 35px;
   }
 }
 .sec-one-single-slide:last-of-type {
