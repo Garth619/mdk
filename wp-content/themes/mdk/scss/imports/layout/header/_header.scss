@@ -10,6 +10,10 @@ header {
 #header-inner {
   @include flex(space-between);
   flex-wrap: wrap;
+  @include mq(monitor) {
+    max-width: 1990px;
+    @include margin_lr();
+  }
 }
 
 #header-left {

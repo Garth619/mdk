@@ -43,7 +43,7 @@ nav {
     @include contentdisplay();
     @include mq(large_laptop) {
       background: rgba(255, 255, 255, 0.5);
-      @include box(calc(100% + 370px), 1px);
+      @include box(calc(100% + 385px), 1px);
     }
   }
   &.open {
@@ -81,6 +81,7 @@ nav {
       @include mq(large_laptop) {
         font-size: 17px;
       }
+
       a {
         display: block;
         cursor: pointer;
@@ -156,6 +157,14 @@ nav {
       &.current-menu-item {
         > a {
           color: $red;
+        }
+      }
+      &:nth-last-of-type(-n + 3) {
+        @include mq(small_laptop) {
+          ul.sub-menu {
+            left: auto;
+            right: -10px;
+          }
         }
       }
       &:last-of-type {
