@@ -168,12 +168,30 @@ jQuery(document).ready(function ($) {
         },
       },
       {
-        breakpoint: 1179,
+        breakpoint: 1169,
         settings: {
           centerMode: true,
           centerPadding: "345px",
           slidesToShow: 1,
           slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1379,
+        settings: {
+          centerMode: true,
+          centerPadding: "445px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1695,
+        settings: {
+          centerMode: true,
+          centerPadding: "150px",
+          slidesToShow: 3,
+          slidesToScroll: 3,
         },
       },
     ],
