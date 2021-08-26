@@ -3,7 +3,7 @@
 
 #sec-three-content {
   text-align: center;
-  padding: 0 0 30px;
+  padding: 0 0 34px;
   @include mq(small_laptop) {
     max-width: 1010px;
     padding: 0 0 55px;
@@ -86,5 +86,154 @@
 a#sec-three-button {
   @include mq(small_laptop) {
     height: 45px;
+  }
+}
+
+#sec-three-case-results {
+  @include flex(space-between);
+  flex-wrap: wrap;
+}
+
+.sec-three-arrow {
+  flex-basis: 49.8%;
+  margin-top: 8px;
+  background: $red;
+  padding: 18px 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms ease-in-out;
+  &:hover {
+    background: $grey;
+  }
+}
+
+#sec-three-arrow-left {
+  order: 2;
+  img {
+    transform: rotate(180deg);
+  }
+}
+
+#sec-three-arrow-right {
+  order: 3;
+}
+
+#sec-three-slider {
+  width: 100%;
+  order: 1;
+  .slick-track {
+  }
+  .slick-slide {
+    margin: 0 6px;
+  }
+  .slick-list {
+    margin: 0 -6px;
+  }
+}
+
+.sec-three-single-slide {
+  span {
+    display: block;
+    color: $white;
+    text-align: center;
+  }
+  .sec-three-single-inner {
+    position: relative;
+    .sec-three-single-cr {
+      position: relative;
+      height: 590px;
+      .sec-three-single-cr-content {
+        position: relative;
+        z-index: 1;
+        background: rgba(7, 18, 28, 0.7);
+        @include flex(center, center, column);
+        @include box(100%, 100%);
+        span {
+          &.sec-three-single-amount {
+            margin-top: -46px;
+            @include type(
+              (
+                size: 90px,
+                height: 100px,
+                family: $secondaryfont,
+                weight: 800,
+                transform: uppercase,
+              )
+            );
+            &::after {
+              background: $red;
+              margin-top: 25px;
+              @include contentdisplay();
+              @include margin_lr();
+              @include box(158px, 2px);
+            }
+          }
+          &.sec-three-single-type {
+            margin-top: 45px;
+            max-width: 300px;
+            @include margin_lr();
+            @include type(
+              (
+                size: 20px,
+                height: 25px,
+                family: $secondaryfont,
+                weight: 700,
+                transform: uppercase,
+              )
+            );
+          }
+        }
+        img.svg-arrow {
+          position: relative;
+          top: 100px;
+        }
+      }
+      img.sec-three-single-img {
+        object-fit: cover;
+        @include box(100%, 100%);
+        @include abs(0, null, null, 0);
+      }
+    }
+    .sec-three-single-hover {
+      background: $bluedark;
+      opacity: 0;
+      visibility: hidden;
+      padding: 0 20px;
+      transition: all 300ms ease-in-out;
+      @include flex(center, center, column);
+      @include box(100%, 100%);
+      @include abs(0, null, null, 0, 1);
+      span {
+        &.sec-three-hover-type {
+          @include type(
+            (
+              size: 25px,
+              height: 30px,
+              spacing: 1.25px,
+              family: $secondaryfont,
+              weight: 800,
+              transform: uppercase,
+            )
+          );
+        }
+        &.sec-three-hover-descrip {
+          margin-top: 33px;
+          max-width: 370px;
+          @include margin_lr();
+          @include type(
+            (
+              size: 17px,
+              height: 30px,
+              family: $primaryfont,
+            )
+          );
+        }
+      }
+      &.show {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }

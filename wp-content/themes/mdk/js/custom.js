@@ -148,6 +148,32 @@ jQuery(document).ready(function ($) {
     ],
   });
 
+  $("#sec-three-slider").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    arrows: true,
+    prevArrow: "#sec-three-arrow-left",
+    nextArrow: "#sec-three-arrow-right",
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          centerMode: true,
+          centerPadding: "130px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+
+  $(".sec-three-single-slide").on("click", function (e) {
+    $(this).find(".sec-three-single-hover").toggleClass("show");
+  });
+
   // $("#sec-three-slider").slick({
   //   infinite: true,
   //   slidesToShow: 2,
