@@ -171,7 +171,8 @@ jQuery(document).ready(function ($) {
   });
 
   $(".sec-three-single-slide").on("click", function (e) {
-    $(this).find(".sec-three-single-hover").toggleClass("show");
+    $(".sec-three-single-slide").removeClass("show");
+    $(this).toggleClass("show");
   });
 
   // $("#sec-three-slider").slick({
