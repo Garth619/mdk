@@ -45,6 +45,9 @@
     @include mq(small_tablet) {
       padding-top: 10px;
     }
+    @include mq(monitor) {
+      font-size: 20px;
+    }
   }
   ul,
   p {

@@ -15,7 +15,10 @@
     padding: 96px 0px 70px;
   }
   @include mq(large_laptop) {
-    padding: 158px 85px 70px;
+    padding: 158px 85px 140px;
+  }
+  @include mq(monitor) {
+    padding: 158px 85px 170px;
   }
   h1 {
     margin-bottom: 20px;
@@ -54,12 +57,17 @@
 #sec-two-inner {
   @include mq(large_laptop) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
+    //grid-template-columns: auto;
+    //grid-template-rows: auto;
+    gap: 0px 60px;
     grid-template-areas:
       "sec-two-middle sec-two-top"
       "sec-two-middle sec-two-bottom";
+    max-width: 1358px;
+    @include margin_lr();
+  }
+  @include mq(monitor) {
+    gap: 0px 73px;
   }
 }
 
@@ -74,18 +82,15 @@
     @include margin_lr();
   }
   @include mq(large_laptop) {
+    max-width: 100%;
+    padding: 0px;
+    @include margin_lr(0);
   }
 }
 
 #sec-two-top {
   @include mq(large_laptop) {
     grid-area: sec-two-top;
-  }
-}
-
-#sec-two-bottom {
-  @include mq(large_laptop) {
-    grid-area: sec-two-bottom;
   }
 }
 
@@ -103,7 +108,7 @@
   @include mq(large_laptop) {
     display: block;
     padding: 0px 0px 0px 0px;
-    max-width: 436px;
+    max-width: 443px;
     grid-area: sec-two-middle;
     @include margin_lr(0);
   }
@@ -132,6 +137,10 @@
     border-color: transparent transparent $red transparent;
     @include abs(null, 20px, -11px, null);
     @include contentdisplay();
+    @include mq(large_laptop) {
+      border-width: 0 0 130px 130px;
+      @include abs(null, 40px, -29px, null);
+    }
   }
   #sec-two-image-inner {
     position: relative;
@@ -139,7 +148,6 @@
     img#sec-two-image {
       width: 100%;
       @include abs(0, null, null, 0);
-      //@include image();
     }
   }
 }
@@ -164,6 +172,10 @@
     padding-left: 33px;
     @include quick_type(35px, 45px, null);
   }
+  @include mq(large_laptop) {
+    margin-top: 64px;
+    padding-left: 0px;
+  }
   p {
     margin-bottom: 10px;
   }
@@ -175,4 +187,8 @@
 
 #sec-two-bottom {
   margin-top: 55px;
+  @include mq(large_laptop) {
+    margin-top: 0px;
+    grid-area: sec-two-bottom;
+  }
 }

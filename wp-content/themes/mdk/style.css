@@ -608,6 +608,11 @@ h4 {
     padding-top: 10px;
   }
 }
+@media screen and (min-width: 1800px) {
+  .content h3 {
+    font-size: 20px;
+  }
+}
 .content ul,
 .content p {
   margin-bottom: 25px;
@@ -1949,7 +1954,12 @@ img#hero-image {
 }
 @media screen and (min-width: 1380px) {
   #section-two {
-    padding: 158px 85px 70px;
+    padding: 158px 85px 140px;
+  }
+}
+@media screen and (min-width: 1800px) {
+  #section-two {
+    padding: 158px 85px 170px;
   }
 }
 #section-two h1 {
@@ -1997,10 +2007,16 @@ img#hero-image {
 @media screen and (min-width: 1380px) {
   #sec-two-inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
+    gap: 0px 60px;
     grid-template-areas: "sec-two-middle sec-two-top" "sec-two-middle sec-two-bottom";
+    max-width: 1358px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 1800px) {
+  #sec-two-inner {
+    gap: 0px 73px;
   }
 }
 
@@ -2020,14 +2036,18 @@ img#hero-image {
   }
 }
 @media screen and (min-width: 1380px) {
-  #sec-two-top {
-    grid-area: sec-two-top;
+  #sec-two-top,
+#sec-two-bottom {
+    max-width: 100%;
+    padding: 0px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media screen and (min-width: 1380px) {
-  #sec-two-bottom {
-    grid-area: sec-two-bottom;
+  #sec-two-top {
+    grid-area: sec-two-top;
   }
 }
 
@@ -2053,7 +2073,7 @@ img#hero-image {
   #sec-two-middle {
     display: block;
     padding: 0px 0px 0px 0px;
-    max-width: 436px;
+    max-width: 443px;
     grid-area: sec-two-middle;
     margin-left: 0;
     margin-right: 0;
@@ -2097,6 +2117,14 @@ img#hero-image {
   content: "";
   display: block;
 }
+@media screen and (min-width: 1380px) {
+  #sec-two-image-wrapper::after {
+    border-width: 0 0 130px 130px;
+    position: absolute;
+    right: 40px;
+    bottom: -29px;
+  }
+}
 #sec-two-image-wrapper #sec-two-image-inner {
   position: relative;
   padding-top: 104.8109965636%;
@@ -2133,6 +2161,12 @@ img#hero-image {
     line-height: 45px;
   }
 }
+@media screen and (min-width: 1380px) {
+  #sec-two-middle-block {
+    margin-top: 64px;
+    padding-left: 0px;
+  }
+}
 #sec-two-middle-block p {
   margin-bottom: 10px;
 }
@@ -2143,6 +2177,12 @@ img#hero-image {
 
 #sec-two-bottom {
   margin-top: 55px;
+}
+@media screen and (min-width: 1380px) {
+  #sec-two-bottom {
+    margin-top: 0px;
+    grid-area: sec-two-bottom;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
