@@ -1,0 +1,90 @@
+#section-three {
+}
+
+#sec-three-content {
+  text-align: center;
+  padding: 0 0 30px;
+  @include mq(small_laptop) {
+    max-width: 1010px;
+    padding: 0 0 55px;
+    @include margin_lr();
+    @include flex(flex-start, center);
+  }
+  @include mq(large_laptop) {
+    max-width: 1190px;
+    padding: 0 0 75px;
+  }
+  @include mq(monitor) {
+    max-width: 1267px;
+  }
+  span {
+    display: block;
+    &#sec-three-title {
+      @include type(
+        (
+          size: 35px,
+          height: 38px,
+          family: $secondaryfont,
+          weight: 800,
+          transform: uppercase,
+        )
+      );
+      @include mq(small_laptop) {
+        @include flex();
+        flex-shrink: 0;
+      }
+      &::after {
+        background: $grey;
+        margin-top: 15px;
+        @include margin_lr();
+        @include box(80px, 4px);
+        @include contentdisplay();
+        @include mq(small_laptop) {
+          @include margin_lr(18px);
+        }
+        @include mq(large_laptop) {
+          @include box(118px, 4px);
+        }
+      }
+    }
+    &#sec-three-descrip {
+      max-width: 280px;
+      margin-top: 13px;
+      margin-bottom: 30px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 18px,
+          height: 21px,
+          family: $primaryfont,
+          color: $bluelight,
+        )
+      );
+      @include mq(small_tablet) {
+        max-width: 295px;
+      }
+      @include mq(small_laptop) {
+        margin-left: 0;
+        margin-top: 0px;
+        margin-right: 30px;
+        position: relative;
+        top: 13px;
+        text-align: left;
+      }
+      @include mq(large_laptop) {
+        max-width: 100%;
+        margin-right: 20px;
+      }
+      @include mq(monitor) {
+        padding-left: 20px;
+        margin-right: 112px;
+      }
+    }
+  }
+}
+
+a#sec-three-button {
+  @include mq(small_laptop) {
+    height: 45px;
+  }
+}

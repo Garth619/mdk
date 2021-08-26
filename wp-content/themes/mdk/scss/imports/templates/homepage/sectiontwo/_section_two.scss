@@ -1,5 +1,5 @@
 #section-two {
-  padding: 39px 40px;
+  padding: 39px 40px 22px;
   @include type(
     (
       size: 16px,
@@ -9,7 +9,7 @@
     )
   );
   @include mq(small_tablet) {
-    padding: 96px 0px 50px;
+    padding: 96px 0px 55px;
   }
   @include mq(small_laptop) {
     padding: 96px 0px 70px;
@@ -186,7 +186,10 @@
 }
 
 #sec-two-bottom {
-  margin-top: 55px;
+  margin-top: 16px;
+  @include mq(small_tablet) {
+    margin-top: 55px;
+  }
   @include mq(large_laptop) {
     margin-top: 0px;
     grid-area: sec-two-bottom;

@@ -40,3 +40,26 @@
     }
   }
 }
+
+.button-two {
+  background: $red;
+  display: inline-block;
+  padding: 14px 23px;
+  box-shadow: 0px 3px 10px #c61f2080;
+  transition: all 200ms ease-in-out;
+  @include type(
+    (
+      size: 17px,
+      family: $secondaryfont,
+      color: $white,
+      align: center,
+    )
+  );
+  @include mq(small_laptop) {
+    padding: 14px 19px;
+  }
+  &:hover {
+    background: $grey;
+    box-shadow: 0px 3px 10px #8e99ac;
+  }
+}
