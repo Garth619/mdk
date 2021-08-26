@@ -167,11 +167,20 @@ jQuery(document).ready(function ($) {
           slidesToScroll: 1,
         },
       },
+      {
+        breakpoint: 1179,
+        settings: {
+          centerMode: true,
+          centerPadding: "345px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
   });
 
   $(".sec-three-single-slide").on("click", function (e) {
-    $(".sec-three-single-slide").removeClass("show");
+    $(".sec-three-single-slide").not(this).removeClass("show");
     $(this).toggleClass("show");
   });
 
