@@ -2,20 +2,55 @@
 }
 
 #sec-five-inner {
+  position: relative;
+}
+
+#sec-five-slider-wrapper {
+  background: $bluedark;
+  padding: 57px 30px;
+  position: relative;
+  @include mq(small_tablet) {
+    padding: 113px 30px;
+    overflow: hidden;
+  }
+  &::after {
+    @include mq(small_tablet) {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 1312px 0 0 540px;
+      border-color: transparent transparent transparent $red;
+      @include abs(0, null, null, 0);
+      @include contentdisplay();
+    }
+  }
+  .slick-list {
+    @include mq(small_tablet) {
+      z-index: 1;
+    }
+  }
 }
 
 #sec-five-slider {
-  background: $bluedark;
-  padding: 57px 30px;
+  @include mq(small_tablet) {
+    max-width: 565px;
+
+    @include margin_lr();
+  }
 }
 
 .sec-five-slide {
   color: $white;
   position: relative;
   padding-top: 1px;
+  z-index: 2;
+
   img.sec-five-slide-quote {
     @include abs(0, null, null, 0);
     @include box(117px, auto);
+  }
+  .sec-five-slide-inner {
+    padding-left: 65px;
   }
   span {
     display: block;
@@ -31,6 +66,9 @@
           weight: 800,
         )
       );
+      @include mq(small_tablet) {
+        @include quick_type(40px, 45px, null);
+      }
     }
     &.sec-five-slide-descrip {
       padding-top: 15px;
@@ -41,6 +79,9 @@
           family: $primaryfont,
         )
       );
+      @include mq(small_tablet) {
+        padding-right: 60px;
+      }
     }
     &.sec-five-slide-name {
       display: inline-block;
@@ -53,6 +94,10 @@
           weight: 700,
         )
       );
+      @include mq(small_tablet) {
+        margin-top: 45px;
+        @include flex(flex-end);
+      }
       &::before {
         background: $red;
         vertical-align: top;
@@ -76,6 +121,10 @@
   .sec-five-slide-icon-wrapper {
     margin-top: 48px;
     @include flex(null, center);
+    @include mq(small_tablet) {
+      margin-top: 28px;
+      @include flex(flex-end, center);
+    }
     img {
       margin-right: 5px;
     }
@@ -85,12 +134,16 @@
 .sec-five-image-wrapper {
   position: relative;
   @include flex(space-between);
+  @include mq(small_tablet) {
+    position: static;
+    @include flex(flex-end);
+  }
 }
 
 .sec-five-arrow {
   flex-basis: 49.8%;
   margin-top: 8px;
-  background: $red;
+  background: $bluelight;
   padding: 18px 0;
   display: flex !important;
   justify-content: center;
