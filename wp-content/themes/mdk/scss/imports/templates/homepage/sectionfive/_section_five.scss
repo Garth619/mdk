@@ -1,0 +1,127 @@
+#section-five {
+}
+
+#sec-five-inner {
+}
+
+#sec-five-slider {
+  background: $bluedark;
+  padding: 57px 30px;
+}
+
+.sec-five-slide {
+  color: $white;
+  position: relative;
+  padding-top: 1px;
+  img.sec-five-slide-quote {
+    @include abs(0, null, null, 0);
+    @include box(117px, auto);
+  }
+  span {
+    display: block;
+    position: relative;
+    z-index: 1;
+    &.sec-five-slide-title {
+      margin-top: 35px;
+      @include type(
+        (
+          size: 35px,
+          height: 40px,
+          family: $secondaryfont,
+          weight: 800,
+        )
+      );
+    }
+    &.sec-five-slide-descrip {
+      padding-top: 15px;
+      @include type(
+        (
+          size: 17px,
+          height: 28px,
+          family: $primaryfont,
+        )
+      );
+    }
+    &.sec-five-slide-name {
+      display: inline-block;
+      margin-top: 25px;
+      @include type(
+        (
+          size: 17px,
+          height: 20px,
+          family: $primaryfont,
+          weight: 700,
+        )
+      );
+      &::before {
+        background: $red;
+        vertical-align: top;
+        margin-top: 9px;
+        margin-right: 12px;
+        @include box(47px, 3px);
+        @include contentdisplay(inline-block, "");
+      }
+    }
+    &.sec-five-icon-title {
+      @include type(
+        (
+          size: 17px,
+          height: 20px,
+          family: $primaryfont,
+          weight: 700,
+        )
+      );
+    }
+  }
+  .sec-five-slide-icon-wrapper {
+    margin-top: 48px;
+    @include flex(null, center);
+    img {
+      margin-right: 5px;
+    }
+  }
+}
+
+.sec-five-image-wrapper {
+  position: relative;
+  @include flex(space-between);
+}
+
+.sec-five-arrow {
+  flex-basis: 49.8%;
+  margin-top: 8px;
+  background: $red;
+  padding: 18px 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms ease-in-out;
+  @include mq(small_tablet) {
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    @include box(60px, 60px);
+  }
+  &:hover {
+    background: $grey;
+  }
+}
+
+#sec-five-arrow-left {
+  order: 2;
+  @include mq(small_tablet) {
+    left: 0;
+  }
+  img {
+    transform: rotate(180deg);
+  }
+}
+
+#sec-five-arrow-right {
+  order: 3;
+  @include mq(small_tablet) {
+    right: 0;
+  }
+}

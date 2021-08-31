@@ -202,6 +202,19 @@ jQuery(document).ready(function ($) {
     $(this).toggleClass("show");
   });
 
+  $("#sec-five-slider").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    arrows: true,
+    fade: true,
+    prevArrow: "#sec-five-arrow-left",
+    nextArrow: "#sec-five-arrow-right",
+    adaptiveHeight: true,
+    dots: false,
+  });
+
   // $("#sec-three-slider").slick({
   //   infinite: true,
   //   slidesToShow: 2,

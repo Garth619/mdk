@@ -249,7 +249,7 @@
 
       <img class='sec-three-svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
 
-    </div><!-- sec-three-arrow-left -->
+    </div><!-- sec-three-arrow-right -->
 
   </div><!-- sec-three-case-results -->
 
