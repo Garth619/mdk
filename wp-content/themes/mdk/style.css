@@ -2788,6 +2788,15 @@ img#hero-image {
 #sec-five-inner {
   position: relative;
 }
+@media screen and (min-width: 1170px) {
+  #sec-five-inner {
+    background: #07121c;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+  }
+}
 
 #sec-five-slider-wrapper {
   background: #07121c;
@@ -2798,6 +2807,13 @@ img#hero-image {
   #sec-five-slider-wrapper {
     padding: 113px 30px;
     overflow: hidden;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-five-slider-wrapper {
+    padding: 144px 0px 120px;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
   }
 }
 @media screen and (min-width: 768px) {
@@ -2827,6 +2843,14 @@ img#hero-image {
     margin-right: auto;
   }
 }
+@media screen and (min-width: 1170px) {
+  #sec-five-slider {
+    max-width: 580px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-left: 145px;
+  }
+}
 
 .sec-five-slide {
   color: #fff;
@@ -2843,6 +2867,11 @@ img#hero-image {
 }
 .sec-five-slide .sec-five-slide-inner {
   padding-left: 65px;
+}
+@media screen and (min-width: 1170px) {
+  .sec-five-slide .sec-five-slide-inner {
+    padding-left: 80px;
+  }
 }
 .sec-five-slide span {
   display: block;
@@ -2864,6 +2893,12 @@ img#hero-image {
     line-height: 45px;
   }
 }
+@media screen and (min-width: 1170px) {
+  .sec-five-slide span.sec-five-slide-title {
+    font-size: 43px;
+    line-height: 45px;
+  }
+}
 .sec-five-slide span.sec-five-slide-descrip {
   padding-top: 15px;
   font-size: 17px;
@@ -2878,6 +2913,11 @@ img#hero-image {
     padding-right: 60px;
   }
 }
+@media screen and (min-width: 1170px) {
+  .sec-five-slide span.sec-five-slide-descrip {
+    padding-right: 0px;
+  }
+}
 .sec-five-slide span.sec-five-slide-name {
   display: inline-block;
   margin-top: 25px;
@@ -2890,11 +2930,20 @@ img#hero-image {
 }
 @media screen and (min-width: 768px) {
   .sec-five-slide span.sec-five-slide-name {
-    margin-top: 45px;
+    margin-top: 40px;
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: flex-end;
             justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .sec-five-slide span.sec-five-slide-name {
+    margin-top: 28px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-start;
+            justify-content: flex-start;
   }
 }
 .sec-five-slide span.sec-five-slide-name::before {
@@ -2933,6 +2982,11 @@ img#hero-image {
             align-items: center;
   }
 }
+@media screen and (min-width: 1170px) {
+  .sec-five-slide .sec-five-slide-icon-wrapper {
+    margin-top: 40px;
+  }
+}
 .sec-five-slide .sec-five-slide-icon-wrapper img {
   margin-right: 5px;
 }
@@ -2951,6 +3005,43 @@ img#hero-image {
     display: flex;
     -webkit-justify-content: flex-end;
             justify-content: flex-end;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .sec-five-image-wrapper {
+    -webkit-flex-basis: 420px;
+            flex-basis: 420px;
+    -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+    height: 470px;
+    margin-top: 115px;
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+  }
+}
+.sec-five-image-wrapper #sec-five-image {
+  display: none;
+}
+@media screen and (min-width: 1170px) {
+  .sec-five-image-wrapper #sec-five-image {
+    display: block;
+    position: relative;
+    width: 360px;
+    height: 470px;
+  }
+}
+.sec-five-image-wrapper #sec-five-image img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 1170px) {
+  .sec-five-image-wrapper #sec-five-image img {
+    left: 60px;
   }
 }
 
@@ -2992,6 +3083,13 @@ img#hero-image {
     left: 0;
   }
 }
+@media screen and (min-width: 1170px) {
+  #sec-five-arrow-left {
+    -webkit-order: 1;
+            order: 1;
+    top: 66px;
+  }
+}
 #sec-five-arrow-left img {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -3004,6 +3102,15 @@ img#hero-image {
 @media screen and (min-width: 768px) {
   #sec-five-arrow-right {
     right: 0;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #sec-five-arrow-right {
+    -webkit-order: 2;
+            order: 2;
+    right: auto;
+    left: 0;
+    top: -66px;
   }
 }
 

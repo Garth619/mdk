@@ -3,6 +3,10 @@
 
 #sec-five-inner {
   position: relative;
+  @include mq(small_laptop) {
+    background: $bluedark;
+    @include flex(space-between);
+  }
 }
 
 #sec-five-slider-wrapper {
@@ -12,6 +16,10 @@
   @include mq(small_tablet) {
     padding: 113px 30px;
     overflow: hidden;
+  }
+  @include mq(small_laptop) {
+    padding: 144px 0px 120px;
+    flex-grow: 1;
   }
   &::after {
     @include mq(small_tablet) {
@@ -34,8 +42,12 @@
 #sec-five-slider {
   @include mq(small_tablet) {
     max-width: 565px;
-
     @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    max-width: 580px;
+    @include margin_lr(0);
+    margin-left: 145px;
   }
 }
 
@@ -51,6 +63,9 @@
   }
   .sec-five-slide-inner {
     padding-left: 65px;
+    @include mq(small_laptop) {
+      padding-left: 80px;
+    }
   }
   span {
     display: block;
@@ -69,6 +84,9 @@
       @include mq(small_tablet) {
         @include quick_type(40px, 45px, null);
       }
+      @include mq(small_laptop) {
+        @include quick_type(43px, 45px, null);
+      }
     }
     &.sec-five-slide-descrip {
       padding-top: 15px;
@@ -81,6 +99,9 @@
       );
       @include mq(small_tablet) {
         padding-right: 60px;
+      }
+      @include mq(small_laptop) {
+        padding-right: 0px;
       }
     }
     &.sec-five-slide-name {
@@ -95,8 +116,12 @@
         )
       );
       @include mq(small_tablet) {
-        margin-top: 45px;
+        margin-top: 40px;
         @include flex(flex-end);
+      }
+      @include mq(small_laptop) {
+        margin-top: 28px;
+        @include flex(flex-start);
       }
       &::before {
         background: $red;
@@ -125,6 +150,9 @@
       margin-top: 28px;
       @include flex(flex-end, center);
     }
+    @include mq(small_laptop) {
+      margin-top: 40px;
+    }
     img {
       margin-right: 5px;
     }
@@ -137,6 +165,29 @@
   @include mq(small_tablet) {
     position: static;
     @include flex(flex-end);
+  }
+  @include mq(small_laptop) {
+    flex-basis: 420px;
+    flex-shrink: 0;
+    height: 470px;
+    margin-top: 115px;
+    position: relative;
+    @include flex(flex-start);
+  }
+  #sec-five-image {
+    display: none;
+    @include mq(small_laptop) {
+      display: block;
+      position: relative;
+      @include box(360px, 470px);
+    }
+    img {
+      width: 100%;
+      @include abs(0, null, null, 0);
+      @include mq(small_laptop) {
+        left: 60px;
+      }
+    }
   }
 }
 
@@ -157,6 +208,9 @@
     z-index: 1;
     @include box(60px, 60px);
   }
+  @include mq(small_laptop) {
+    //margin: 0;
+  }
   &:hover {
     background: $grey;
   }
@@ -167,6 +221,10 @@
   @include mq(small_tablet) {
     left: 0;
   }
+  @include mq(small_laptop) {
+    order: 1;
+    top: 66px;
+  }
   img {
     transform: rotate(180deg);
   }
@@ -176,5 +234,11 @@
   order: 3;
   @include mq(small_tablet) {
     right: 0;
+  }
+  @include mq(small_laptop) {
+    order: 2;
+    right: auto;
+    left: 0;
+    top: -66px;
   }
 }

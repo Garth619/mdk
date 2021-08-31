@@ -211,6 +211,18 @@
 
       </div><!-- sec-five-arrow-right -->
 
+      <div id='sec-five-image'>
+
+        <picture>
+
+          <!-- <source media='(min-width: 1380px)' srcset='<?php // bloginfo('template_directory'); ?>/images'> -->
+
+          <img src='<?php bloginfo('template_directory');?>/images/testimonial-image-1200.jpg' alt='' />
+
+        </picture>
+
+      </div><!-- sec-five-image -->
+
     </div><!-- sec-five-image-wrapper -->
 
   </div><!-- sec-five-inner -->
