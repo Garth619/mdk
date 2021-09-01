@@ -56,7 +56,7 @@
     )
   );
   @include mq(small_laptop) {
-    padding: 14px 19px;
+    padding: 14px 16px;
   }
   &:hover {
     background: $grey;

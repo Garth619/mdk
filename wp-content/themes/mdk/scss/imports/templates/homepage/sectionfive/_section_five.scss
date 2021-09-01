@@ -1,11 +1,117 @@
 #section-five {
 }
 
+#sec-five-content {
+  text-align: center;
+  padding: 0 0 34px;
+  @include mq(small_tablet) {
+    padding: 0 0 64px;
+  }
+  @include mq(small_laptop) {
+    max-width: 1010px;
+    padding: 0 0 55px;
+    @include margin_lr();
+    @include flex(flex-start, center);
+  }
+  @include mq(large_laptop) {
+    max-width: 1190px;
+    padding: 0 0 75px;
+  }
+  @include mq(monitor) {
+    max-width: 1495px;
+  }
+  span {
+    display: block;
+    &#sec-five-title {
+      padding: 0 20px;
+      @include type(
+        (
+          size: 35px,
+          height: 38px,
+          family: $secondaryfont,
+          weight: 800,
+          transform: uppercase,
+        )
+      );
+      @include mq(small_laptop) {
+        padding: 0px 4px 0 20px;
+        @include flex();
+        flex-shrink: 0;
+      }
+      @include mq(monitor) {
+        padding: 0px 4px 0 45px;
+      }
+
+      &::after {
+        background: $grey;
+        margin-top: 15px;
+        @include margin_lr();
+        @include box(80px, 4px);
+        @include contentdisplay();
+        @include mq(small_laptop) {
+          @include margin_lr(18px);
+        }
+        @include mq(large_laptop) {
+          @include box(118px, 4px);
+        }
+        @include mq(monitor) {
+          margin-left: 13px;
+          margin-right: 13px;
+        }
+      }
+    }
+    &#sec-five-descrip {
+      max-width: 280px;
+      margin-top: 18px;
+      margin-bottom: 30px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 18px,
+          height: 21px,
+          family: $primaryfont,
+          color: $bluelight,
+        )
+      );
+      @include mq(small_tablet) {
+        max-width: 280px;
+      }
+      @include mq(small_laptop) {
+        margin-left: 0;
+        margin-top: 0px;
+        margin-right: 25px;
+        position: relative;
+        top: 13px;
+        text-align: left;
+      }
+      @include mq(large_laptop) {
+        max-width: 428px;
+        margin-right: 20px;
+      }
+      @include mq(monitor) {
+        max-width: 100%;
+        margin-right: 134px;
+      }
+      // @include mq(monitor) {
+      //   padding-left: 20px;
+      //   margin-right: 112px;
+      // }
+    }
+  }
+}
+
+#sec-five-button {
+  padding: 14px 17px;
+}
+
 #sec-five-inner {
   position: relative;
   @include mq(small_laptop) {
     background: $bluedark;
     @include flex(space-between);
+  }
+  @include mq(large_laptop) {
+    background: transparent;
   }
 }
 
@@ -20,6 +126,12 @@
   @include mq(small_laptop) {
     padding: 144px 0px 120px;
     flex-grow: 1;
+  }
+  @include mq(large_laptop) {
+    padding: 104px 0px 120px;
+    min-height: 700px;
+    flex-grow: 0;
+    width: calc(100% - 300px);
   }
   &::after {
     @include mq(small_tablet) {
@@ -48,6 +160,14 @@
     max-width: 580px;
     @include margin_lr(0);
     margin-left: 145px;
+  }
+  @include mq(large_laptop) {
+    max-width: 100%;
+    width: calc(100% - 515px);
+  }
+  @include mq(monitor) {
+    margin-left: 19%;
+    width: calc(100% - 945px);
   }
 }
 
@@ -86,6 +206,9 @@
       }
       @include mq(small_laptop) {
         @include quick_type(43px, 45px, null);
+      }
+      @include mq(monitor) {
+        @include quick_type(50px, 55px, null);
       }
     }
     &.sec-five-slide-descrip {
@@ -153,6 +276,9 @@
     @include mq(small_laptop) {
       margin-top: 40px;
     }
+    @include mq(monitor) {
+      margin-top: 80px;
+    }
     img {
       margin-right: 5px;
     }
@@ -167,12 +293,22 @@
     @include flex(flex-end);
   }
   @include mq(small_laptop) {
-    flex-basis: 420px;
+    flex-basis: 360px;
     flex-shrink: 0;
     height: 470px;
     margin-top: 115px;
     position: relative;
     @include flex(flex-start);
+  }
+  @include mq(large_laptop) {
+    flex-basis: 533px;
+    height: 575px;
+    margin-top: 65px;
+    @include abs(0, 0, null, null);
+  }
+  @include mq(monitor) {
+    flex-basis: 740px;
+    height: 575px;
   }
   #sec-five-image {
     display: none;
@@ -181,11 +317,17 @@
       position: relative;
       @include box(360px, 470px);
     }
+    @include mq(large_laptop) {
+      @include box(533px, 575px);
+    }
+    @include mq(monitor) {
+      @include box(740px, 575px);
+    }
     img {
       width: 100%;
       @include abs(0, null, null, 0);
       @include mq(small_laptop) {
-        left: 60px;
+        left: 0px;
       }
     }
   }
@@ -208,9 +350,7 @@
     z-index: 1;
     @include box(60px, 60px);
   }
-  @include mq(small_laptop) {
-    //margin: 0;
-  }
+
   &:hover {
     background: $grey;
   }
@@ -219,7 +359,7 @@
 #sec-five-arrow-left {
   order: 2;
   @include mq(small_tablet) {
-    left: 0;
+    left: -60px;
   }
   @include mq(small_laptop) {
     order: 1;
@@ -238,7 +378,7 @@
   @include mq(small_laptop) {
     order: 2;
     right: auto;
-    left: 0;
+    left: -60px;
     top: -66px;
   }
 }
