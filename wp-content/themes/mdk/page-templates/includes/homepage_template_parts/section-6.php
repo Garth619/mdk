@@ -27,6 +27,100 @@
 
   <div id='sec-six-awards-wrapper'>
 
+    <span id='sec-six-awards-title'>AWARDS, MEDIA<br> AND ACCOLADEs</span><!-- sec-six-awards-title -->
+
+    <div id='sec-six-awards-inner'>
+
+      <div id='sec-six-arrow-left' class='sec-six-arrow'>
+
+        <img class='sec-six-svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+      </div><!-- sec-six-arrow-left -->
+
+      <div id='sec-six-slider'>
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-2.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-1.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-3.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-4.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-5.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-6.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-7.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-8.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-9.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-10.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-11.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+        <div class='sec-six-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-12.png' alt='' />
+
+        </div><!-- sec-six-slide -->
+
+      </div><!-- sec-six-slider -->
+
+      <div id='sec-six-arrow-right' class='sec-six-arrow'>
+
+        <img class='sec-six-svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+      </div><!-- sec-six-arrow-right -->
+
+    </div><!-- sec-six-awards-inner -->
+
   </div><!-- sec-six-awards-wrapper -->
 
 </section><!-- section-six -->
