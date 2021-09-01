@@ -1,0 +1,114 @@
+#section-six {
+}
+
+#sec-six-inner {
+  padding: 55px 30px;
+  @include mq(small_tablet) {
+    padding: 84px 90px;
+  }
+  @include mq(small_laptop) {
+    max-width: 1120px;
+    padding: 109px 90px;
+    @include margin_lr();
+    @include flex();
+  }
+  @include mq(large_laptop) {
+    padding: 157px 90px;
+    max-width: 1225px;
+  }
+  @include mq(small_monitor) {
+    padding: 199px 90px 160px;
+    max-width: 1328px;
+  }
+}
+
+#sec-six-top {
+  max-width: 300px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    max-width: 445px;
+  }
+  @include mq(small_laptop) {
+    margin-top: 33px;
+    @include margin_lr(0);
+  }
+  @include mq(large_laptop) {
+    margin-top: 12px;
+  }
+  @include mq(small_laptop) {
+    margin-top: -9px;
+  }
+}
+
+span#sec-six-subtitle {
+  display: block;
+  @include type(
+    (
+      size: 17px,
+      height: 30px,
+      family: $primaryfont,
+      color: $red,
+      weight: 700,
+      transform: uppercase,
+      spacing: 0.85px,
+    )
+  );
+  @include mq(small_tablet) {
+    font-size: 18px;
+    letter-spacing: 1.8px;
+  }
+}
+
+span#sec-six-title {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  position: relative;
+  @include type(
+    (
+      size: 50px,
+      height: 50px,
+      family: $secondaryfont,
+      weight: 700,
+    )
+  );
+  @include mq(small_tablet) {
+    margin-top: 15px;
+    margin-bottom: 51px;
+    @include quick_type(80px, 80px, null);
+  }
+  @include mq(small_laptop) {
+    margin-top: 9px;
+  }
+  &::after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 48px 62px;
+    border-color: transparent transparent $red transparent;
+    @include abs(null, null, 0, 197px, -1);
+    @include contentdisplay();
+    @include mq(small_tablet) {
+      border-width: 0 0 81px 76px;
+      left: 320px;
+    }
+    @include mq(small_laptop) {
+      left: 306px;
+    }
+    @include mq(large_laptop) {
+      left: 320px;
+    }
+  }
+}
+
+#sec-six-bottom {
+  @include mq(small_laptop) {
+    padding-left: 63px;
+  }
+  @include mq(large_laptop) {
+    padding-left: 47px;
+  }
+  @include mq(small_laptop) {
+    padding-left: 60px;
+  }
+}

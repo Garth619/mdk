@@ -182,7 +182,9 @@
     @include box(117px, auto);
   }
   .sec-five-slide-inner {
-    padding-left: 65px;
+    @include mq(small_tablet) {
+      padding-left: 65px;
+    }
     @include mq(small_laptop) {
       padding-left: 80px;
     }
@@ -336,7 +338,7 @@
 .sec-five-arrow {
   flex-basis: 49.8%;
   margin-top: 8px;
-  background: $bluelight;
+  background: $red;
   padding: 18px 0;
   display: flex !important;
   justify-content: center;
@@ -350,7 +352,9 @@
     z-index: 1;
     @include box(60px, 60px);
   }
-
+  @include mq(small_tablet) {
+    background: $bluelight;
+  }
   &:hover {
     background: $grey;
   }
@@ -359,11 +363,12 @@
 #sec-five-arrow-left {
   order: 2;
   @include mq(small_tablet) {
-    left: -60px;
+    left: 0px;
   }
   @include mq(small_laptop) {
     order: 1;
     top: 66px;
+    left: -60px;
   }
   img {
     transform: rotate(180deg);

@@ -34,6 +34,9 @@
         @include flex();
         flex-shrink: 0;
       }
+      @include mq(monitor) {
+        padding: 0 0 0 20px;
+      }
       &::after {
         background: $grey;
         margin-top: 15px;
@@ -45,6 +48,8 @@
         }
         @include mq(large_laptop) {
           @include box(118px, 4px);
+        }
+        @include mq(monitor) {
         }
       }
     }
@@ -77,8 +82,7 @@
         margin-right: 20px;
       }
       @include mq(monitor) {
-        padding-left: 20px;
-        margin-right: 112px;
+        margin-right: 100px;
       }
     }
   }
