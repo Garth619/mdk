@@ -84,7 +84,17 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
 </head>
 
-<body <?php body_class();?>>
+<?php
+
+$header = 'front-page-header';
+
+if (!is_front_page()) {
+
+    $header = 'internal-header';
+
+}?>
+
+<body <?php body_class($header);?>>
 
   <header>
 

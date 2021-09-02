@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-<div id="internal-main" class='<?php echo $banner; ?>'>
+<div id="internal-main">
 
   <?php if (!get_field('disable_banner')) {
 

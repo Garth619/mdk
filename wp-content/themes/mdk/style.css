@@ -766,10 +766,8 @@ header {
     overflow: hidden;
   }
 }
-header.fade-header {
-  opacity: 0;
-}
-header.sticky {
+
+body.sticky header, body.internal-header header {
   opacity: 1;
   background: #07121c;
   position: fixed;
@@ -777,26 +775,26 @@ header.sticky {
   left: 0;
 }
 @media screen and (min-width: 1170px) {
-  header.sticky {
+  body.sticky header, body.internal-header header {
     position: absolute;
   }
 }
-header.sticky #header-left {
+body.sticky header #header-left, body.internal-header header #header-left {
   padding: 16px 16px 0px;
 }
-header.sticky #header-left a {
+body.sticky header #header-left a, body.internal-header header #header-left a {
   width: 120px;
 }
-header.sticky #header-middle {
+body.sticky header #header-middle, body.internal-header header #header-middle {
   padding: 10px 6px 0px;
 }
 @media screen and (min-width: 675px) and (max-width: 1170px) {
-  header.sticky #header-middle {
+  body.sticky header #header-middle, body.internal-header header #header-middle {
     padding: 0px 6px 0px;
   }
 }
 @media screen and (max-width: 675px) {
-  header.sticky #cta-wrapper {
+  body.sticky header #cta-wrapper, body.internal-header header #cta-wrapper {
     padding-bottom: 10px;
     border: none;
     display: -webkit-flex;
@@ -806,18 +804,18 @@ header.sticky #header-middle {
     -webkit-align-items: center;
             align-items: center;
   }
-  header.sticky #cta-wrapper #cta {
+  body.sticky header #cta-wrapper #cta, body.internal-header header #cta-wrapper #cta {
     width: auto;
   }
-  header.sticky #cta-wrapper #cta span {
+  body.sticky header #cta-wrapper #cta span, body.internal-header header #cta-wrapper #cta span {
     display: block;
     text-align: right;
     font-size: 13px;
   }
-  header.sticky #cta-wrapper #cta span::after {
+  body.sticky header #cta-wrapper #cta span::after, body.internal-header header #cta-wrapper #cta span::after {
     display: none;
   }
-  header.sticky #cta-wrapper a#phone {
+  body.sticky header #cta-wrapper a#phone, body.internal-header header #cta-wrapper a#phone {
     -webkit-flex-shrink: 0;
             flex-shrink: 0;
     font-size: 23px;
@@ -825,12 +823,12 @@ header.sticky #header-middle {
   }
 }
 @media screen and (max-width: 675px) and (min-width: 675px) and (max-width: 1170px) {
-  header.sticky #cta-wrapper a#phone {
+  body.sticky header #cta-wrapper a#phone, body.internal-header header #cta-wrapper a#phone {
     margin-top: 5px;
   }
 }
 @media screen and (max-width: 675px) {
-  header.sticky #cta-wrapper a#phone::before {
+  body.sticky header #cta-wrapper a#phone::before, body.internal-header header #cta-wrapper a#phone::before {
     vertical-align: top;
     background: #c61f20;
     margin: 9px 13px 0 17px;
@@ -840,7 +838,12 @@ header.sticky #header-middle {
     display: inline-block;
   }
 }
-
+body.internal-header header {
+  background: transparent;
+}
+body.sticky.internal-header header {
+  background: #07121c;
+}
 #header-inner {
   display: -webkit-flex;
   display: flex;
@@ -1521,6 +1524,37 @@ nav.nav-desktop ul li a:hover {
   font-family: industry, sans-serif;
   color: #253245;
   font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+}
+
+#banner-wrapper {
+  position: relative;
+}
+#banner-wrapper img#banner-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 750px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#banner-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 153px;
+}
+
+.banner-title {
+  display: block;
+  font-size: 25px;
+  line-height: 30px;
+  font-family: industry, sans-serif;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
   font-style: normal;
   text-decoration: none;
 }

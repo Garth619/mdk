@@ -1,0 +1,28 @@
+#banner-wrapper {
+  position: relative;
+  img#banner-image {
+    object-fit: cover;
+    @include box(750px, auto);
+    @include abs(0, null, null, 0);
+  }
+}
+
+#banner-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 153px;
+}
+
+.banner-title {
+  display: block;
+  @include type(
+    (
+      size: 25px,
+      height: 30px,
+      family: $secondaryfont,
+      color: $white,
+      weight: 800,
+      align: center,
+    )
+  );
+}

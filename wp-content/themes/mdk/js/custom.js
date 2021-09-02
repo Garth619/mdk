@@ -103,16 +103,8 @@ jQuery(document).ready(function ($) {
 
   //createWaypoint("section-one", "header", "fade-header", -185, null, true);
 
-  createWaypoint("section-one", "header", "sticky", -250, null, true);
-
-  // createWaypoint(
-  //   "internal-main",
-  //   "body, #header-right, nav",
-  //   "sticky",
-  //   73,
-  //   null,
-  //   true
-  // );
+  createWaypoint("section-one", "body", "sticky", -250, null, true);
+  createWaypoint("internal-main", "body", "sticky", -250, null, true);
 
   /* Slick Carousel ( http://kenwheeler.github.io/slick/ )
 --------------------------------------------------------------------------------------- */
