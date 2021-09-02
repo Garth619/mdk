@@ -101,14 +101,9 @@ jQuery(document).ready(function ($) {
     }
   }
 
-  // createWaypoint(
-  //   "section-one",
-  //   "body, #header-right, nav",
-  //   "sticky",
-  //   73,
-  //   null,
-  //   true
-  // );
+  createWaypoint("section-one", "header", "fade-header", -185, null, true);
+
+  createWaypoint("section-one", "header", "sticky", -250, null, true);
 
   // createWaypoint(
   //   "internal-main",

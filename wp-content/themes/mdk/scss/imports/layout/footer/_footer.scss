@@ -9,6 +9,12 @@ footer {
   @include mq(small_laptop) {
     padding: 1px 36px;
   }
+  @include mq(large_laptop) {
+    padding: 1px 64px;
+  }
+  @include mq(small_monitor) {
+    padding: 1px 120px;
+  }
   &::after {
     width: 0;
     height: 0;
@@ -29,6 +35,10 @@ footer {
   @include mq(small_laptop) {
     @include flex();
   }
+  @include mq(small_monitor) {
+    max-width: 1680px;
+    @include margin_lr();
+  }
 }
 
 #footer-form-wrapper {
@@ -44,6 +54,18 @@ footer {
   @include mq(small_laptop) {
     flex-basis: 722px;
     flex-shrink: 0;
+  }
+  @include mq(large_laptop) {
+    padding: 86px 20px 80px;
+    flex-basis: 795px;
+    max-width: 100%;
+  }
+  @include mq(small_monitor) {
+    flex-basis: 906px;
+    padding: 105px 20px 80px;
+  }
+  @include mq(monitor) {
+    flex-basis: 1106px;
   }
   span {
     text-align: center;
@@ -62,6 +84,13 @@ footer {
       @include mq(small_tablet) {
         margin-bottom: 27px;
         @include quick_type(50px, 50px, null);
+      }
+      @include mq(large_laptop) {
+        margin-bottom: 14px;
+      }
+      @include mq(small_monitor) {
+        margin-bottom: 22px;
+        @include quick_type(60px, 60px, null);
       }
     }
     &#footer-form-description {
@@ -88,6 +117,9 @@ footer {
     @include mq(small_tablet) {
       margin-top: 55px;
       max-width: 620px;
+    }
+    @include mq(small_monitor) {
+      max-width: 850px;
     }
     .gform_fields {
       @include mq(small_tablet) {
@@ -258,6 +290,9 @@ span#footer-form-required {
     flex-grow: 1;
     padding: 110px 25px 0;
   }
+  @include mq(large_laptop) {
+    padding: 166px 25px 0;
+  }
   span {
     display: block;
     &#footer-info-title {
@@ -289,6 +324,9 @@ span#footer-form-required {
         @include mq(small_tablet) {
           margin-bottom: 40px;
         }
+        @include mq(small_monitor) {
+          margin-bottom: 50px;
+        }
       }
     }
   }
@@ -315,6 +353,14 @@ span#footer-form-required {
     padding-left: 18px;
     padding-right: 13px;
   }
+  @include mq(large_laptop) {
+    max-width: 318px;
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+  @include mq(small_monitor) {
+    max-width: 345px;
+  }
 }
 
 .footer-info-row {
@@ -322,6 +368,9 @@ span#footer-form-required {
   @include mq(small_laptop) {
     margin-bottom: 38px;
     @include flex(space-between);
+  }
+  @include mq(large_laptop) {
+    margin-bottom: 50px;
   }
   span {
     &.footer-info-subtitle {
@@ -455,6 +504,13 @@ span#footer-form-required {
   @include mq(small_laptop) {
     padding-top: 58px;
     margin-bottom: 45px;
+  }
+  @include mq(large_laptop) {
+    margin-bottom: 55px;
+  }
+  @include mq(small_monitor) {
+    max-width: 1680px;
+    @include margin_lr();
   }
   #copyright-inner {
     ul {
