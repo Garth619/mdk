@@ -11,6 +11,18 @@
     font-size: 17px;
     line-height: 30px;
   }
+  h1,
+  .page-title {
+    margin-bottom: 20px;
+    @include type(
+      (
+        size: 30px,
+        height: 35px,
+        family: $secondaryfont,
+        weight: 800,
+      )
+    );
+  }
   h2 {
     margin-bottom: 20px;
     @include type(
@@ -61,6 +73,15 @@
       &::marker {
         color: $red;
       }
+    }
+  }
+  a {
+    font-weight: 700;
+    color: $bluedark;
+    text-decoration: underline;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      color: $red;
     }
   }
 }

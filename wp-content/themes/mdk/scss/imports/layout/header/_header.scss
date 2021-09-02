@@ -72,11 +72,13 @@ body {
   &.internal-header {
     header {
       background: transparent;
+      position: absolute;
     }
   }
   &.sticky.internal-header {
     header {
       background: $bluedark;
+      position: fixed;
     }
   }
   &.internal-header.no-banner {

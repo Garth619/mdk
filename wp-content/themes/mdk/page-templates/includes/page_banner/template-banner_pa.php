@@ -10,7 +10,7 @@
 
     <!-- <source media='(min-width: 1380px)' srcset='<?php //bloginfo('template_directory'); ?>/images'> -->
 
-    <img id='banner-image' src='<?php bloginfo('template_directory');?>/images/int-hero-1920.jpg' alt='' />
+    <img id='banner-image' src='<?php bloginfo('template_directory');?>/images/int-hero-360.jpg' alt='' />
 
   </picture>
   <!-- remove 'data-' and 'lazyload' if needs to load on page load -->

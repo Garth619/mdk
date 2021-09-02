@@ -566,6 +566,16 @@ h4 {
     line-height: 30px;
   }
 }
+.content h1,
+.content .page-title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 35px;
+  font-family: industry, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+}
 .content h2 {
   margin-bottom: 20px;
   font-size: 20px;
@@ -625,6 +635,15 @@ h4 {
 .content ul li::marker {
   color: #c61f20;
 }
+.content a {
+  font-weight: 700;
+  color: #07121c;
+  text-decoration: underline;
+  transition: all 200ms ease-in-out;
+}
+.content a:hover {
+  color: #c61f20;
+}
 
 @media screen and (min-width: 1100px) {
   .wp-block-image figure.alignleft img {
@@ -657,6 +676,20 @@ h4 {
 
 body {
   color: #07121c;
+}
+
+#page-container {
+  padding: 30px 30px;
+}
+
+.page-title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 35px;
+  font-family: industry, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
 }
 
 .gform_body .gform_fields .gfield ::-webkit-input-placeholder {
@@ -725,6 +758,15 @@ body {
 }
 .button-one:hover::after {
   opacity: 1;
+}
+
+.page-button.button-one {
+  font-size: 15px;
+  max-width: 245px;
+  padding: 18px 20px;
+  margin-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button-two {
@@ -840,9 +882,11 @@ body.sticky header #header-middle, body.internal-header header #header-middle {
 }
 body.internal-header header {
   background: transparent;
+  position: absolute;
 }
 body.sticky.internal-header header {
   background: #07121c;
+  position: fixed;
 }
 #header-inner {
   display: -webkit-flex;
@@ -1534,17 +1578,19 @@ nav.nav-desktop ul li a:hover {
 #banner-wrapper img#banner-image {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 750px;
-  height: auto;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
 }
 
 #banner-content {
   position: relative;
   z-index: 1;
-  padding-top: 153px;
+  padding: 153px 36px 36px;
 }
 
 .banner-title {
@@ -1557,6 +1603,10 @@ nav.nav-desktop ul li a:hover {
   text-align: center;
   font-style: normal;
   text-decoration: none;
+}
+
+#sidebar-wrapper {
+  display: none;
 }
 
 footer {
