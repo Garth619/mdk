@@ -101,7 +101,7 @@ jQuery(document).ready(function ($) {
     }
   }
 
-  createWaypoint("section-one", "header", "fade-header", -185, null, true);
+  //createWaypoint("section-one", "header", "fade-header", -185, null, true);
 
   createWaypoint("section-one", "header", "sticky", -250, null, true);
 

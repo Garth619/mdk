@@ -776,47 +776,69 @@ header.sticky {
   top: 0;
   left: 0;
 }
+@media screen and (min-width: 1170px) {
+  header.sticky {
+    position: absolute;
+  }
+}
 header.sticky #header-left {
   padding: 16px 16px 0px;
+}
+header.sticky #header-left a {
+  width: 120px;
 }
 header.sticky #header-middle {
   padding: 10px 6px 0px;
 }
-header.sticky #cta-wrapper {
-  padding-bottom: 10px;
-  border: none;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
+@media screen and (min-width: 675px) and (max-width: 1170px) {
+  header.sticky #header-middle {
+    padding: 0px 6px 0px;
+  }
 }
-header.sticky #cta-wrapper #cta {
-  width: auto;
+@media screen and (max-width: 675px) {
+  header.sticky #cta-wrapper {
+    padding-bottom: 10px;
+    border: none;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-align-items: center;
+            align-items: center;
+  }
+  header.sticky #cta-wrapper #cta {
+    width: auto;
+  }
+  header.sticky #cta-wrapper #cta span {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+  }
+  header.sticky #cta-wrapper #cta span::after {
+    display: none;
+  }
+  header.sticky #cta-wrapper a#phone {
+    -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+    font-size: 23px;
+    margin-top: 0px;
+  }
 }
-header.sticky #cta-wrapper #cta span {
-  display: block;
-  text-align: right;
-  font-size: 13px;
+@media screen and (max-width: 675px) and (min-width: 675px) and (max-width: 1170px) {
+  header.sticky #cta-wrapper a#phone {
+    margin-top: 5px;
+  }
 }
-header.sticky #cta-wrapper #cta span::after {
-  display: none;
-}
-header.sticky #cta-wrapper a#phone {
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-  font-size: 23px;
-  margin-top: 0px;
-}
-header.sticky #cta-wrapper a#phone::before {
-  vertical-align: top;
-  background: #c61f20;
-  margin: 9px 13px 0 17px;
-  width: 5px;
-  height: 5px;
-  content: "";
-  display: inline-block;
+@media screen and (max-width: 675px) {
+  header.sticky #cta-wrapper a#phone::before {
+    vertical-align: top;
+    background: #c61f20;
+    margin: 9px 13px 0 17px;
+    width: 5px;
+    height: 5px;
+    content: "";
+    display: inline-block;
+  }
 }
 
 #header-inner {

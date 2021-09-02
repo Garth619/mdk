@@ -14,37 +14,51 @@ header {
     opacity: 1;
     background: $bluedark;
     @include fixed(0, null, null, 0);
+    @include mq(small_laptop) {
+      position: absolute;
+    }
     #header-left {
       padding: 16px 16px 0px;
+      a {
+        width: 120px;
+      }
     }
     #header-middle {
       padding: 10px 6px 0px;
+      @media screen and (min-width: 675px) and (max-width: 1170px) {
+        padding: 0px 6px 0px;
+      }
     }
     #cta-wrapper {
-      padding-bottom: 10px;
-      border: none;
-      @include flex(center, center);
-      #cta {
-        width: auto;
-        span {
-          display: block;
-          text-align: right;
-          font-size: 13px;
-          &::after {
-            display: none;
+      @media screen and (max-width: 675px) {
+        padding-bottom: 10px;
+        border: none;
+        @include flex(center, center);
+        #cta {
+          width: auto;
+          span {
+            display: block;
+            text-align: right;
+            font-size: 13px;
+            &::after {
+              display: none;
+            }
           }
         }
-      }
-      a#phone {
-        flex-shrink: 0;
-        font-size: 23px;
-        margin-top: 0px;
-        &::before {
-          vertical-align: top;
-          background: $red;
-          margin: 9px 13px 0 17px;
-          @include box(5px, 5px);
-          @include contentdisplay(inline-block);
+        a#phone {
+          flex-shrink: 0;
+          font-size: 23px;
+          margin-top: 0px;
+          @media screen and (min-width: 675px) and (max-width: 1170px) {
+            margin-top: 5px;
+          }
+          &::before {
+            vertical-align: top;
+            background: $red;
+            margin: 9px 13px 0 17px;
+            @include box(5px, 5px);
+            @include contentdisplay(inline-block);
+          }
         }
       }
     }
