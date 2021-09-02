@@ -49,6 +49,10 @@
   @include margin_lr();
 }
 
+.banner-button.button-one {
+  display: none;
+}
+
 .button-two {
   background: $red;
   display: inline-block;

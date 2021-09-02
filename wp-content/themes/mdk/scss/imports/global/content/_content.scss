@@ -11,18 +11,9 @@
     font-size: 17px;
     line-height: 30px;
   }
-  h1,
-  .page-title {
-    margin-bottom: 20px;
-    @include type(
-      (
-        size: 30px,
-        height: 35px,
-        family: $secondaryfont,
-        weight: 800,
-      )
-    );
+  h1 {
   }
+
   h2 {
     margin-bottom: 20px;
     @include type(
@@ -63,6 +54,17 @@
       font-size: 20px;
     }
   }
+  h4 {
+    padding-bottom: 20px;
+    @include type(
+      (
+        size: 16px,
+        height: 18px,
+        family: $primaryfont,
+        weight: 700,
+      )
+    );
+  }
   ul,
   p {
     margin-bottom: 25px;
@@ -82,6 +84,29 @@
     transition: all 200ms ease-in-out;
     &:hover {
       color: $red;
+    }
+  }
+  blockquote {
+    padding-left: 44px;
+    position: relative;
+    @include type(
+      (
+        size: 25px,
+        height: 30px,
+        family: $secondaryfont,
+        weight: 700,
+      )
+    );
+    &::before {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 37px 40px;
+      border-color: transparent transparent $red transparent;
+      @include abs(0, null, null, -5px);
+      @include contentdisplay();
+    }
+    p {
     }
   }
 }

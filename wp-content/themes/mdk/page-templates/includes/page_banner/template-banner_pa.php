@@ -4,6 +4,8 @@
 
     <span class='banner-title'>Dedicated to the best results for our clients, every time. </span><!-- banner-title -->
 
+    <a class='banner-button button-one' href='#consultation'>Request Free Consultation</a><!-- button-one -->
+
   </div><!-- banner-content -->
 
   <picture>
