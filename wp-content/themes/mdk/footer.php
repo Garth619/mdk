@@ -19,51 +19,67 @@
 
       <div id='footer-info-inner'>
 
-        <div class='footer-info-row'>
+        <div class='footer-info-row footer-info-row-one'>
 
           <span class='footer-info-subtitle'>Location</span><!-- footer-info-subtitle -->
 
-          <span class='footer-info-content'>4105 N. 20th Street, Suite 260 Phoenix Az 85016</span>
-          <!-- footer-info-subtitle -->
+          <div class='footer-info-row-inner'>
 
-          <a class='footer-info-content directions' href=''>DIRECTIONs</a><!-- directions -->
+            <span class='footer-info-content'>4105 N. 20th Street, Suite 260<br> Phoenix Az 85016</span>
+            <!-- footer-info-subtitle -->
+
+            <a class='footer-info-content directions' href=''>DIRECTIONs</a><!-- directions -->
+
+          </div><!-- footer-info-row-inner -->
 
         </div><!-- footer-info-row -->
 
-        <div class='footer-info-row'>
+        <div class='footer-info-row footer-info-row-two'>
 
           <span class='footer-info-subtitle'>Office Hours</span><!-- footer-info-subtitle -->
 
-          <span class='footer-info-content'>Monday - Friday<br> 8AM - 6PM</span>
-          <!-- footer-info-subtitle -->
+          <div class='footer-info-row-inner'>
+
+            <span class='footer-info-content'>Monday - Friday<br> 8AM - 6PM</span>
+            <!-- footer-info-subtitle -->
+
+          </div><!-- footer-info-row-inner -->
 
         </div><!-- footer-info-row -->
 
-        <div class='footer-info-row'>
+        <div class='footer-info-row footer-info-row-three'>
 
           <span class='footer-info-subtitle'>Call Today</span><!-- footer-info-subtitle -->
 
-          <span class='footer-info-content'><a href='tel:6232255635'> <span>(623) 225-5635</span>
-            </a>Se Habla Español</span>
-          <!-- footer-info-subtitle -->
+          <div class='footer-info-row-inner'>
+
+            <span class='footer-info-content'><a href='tel:6232255635'> <span>(623) 225-5635</span>
+              </a>Se Habla Español</span>
+            <!-- footer-info-subtitle -->
+
+          </div><!-- footer-info-row-inner -->
 
         </div><!-- footer-info-row -->
 
-        <div class='footer-info-row'>
+        <div class='footer-info-row footer-info-row-four'>
 
           <span class='footer-info-subtitle'>Social</span><!-- footer-info-subtitle -->
 
-          <a class='social-icon' href=''>
+          <div class='footer-info-row-inner'>
 
-            <?php echo file_get_contents(get_template_directory() . '/images/social-fb.svg'); ?>
+            <a class='social-icon' href=''>
 
-          </a><!-- social-icon -->
+              <?php echo file_get_contents(get_template_directory() . '/images/social-fb.svg'); ?>
 
-          <a class='social-icon' href=''>
+            </a><!-- social-icon -->
 
-            <?php echo file_get_contents(get_template_directory() . '/images/social-insta.svg'); ?>
+            <a class='social-icon' href=''>
 
-          </a><!-- social-icon -->
+              <?php echo file_get_contents(get_template_directory() . '/images/social-insta.svg'); ?>
+
+            </a><!-- social-icon -->
+
+          </div><!-- footer-info-row-inner -->
 
         </div><!-- footer-info-row -->
 

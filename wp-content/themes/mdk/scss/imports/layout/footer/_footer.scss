@@ -2,26 +2,49 @@ footer {
   background: $bluedark;
   padding-bottom: 45px;
   position: relative;
+  @include mq(small_tablet) {
+    padding: 1px 25px;
+    margin-top: 115px;
+  }
+  @include mq(small_laptop) {
+    padding: 1px 36px;
+  }
   &::after {
     width: 0;
     height: 0;
     border-style: solid;
-    //border-width: 0 0 572px 475px;
     border-width: 0 0 205px 323px;
     border-color: transparent transparent $red transparent;
     @include abs(null, 0, 0px, null);
     @include contentdisplay();
+    @include mq(small_laptop) {
+      border-width: 0 0 413px 522px;
+    }
   }
 }
 
 #footer-inner {
   position: relative;
   z-index: 1;
+  @include mq(small_laptop) {
+    @include flex();
+  }
 }
 
 #footer-form-wrapper {
   background: $bluelight;
   padding: 40px 20px 55px;
+  @include mq(small_tablet) {
+    padding: 70px 20px 80px;
+    margin-top: -111px;
+    max-width: 775px;
+    box-shadow: 0px 3px 10px #00000080;
+    @include margin_lr();
+  }
+  @include mq(small_laptop) {
+    flex-basis: 722px;
+    flex-shrink: 0;
+  }
   span {
     text-align: center;
     display: block;
@@ -36,8 +59,14 @@ footer {
           weight: 800,
         )
       );
+      @include mq(small_tablet) {
+        margin-bottom: 27px;
+        @include quick_type(50px, 50px, null);
+      }
     }
     &#footer-form-description {
+      max-width: 470px;
+      @include margin_lr();
       @include type(
         (
           size: 16px,
@@ -47,65 +76,92 @@ footer {
           weight: 700,
         )
       );
+      @include mq(small_tablet) {
+        @include quick_type(17px, 25px, null);
+      }
     }
   }
   .gform_wrapper {
     margin-top: 30px;
-    .gfield {
-      margin-bottom: 15px;
-      position: relative;
-      label {
-        display: none;
+    max-width: 485px;
+    @include margin_lr();
+    @include mq(small_tablet) {
+      margin-top: 55px;
+      max-width: 620px;
+    }
+    .gform_fields {
+      @include mq(small_tablet) {
+        @include flex(space-between);
+        flex-wrap: wrap;
       }
-      input,
-      textarea,
-      select {
-        border: none;
-        border-radius: 6px;
-        width: 100%;
-        background: $white;
-        padding: 23px 30px 23px 20px;
-        @include type(
-          (
-            size: 16px,
-            family: $primaryfont,
-          )
-        );
-      }
-      select {
-        -webkit-appearance: none;
-      }
-      textarea {
-        height: 213px;
-      }
-      .validation_message {
-        @include type(
-          (
-            size: 13px,
-            height: 22px,
-            family: $primaryfont,
-            color: $greytwo,
-            weight: 700,
-          )
-        );
-      }
-      &.gfield_contains_required::after {
-        @include type(
-          (
-            size: 20px,
-            family: $primaryfont,
-            color: $red,
-            weight: 700,
-          )
-        );
-        @include abs(27px, 13px, null, null);
-        @include contentdisplay(block, "*");
-      }
-      .ginput_container_select {
-        &::after {
-          @include tri(down, 6px, 11px, $bluedark);
-          @include abs(28px, 13px, null, null);
-          @include contentdisplay();
+      .gfield {
+        margin-bottom: 15px;
+        position: relative;
+        @include mq(small_tablet) {
+          flex-basis: 49%;
+          margin-bottom: 20px;
+        }
+        @include mq(small_laptop) {
+          flex-basis: 48.5%;
+        }
+        &#field_1_5 {
+          @include mq(small_tablet) {
+            flex-basis: 100%;
+          }
+        }
+        label {
+          display: none;
+        }
+        input,
+        textarea,
+        select {
+          border: none;
+          border-radius: 6px;
+          width: 100%;
+          background: $white;
+          padding: 23px 30px 23px 20px;
+          @include type(
+            (
+              size: 16px,
+              family: $primaryfont,
+            )
+          );
+        }
+        select {
+          -webkit-appearance: none;
+        }
+        textarea {
+          height: 213px;
+        }
+        .validation_message {
+          @include type(
+            (
+              size: 13px,
+              height: 22px,
+              family: $primaryfont,
+              color: $greytwo,
+              weight: 700,
+            )
+          );
+        }
+        &.gfield_contains_required::after {
+          @include type(
+            (
+              size: 20px,
+              family: $primaryfont,
+              color: $red,
+              weight: 700,
+            )
+          );
+          @include abs(27px, 13px, null, null);
+          @include contentdisplay(block, "*");
+        }
+        .ginput_container_select {
+          &::after {
+            @include tri(down, 6px, 11px, $bluedark);
+            @include abs(28px, 13px, null, null);
+            @include contentdisplay();
+          }
         }
       }
     }
@@ -148,8 +204,8 @@ span#footer-form-required {
   max-width: 207px;
   margin-top: 28px;
   @include margin_lr();
-  @include mq(small_laptop) {
-    @include quick_type(20px, 20px, null);
+  @include mq(small_tablet) {
+    margin-top: 2px;
   }
   &::before,
   &::after {
@@ -194,7 +250,14 @@ span#footer-form-required {
 #footer-info-wrapper {
   text-align: center;
   padding: 50px 40px 0;
-
+  @include mq(small_tablet) {
+    padding: 55px 40px 0;
+    text-align: left;
+  }
+  @include mq(small_laptop) {
+    flex-grow: 1;
+    padding: 110px 25px 0;
+  }
   span {
     display: block;
     &#footer-info-title {
@@ -210,6 +273,12 @@ span#footer-form-required {
           transform: uppercase,
         )
       );
+      @media screen and (min-width: 475px) {
+        max-width: 100%;
+      }
+      @include mq(small_tablet) {
+        text-align: center;
+      }
       &::after {
         background: $red;
         margin-top: 20px;
@@ -217,16 +286,43 @@ span#footer-form-required {
         @include margin_lr();
         @include box(118px, 3px);
         @include contentdisplay();
+        @include mq(small_tablet) {
+          margin-bottom: 40px;
+        }
       }
     }
   }
 }
 
 #footer-info-inner {
+  @include mq(small_tablet) {
+    display: grid;
+    grid-template-columns: 175px 140px 150px;
+    grid-template-rows: auto;
+    gap: 0px 75px;
+    grid-template-areas:
+      "footer-info-row-one footer-info-row-two footer-info-row-three"
+      "footer-info-row-one footer-info-row-four footer-info-row-three";
+    max-width: 328px;
+    @include margin_lr();
+  }
+  @include mq(small_tablet) {
+    max-width: 605px;
+  }
+  @include mq(small_laptop) {
+    display: block;
+    max-width: 328px;
+    padding-left: 18px;
+    padding-right: 13px;
+  }
 }
 
 .footer-info-row {
   margin-bottom: 45px;
+  @include mq(small_laptop) {
+    margin-bottom: 38px;
+    @include flex(space-between);
+  }
   span {
     &.footer-info-subtitle {
       margin-bottom: 7px;
@@ -239,6 +335,12 @@ span#footer-form-required {
           weight: 800,
         )
       );
+      @include mq(small_tablet) {
+        margin-bottom: 15px;
+      }
+      @include mq(small_laptop) {
+        flex-grow: 1;
+      }
     }
     &.footer-info-content {
       @include type(
@@ -250,6 +352,9 @@ span#footer-form-required {
           weight: 800,
         )
       );
+      @include mq(small_tablet) {
+        max-width: 185px;
+      }
       a {
         color: $white;
         text-decoration: none;
@@ -261,8 +366,9 @@ span#footer-form-required {
     }
   }
   a.directions {
-    display: block;
+    display: inline-block;
     margin-top: 9px;
+    transition: all 200ms ease-in-out;
     @include type(
       (
         size: 13px,
@@ -274,12 +380,18 @@ span#footer-form-required {
         transform: uppercase,
       )
     );
+    &:hover {
+      color: $red;
+    }
   }
   a.social-icon {
     margin: 5px 12px 0;
     display: inline-block;
     vertical-align: middle;
     text-decoration: none;
+    @include mq(small_tablet) {
+      margin: 0px 18px 0 0;
+    }
     svg {
       height: 25px;
       path {
@@ -297,16 +409,66 @@ span#footer-form-required {
   }
 }
 
+.footer-info-row-inner {
+  @include mq(small_laptop) {
+    flex-basis: 175px;
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+}
+
+.footer-info-row-one {
+  grid-area: footer-info-row-one;
+}
+.footer-info-row-two {
+  grid-area: footer-info-row-two;
+}
+.footer-info-row-four {
+  grid-area: footer-info-row-four;
+  @include mq(small_tablet) {
+    margin-top: -15px;
+    @include flex(null, center);
+  }
+  @include mq(small_laptop) {
+    margin-top: 0px;
+    padding-top: 7px;
+  }
+  span.footer-info-subtitle {
+    @include mq(small_tablet) {
+      margin-bottom: 0;
+      margin-right: 15px;
+    }
+  }
+}
+.footer-info-row-three {
+  grid-area: footer-info-row-three;
+}
+
 #copyright-wrapper {
   padding-top: 13px;
   position: relative;
   z-index: 1;
+  @include mq(small_tablet) {
+    padding-top: 35px;
+    margin-bottom: 25px;
+  }
+  @include mq(small_laptop) {
+    padding-top: 58px;
+    margin-bottom: 45px;
+  }
   #copyright-inner {
     ul {
       list-style: none;
       max-width: 255px;
       text-align: center;
       @include margin_lr();
+      @media screen and (min-width: 525px) {
+        max-width: 100%;
+      }
+      @include mq(small_tablet) {
+        text-align: left;
+        @include margin_lr(0);
+      }
       li {
         display: inline-block;
         @include type(
@@ -315,11 +477,15 @@ span#footer-form-required {
             height: 20px,
             family: $primaryfont,
             color: $white,
+            spacing: 0.7px,
           )
         );
         &::after {
           margin: 0 2px 0 7px;
           @include contentdisplay(inline-block, "|");
+          @include mq(small_tablet) {
+            margin: 0 5px 0 10px;
+          }
         }
         &:last-of-type {
           &::after {
