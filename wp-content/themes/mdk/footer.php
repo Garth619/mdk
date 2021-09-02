@@ -11,11 +11,63 @@
 
       <?php gravity_form(1, false, false, false, '', true, 12);?>
 
-      <span id='footer-form-required'><span>*</span> Required Field</span><!-- footer-form-required -->
-
     </div><!-- footer-form-wrapper -->
 
     <div id='footer-info-wrapper'>
+
+      <span id='footer-info-title'>CONTACT MDK LAw</span><!-- footer-info-title -->
+
+      <div id='footer-info-inner'>
+
+        <div class='footer-info-row'>
+
+          <span class='footer-info-subtitle'>Location</span><!-- footer-info-subtitle -->
+
+          <span class='footer-info-content'>4105 N. 20th Street, Suite 260 Phoenix Az 85016</span>
+          <!-- footer-info-subtitle -->
+
+          <a class='footer-info-content directions' href=''>DIRECTIONs</a><!-- directions -->
+
+        </div><!-- footer-info-row -->
+
+        <div class='footer-info-row'>
+
+          <span class='footer-info-subtitle'>Office Hours</span><!-- footer-info-subtitle -->
+
+          <span class='footer-info-content'>Monday - Friday<br> 8AM - 6PM</span>
+          <!-- footer-info-subtitle -->
+
+        </div><!-- footer-info-row -->
+
+        <div class='footer-info-row'>
+
+          <span class='footer-info-subtitle'>Call Today</span><!-- footer-info-subtitle -->
+
+          <span class='footer-info-content'><a href='tel:6232255635'> <span>(623) 225-5635</span>
+            </a>Se Habla Español</span>
+          <!-- footer-info-subtitle -->
+
+        </div><!-- footer-info-row -->
+
+        <div class='footer-info-row'>
+
+          <span class='footer-info-subtitle'>Social</span><!-- footer-info-subtitle -->
+
+          <a class='social-icon' href=''>
+
+            <?php echo file_get_contents(get_template_directory() . '/images/social-fb.svg'); ?>
+
+          </a><!-- social-icon -->
+
+          <a class='social-icon' href=''>
+
+            <?php echo file_get_contents(get_template_directory() . '/images/social-insta.svg'); ?>
+
+          </a><!-- social-icon -->
+
+        </div><!-- footer-info-row -->
+
+      </div><!-- footer-info-inner -->
 
     </div><!-- footer-info-wrapper -->
 
@@ -23,11 +75,15 @@
 
   <div id='copyright-wrapper'>
 
-    <ul>
-      <li>&copy; <?php echo date('Y'); ?> MDK Law Group</li>
-      <li>All Rights Reserved</li>
-      <li><a href=''>Disclaimer</a></li>
-    </ul>
+    <div id='copyright-inner'>
+
+      <ul>
+        <li>&copy; <?php echo date('Y'); ?> MDK Law Group</li>
+        <li>All Rights Reserved</li>
+        <li><a href=''>Disclaimer</a></li>
+      </ul>
+
+    </div><!-- copyright-inner -->
 
   </div><!-- copyright-wrapper -->
 

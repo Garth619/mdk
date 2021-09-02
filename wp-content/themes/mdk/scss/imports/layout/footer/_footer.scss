@@ -1,0 +1,339 @@
+footer {
+  background: $bluedark;
+  padding-bottom: 45px;
+  position: relative;
+  &::after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    //border-width: 0 0 572px 475px;
+    border-width: 0 0 205px 323px;
+    border-color: transparent transparent $red transparent;
+    @include abs(null, 0, 0px, null);
+    @include contentdisplay();
+  }
+}
+
+#footer-inner {
+  position: relative;
+  z-index: 1;
+}
+
+#footer-form-wrapper {
+  background: $bluelight;
+  padding: 40px 20px 55px;
+  span {
+    text-align: center;
+    display: block;
+    &#footer-form-title {
+      margin-bottom: 15px;
+      @include type(
+        (
+          size: 35px,
+          height: 40px,
+          color: $white,
+          family: $secondaryfont,
+          weight: 800,
+        )
+      );
+    }
+    &#footer-form-description {
+      @include type(
+        (
+          size: 16px,
+          height: 22px,
+          family: $primaryfont,
+          color: $greytwo,
+          weight: 700,
+        )
+      );
+    }
+  }
+  .gform_wrapper {
+    margin-top: 30px;
+    .gfield {
+      margin-bottom: 15px;
+      position: relative;
+      label {
+        display: none;
+      }
+      input,
+      textarea,
+      select {
+        border: none;
+        border-radius: 6px;
+        width: 100%;
+        background: $white;
+        padding: 23px 30px 23px 20px;
+        @include type(
+          (
+            size: 16px,
+            family: $primaryfont,
+          )
+        );
+      }
+      select {
+        -webkit-appearance: none;
+      }
+      textarea {
+        height: 213px;
+      }
+      .validation_message {
+        @include type(
+          (
+            size: 13px,
+            height: 22px,
+            family: $primaryfont,
+            color: $greytwo,
+            weight: 700,
+          )
+        );
+      }
+      &.gfield_contains_required::after {
+        @include type(
+          (
+            size: 20px,
+            family: $primaryfont,
+            color: $red,
+            weight: 700,
+          )
+        );
+        @include abs(27px, 13px, null, null);
+        @include contentdisplay(block, "*");
+      }
+      .ginput_container_select {
+        &::after {
+          @include tri(down, 6px, 11px, $bluedark);
+          @include abs(28px, 13px, null, null);
+          @include contentdisplay();
+        }
+      }
+    }
+  }
+}
+
+span#footer-form-required {
+  display: block;
+
+  @include type(
+    (
+      size: 16px,
+      family: $primaryfont,
+      color: $white,
+      align: left,
+    )
+  );
+  span {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 2px;
+    @include type(
+      (
+        size: 20px,
+        family: $primaryfont,
+        color: $red,
+        weight: 700,
+      )
+    );
+  }
+}
+
+.gform_footer {
+  border: 1px solid $red;
+  display: block;
+  position: relative;
+  transition: border 200ms ease-in-out;
+  text-align: center;
+  z-index: 1;
+  max-width: 207px;
+  margin-top: 28px;
+  @include margin_lr();
+  @include mq(small_laptop) {
+    @include quick_type(20px, 20px, null);
+  }
+  &::before,
+  &::after {
+    @include abs(11px, null, null, 11px, -1);
+    @include box(calc(100% - 22px), calc(100% - 22px));
+    @include contentdisplay();
+  }
+  &::before {
+    background: $red;
+  }
+  &::after {
+    background: $grey;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+  &:hover {
+    border: 1px solid $grey;
+    &::after {
+      opacity: 1;
+    }
+  }
+  input[type="submit"] {
+    border: 0;
+    background: transparent;
+    padding: 30px 20px;
+    width: 100%;
+    @include type(
+      (
+        size: 20px,
+        height: 20px,
+        family: $secondaryfont,
+        color: $white,
+        weight: 500,
+        align: center,
+        spacing: 0.9px,
+        transform: capitalize,
+      )
+    );
+  }
+}
+
+#footer-info-wrapper {
+  text-align: center;
+  padding: 50px 40px 0;
+
+  span {
+    display: block;
+    &#footer-info-title {
+      max-width: 182px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 35px,
+          height: 35px,
+          family: $secondaryfont,
+          weight: 800,
+          color: $white,
+          transform: uppercase,
+        )
+      );
+      &::after {
+        background: $red;
+        margin-top: 20px;
+        margin-bottom: 33px;
+        @include margin_lr();
+        @include box(118px, 3px);
+        @include contentdisplay();
+      }
+    }
+  }
+}
+
+#footer-info-inner {
+}
+
+.footer-info-row {
+  margin-bottom: 45px;
+  span {
+    &.footer-info-subtitle {
+      margin-bottom: 7px;
+      @include type(
+        (
+          size: 16px,
+          height: 20px,
+          family: $secondaryfont,
+          color: $grey,
+          weight: 800,
+        )
+      );
+    }
+    &.footer-info-content {
+      @include type(
+        (
+          size: 17px,
+          height: 25px,
+          family: $primaryfont,
+          color: $white,
+          weight: 800,
+        )
+      );
+      a {
+        color: $white;
+        text-decoration: none;
+        transition: all 200ms ease-in-out;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+  a.directions {
+    display: block;
+    margin-top: 9px;
+    @include type(
+      (
+        size: 13px,
+        height: 17px,
+        family: $secondaryfont,
+        color: $grey,
+        weight: 800,
+        spacing: 1.3px,
+        transform: uppercase,
+      )
+    );
+  }
+  a.social-icon {
+    margin: 5px 12px 0;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    svg {
+      height: 25px;
+      path {
+        fill: $white;
+        transition: all 200ms ease-in-out;
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          fill: $red;
+        }
+      }
+    }
+  }
+}
+
+#copyright-wrapper {
+  padding-top: 13px;
+  position: relative;
+  z-index: 1;
+  #copyright-inner {
+    ul {
+      list-style: none;
+      max-width: 255px;
+      text-align: center;
+      @include margin_lr();
+      li {
+        display: inline-block;
+        @include type(
+          (
+            size: 14px,
+            height: 20px,
+            family: $primaryfont,
+            color: $white,
+          )
+        );
+        &::after {
+          margin: 0 2px 0 7px;
+          @include contentdisplay(inline-block, "|");
+        }
+        &:last-of-type {
+          &::after {
+            display: none;
+          }
+        }
+        a {
+          color: $white;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

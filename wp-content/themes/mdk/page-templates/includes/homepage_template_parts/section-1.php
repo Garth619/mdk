@@ -23,7 +23,7 @@
 
         <span id='sec-one-title'>Dedicated to the best results for our clients, every time.</span><!-- sec-one-title -->
 
-        <a id='sec-one-button' class='button' href='#consultation'>Request free consultation</a><!-- button -->
+        <a id='sec-one-button' class='button-one' href='#consultation'>Request free consultation</a><!-- button -->
 
       </div><!-- sec-one-left-content -->
 
