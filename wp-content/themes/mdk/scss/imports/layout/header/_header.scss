@@ -12,26 +12,32 @@ header {
   //  }
 }
 
+// sorry this ended up being trash code, trying to rearrange the layout in different scenarios
 body {
   &.sticky,
   &.internal-header {
     header {
       opacity: 1;
       background: $bluedark;
+      //border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       @include fixed(0, null, null, 0);
       @include mq(small_laptop) {
         position: absolute;
       }
       #header-left {
-        padding: 16px 16px 0px;
+        @media screen and (min-width: 675px) {
+          padding: 16px 16px 0px;
+        }
+
         a {
-          width: 120px;
+          @media screen and (min-width: 675px) {
+            width: 120px;
+          }
         }
       }
       #header-middle {
-        padding: 10px 6px 0px;
         @media screen and (min-width: 675px) and (max-width: 1170px) {
-          padding: 0px 6px 0px;
+          padding: 6px 12px 9px;
         }
       }
       #cta-wrapper {
@@ -39,30 +45,58 @@ body {
           padding-bottom: 10px;
           border: none;
           @include flex(center, center);
-          #cta {
+        }
+        #cta {
+          @media screen and (max-width: 675px) {
             width: auto;
-            span {
-              display: block;
+          }
+          span {
+            display: block;
+            @media screen and (max-width: 675px) {
               text-align: right;
               font-size: 13px;
+            }
+            @media screen and (min-width: 525px) {
+              display: inline-block;
+            }
+            &::after {
+              display: none;
+              @media screen and (min-width: 525px) {
+                display: inline-block;
+              }
+            }
+            &:last-of-type {
               &::after {
-                display: none;
+                @media screen and (min-width: 525px) {
+                  display: none;
+                }
               }
             }
           }
-          a#phone {
+        }
+        a#phone {
+          @media screen and (max-width: 675px) {
             flex-shrink: 0;
             font-size: 23px;
             margin-top: 0px;
-            @media screen and (min-width: 675px) and (max-width: 1170px) {
-              margin-top: 5px;
-            }
-            &::before {
+          }
+          @media screen and (min-width: 525px) {
+            margin-left: 10px;
+          }
+          @media screen and (min-width: 675px) and (max-width: 1170px) {
+            margin-top: 5px;
+            margin-left: 0px;
+          }
+          &::before {
+            @media screen and (max-width: 675px) {
               vertical-align: top;
               background: $red;
               margin: 9px 13px 0 17px;
               @include box(5px, 5px);
               @include contentdisplay(inline-block);
+            }
+            @media screen and (min-width: 525px) {
+              display: none;
             }
           }
         }
@@ -73,15 +107,56 @@ body {
     header {
       background: transparent;
       position: absolute;
+      #header-left {
+        a {
+          @media screen and (min-width: 675px) {
+            width: 177px;
+          }
+        }
+      }
     }
   }
   &.sticky.internal-header {
     header {
       background: $bluedark;
       position: fixed;
+      #header-left {
+        @media screen and (min-width: 675px) {
+          padding: 16px 16px 0px;
+        }
+        a {
+          @media screen and (min-width: 675px) {
+            width: 120px;
+          }
+        }
+      }
+      #header-middle {
+        @media screen and (min-width: 675px) {
+          padding: 0px 12px 9px;
+        }
+      }
     }
   }
   &.internal-header.no-banner {
+    header {
+      background: $bluedark;
+      @include fixed(0, null, null, 0);
+      #header-left {
+        @media screen and (min-width: 675px) and (max-width: 1170px) {
+          padding: 16px 16px 0 16px;
+        }
+        a {
+          @media screen and (min-width: 675px) and (max-width: 1170px) {
+            width: 120px;
+          }
+        }
+      }
+      #header-middle {
+        @media screen and (min-width: 675px) and (max-width: 1170px) {
+          padding: 6px 12px 9px;
+        }
+      }
+    }
   }
 }
 

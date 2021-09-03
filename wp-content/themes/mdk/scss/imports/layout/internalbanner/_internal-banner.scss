@@ -12,10 +12,15 @@
   position: relative;
   z-index: 1;
   padding: 153px 36px 36px;
+  @media screen and (min-width: 675px) {
+    padding: 140px 36px 27px;
+  }
 }
 
 .banner-title {
   display: block;
+  max-width: 345px;
+  @include margin_lr();
   @include type(
     (
       size: 25px,
@@ -26,4 +31,8 @@
       align: center,
     )
   );
+  @media screen and (min-width: 675px) {
+    max-width: 503px;
+    @include quick_type(35px, 40px, null);
+  }
 }

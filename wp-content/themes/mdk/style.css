@@ -579,7 +579,7 @@ h4 {
 @media screen and (min-width: 768px) {
   .content h2 {
     font-size: 22px;
-    line-height: 27px;
+    line-height: 30px;
   }
 }
 @media screen and (min-width: 1170px) {
@@ -608,11 +608,8 @@ h4 {
 @media screen and (min-width: 768px) {
   .content h3 {
     padding-top: 10px;
-  }
-}
-@media screen and (min-width: 1800px) {
-  .content h3 {
     font-size: 20px;
+    padding-bottom: 15px;
   }
 }
 .content h4 {
@@ -623,6 +620,12 @@ h4 {
   font-weight: 700;
   font-style: normal;
   text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .content h4 {
+    font-size: 18px;
+    line-height: 25px;
+  }
 }
 .content ul,
 .content p {
@@ -653,6 +656,19 @@ h4 {
   font-style: normal;
   text-decoration: none;
 }
+@media screen and (min-width: 768px) {
+  .content blockquote {
+    padding-left: 85px;
+    padding-right: 70px;
+    max-width: 660px;
+    margin-top: 39px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 35px;
+    line-height: 35px;
+  }
+}
 .content blockquote::before {
   width: 0;
   height: 0;
@@ -664,6 +680,12 @@ h4 {
   left: -5px;
   content: "";
   display: block;
+}
+@media screen and (min-width: 768px) {
+  .content blockquote::before {
+    border-width: 0 0 63px 69px;
+    left: 0px;
+  }
 }
 @media screen and (min-width: 1100px) {
   .wp-block-image figure.alignleft img {
@@ -698,8 +720,22 @@ body {
   color: #07121c;
 }
 
+body.internal-header.no-banner #internal-main {
+  margin-top: 137px;
+}
+@media screen and (min-width: 675px) and (max-width: 1170px) {
+  body.internal-header.no-banner #internal-main {
+    margin-top: 85px;
+  }
+}
+
 #page-container {
   padding: 30px 30px 47px;
+}
+@media screen and (min-width: 768px) {
+  #page-container {
+    padding: 75px 55px 47px;
+  }
 }
 
 .page-title {
@@ -710,6 +746,12 @@ body {
   font-weight: 800;
   font-style: normal;
   text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .page-title {
+    font-size: 45px;
+    line-height: 45px;
+  }
 }
 
 .gform_body .gform_fields .gfield ::-webkit-input-placeholder {
@@ -788,9 +830,25 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (min-width: 675px) {
+  .page-button.button-one {
+    display: none;
+  }
+}
 
 .banner-button.button-one {
   display: none;
+}
+@media screen and (min-width: 675px) {
+  .banner-button.button-one {
+    display: block;
+    margin-top: 23px;
+    font-size: 15px;
+    max-width: 245px;
+    padding: 18px 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .button-two {
@@ -845,18 +903,19 @@ body.sticky header, body.internal-header header {
     position: absolute;
   }
 }
-body.sticky header #header-left, body.internal-header header #header-left {
-  padding: 16px 16px 0px;
+@media screen and (min-width: 675px) {
+  body.sticky header #header-left, body.internal-header header #header-left {
+    padding: 16px 16px 0px;
+  }
 }
-body.sticky header #header-left a, body.internal-header header #header-left a {
-  width: 120px;
-}
-body.sticky header #header-middle, body.internal-header header #header-middle {
-  padding: 10px 6px 0px;
+@media screen and (min-width: 675px) {
+  body.sticky header #header-left a, body.internal-header header #header-left a {
+    width: 120px;
+  }
 }
 @media screen and (min-width: 675px) and (max-width: 1170px) {
   body.sticky header #header-middle, body.internal-header header #header-middle {
-    padding: 0px 6px 0px;
+    padding: 6px 12px 9px;
   }
 }
 @media screen and (max-width: 675px) {
@@ -870,17 +929,40 @@ body.sticky header #header-middle, body.internal-header header #header-middle {
     -webkit-align-items: center;
             align-items: center;
   }
+}
+@media screen and (max-width: 675px) {
   body.sticky header #cta-wrapper #cta, body.internal-header header #cta-wrapper #cta {
     width: auto;
   }
+}
+body.sticky header #cta-wrapper #cta span, body.internal-header header #cta-wrapper #cta span {
+  display: block;
+}
+@media screen and (max-width: 675px) {
   body.sticky header #cta-wrapper #cta span, body.internal-header header #cta-wrapper #cta span {
-    display: block;
     text-align: right;
     font-size: 13px;
   }
+}
+@media screen and (min-width: 525px) {
+  body.sticky header #cta-wrapper #cta span, body.internal-header header #cta-wrapper #cta span {
+    display: inline-block;
+  }
+}
+body.sticky header #cta-wrapper #cta span::after, body.internal-header header #cta-wrapper #cta span::after {
+  display: none;
+}
+@media screen and (min-width: 525px) {
   body.sticky header #cta-wrapper #cta span::after, body.internal-header header #cta-wrapper #cta span::after {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 525px) {
+  body.sticky header #cta-wrapper #cta span:last-of-type::after, body.internal-header header #cta-wrapper #cta span:last-of-type::after {
     display: none;
   }
+}
+@media screen and (max-width: 675px) {
   body.sticky header #cta-wrapper a#phone, body.internal-header header #cta-wrapper a#phone {
     -webkit-flex-shrink: 0;
             flex-shrink: 0;
@@ -888,9 +970,15 @@ body.sticky header #header-middle, body.internal-header header #header-middle {
     margin-top: 0px;
   }
 }
-@media screen and (max-width: 675px) and (min-width: 675px) and (max-width: 1170px) {
+@media screen and (min-width: 525px) {
+  body.sticky header #cta-wrapper a#phone, body.internal-header header #cta-wrapper a#phone {
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 675px) and (max-width: 1170px) {
   body.sticky header #cta-wrapper a#phone, body.internal-header header #cta-wrapper a#phone {
     margin-top: 5px;
+    margin-left: 0px;
   }
 }
 @media screen and (max-width: 675px) {
@@ -904,14 +992,61 @@ body.sticky header #header-middle, body.internal-header header #header-middle {
     display: inline-block;
   }
 }
+@media screen and (min-width: 525px) {
+  body.sticky header #cta-wrapper a#phone::before, body.internal-header header #cta-wrapper a#phone::before {
+    display: none;
+  }
+}
 body.internal-header header {
   background: transparent;
   position: absolute;
+}
+@media screen and (min-width: 675px) {
+  body.internal-header header #header-left a {
+    width: 177px;
+  }
 }
 body.sticky.internal-header header {
   background: #07121c;
   position: fixed;
 }
+@media screen and (min-width: 675px) {
+  body.sticky.internal-header header #header-left {
+    padding: 16px 16px 0px;
+  }
+}
+@media screen and (min-width: 675px) {
+  body.sticky.internal-header header #header-left a {
+    width: 120px;
+  }
+}
+@media screen and (min-width: 675px) {
+  body.sticky.internal-header header #header-middle {
+    padding: 0px 12px 9px;
+  }
+}
+body.internal-header.no-banner header {
+  background: #07121c;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 675px) and (max-width: 1170px) {
+  body.internal-header.no-banner header #header-left {
+    padding: 16px 16px 0 16px;
+  }
+}
+@media screen and (min-width: 675px) and (max-width: 1170px) {
+  body.internal-header.no-banner header #header-left a {
+    width: 120px;
+  }
+}
+@media screen and (min-width: 675px) and (max-width: 1170px) {
+  body.internal-header.no-banner header #header-middle {
+    padding: 6px 12px 9px;
+  }
+}
+
 #header-inner {
   display: -webkit-flex;
   display: flex;
@@ -1616,9 +1751,17 @@ nav.nav-desktop ul li a:hover {
   z-index: 1;
   padding: 153px 36px 36px;
 }
+@media screen and (min-width: 675px) {
+  #banner-content {
+    padding: 140px 36px 27px;
+  }
+}
 
 .banner-title {
   display: block;
+  max-width: 345px;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 25px;
   line-height: 30px;
   font-family: industry, sans-serif;
@@ -1627,6 +1770,13 @@ nav.nav-desktop ul li a:hover {
   text-align: center;
   font-style: normal;
   text-decoration: none;
+}
+@media screen and (min-width: 675px) {
+  .banner-title {
+    max-width: 503px;
+    font-size: 35px;
+    line-height: 40px;
+  }
 }
 
 #sidebar-wrapper {
@@ -2345,6 +2495,11 @@ span#footer-form-required span {
   padding: 0 30px 35px;
   position: relative;
   padding-top: 205px;
+}
+@media screen and (min-width: 675px) {
+  #sec-one-left {
+    padding-top: 155px;
+  }
 }
 @media screen and (min-width: 768px) {
   #sec-one-left {

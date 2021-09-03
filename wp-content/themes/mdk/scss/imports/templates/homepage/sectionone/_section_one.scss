@@ -27,6 +27,9 @@
   padding: 0 30px 35px;
   position: relative;
   padding-top: 205px;
+  @media screen and (min-width: 675px) {
+    padding-top: 155px;
+  }
   @include mq(small_tablet) {
     padding: 205px 53px 116px;
   }

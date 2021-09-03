@@ -26,7 +26,7 @@
       )
     );
     @include mq(small_tablet) {
-      @include quick_type(22px, 27px, null);
+      @include quick_type(22px, 30px, null);
     }
     @include mq(small_laptop) {
       padding-top: 20px;
@@ -49,9 +49,10 @@
     );
     @include mq(small_tablet) {
       padding-top: 10px;
+      font-size: 20px;
+      padding-bottom: 15px;
     }
     @include mq(monitor) {
-      font-size: 20px;
     }
   }
   h4 {
@@ -64,6 +65,9 @@
         weight: 700,
       )
     );
+    @include mq(small_tablet) {
+      @include quick_type(18px, 25px, null);
+    }
   }
   ul,
   p {
@@ -97,6 +101,15 @@
         weight: 700,
       )
     );
+    @include mq(small_tablet) {
+      padding-left: 85px;
+      padding-right: 70px;
+      max-width: 660px;
+      margin-top: 39px;
+      padding-bottom: 10px;
+      @include margin_lr();
+      @include quick_type(35px, 35px, null);
+    }
     &::before {
       width: 0;
       height: 0;
@@ -105,6 +118,10 @@
       border-color: transparent transparent $red transparent;
       @include abs(0, null, null, -5px);
       @include contentdisplay();
+      @include mq(small_tablet) {
+        border-width: 0 0 63px 69px;
+        left: 0px;
+      }
     }
     p {
     }

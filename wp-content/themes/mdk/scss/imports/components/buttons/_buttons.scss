@@ -47,10 +47,21 @@
   padding: 18px 20px;
   margin-bottom: 35px;
   @include margin_lr();
+  @media screen and (min-width: 675px) {
+    display: none;
+  }
 }
 
 .banner-button.button-one {
   display: none;
+  @media screen and (min-width: 675px) {
+    display: block;
+    margin-top: 23px;
+    font-size: 15px;
+    max-width: 245px;
+    padding: 18px 20px;
+    @include margin_lr();
+  }
 }
 
 .button-two {

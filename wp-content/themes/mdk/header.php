@@ -86,13 +86,20 @@ if (($paged >= 2 || $page >= 2) && !is_404()) {
 
 <?php
 
-$header = 'front-page-header';
+if (is_front_page()) {
 
-if (!is_front_page()) {
+    $header = 'front-page-header';
+
+} else {
 
     $header = 'internal-header';
 
-}?>
+    if (get_field('disable_banner')) {
+        $header .= ' no-banner';
+    }
+}
+
+?>
 
 <body <?php body_class($header);?>>
 

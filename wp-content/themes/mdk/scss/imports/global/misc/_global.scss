@@ -5,8 +5,20 @@ body {
 #internal-main {
 }
 
+body.internal-header.no-banner {
+  #internal-main {
+    margin-top: 137px;
+    @media screen and (min-width: 675px) and (max-width: 1170px) {
+      margin-top: 85px;
+    }
+  }
+}
+
 #page-container {
   padding: 30px 30px 47px;
+  @include mq(small_tablet) {
+    padding: 75px 55px 47px;
+  }
 }
 
 .page-title {
@@ -19,6 +31,9 @@ body {
       weight: 800,
     )
   );
+  @include mq(small_tablet) {
+    @include quick_type(45px, 45px, null);
+  }
 }
 
 .gform_body .gform_fields .gfield ::-webkit-input-placeholder {
