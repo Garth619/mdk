@@ -10,12 +10,6 @@
 
   <div id='page-container'>
 
-    <?php if (!get_field('disable_sidebar')) {
-
-    get_sidebar();
-
-}?>
-
     <div id='page-content'>
 
       <?php if (!get_field('banner_h1') == "Yes"): ?>
@@ -78,6 +72,12 @@
       </div><!-- page-content-inner -->
 
     </div><!-- page-content -->
+
+    <?php if (!get_field('disable_sidebar')) {
+
+    get_sidebar();
+
+}?>
 
   </div><!-- page-container -->
 

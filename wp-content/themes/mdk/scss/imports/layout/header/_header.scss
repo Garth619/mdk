@@ -26,7 +26,8 @@ body {
       }
       #header-left {
         @media screen and (min-width: 675px) {
-          padding: 16px 16px 0px;
+          padding: 31px 16px 0px;
+          //padding: 16px 16px 0px;
         }
 
         a {
@@ -120,6 +121,9 @@ body {
     header {
       background: $bluedark;
       position: fixed;
+      @include mq(small_laptop) {
+        position: absolute;
+      }
       #header-left {
         @media screen and (min-width: 675px) {
           padding: 16px 16px 0px;

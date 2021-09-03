@@ -17,7 +17,7 @@ body.internal-header.no-banner {
 #page-container {
   padding: 30px 30px 47px;
   @include mq(small_tablet) {
-    padding: 75px 55px 47px;
+    padding: 75px 55px 95px;
   }
 }
 
@@ -33,6 +33,9 @@ body.internal-header.no-banner {
   );
   @include mq(small_tablet) {
     @include quick_type(45px, 45px, null);
+  }
+  @include mq(small_laptop) {
+    @include quick_type(60px, 65px, null);
   }
 }
 

@@ -1,3 +1,134 @@
 #sidebar-wrapper {
   display: none;
+  @include mq(small_tablet) {
+    display: block;
+    padding-top: 85px;
+  }
+}
+
+.widget {
+  background: $bluedark;
+  padding: 45px 0px 35px;
+  position: relative;
+  margin-bottom: 37px;
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
+  &::after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 145px 155px 0 0;
+    border-color: $red transparent transparent transparent;
+    @include abs(0, null, null, 0);
+    @include contentdisplay();
+  }
+  h3 {
+    display: block;
+    padding: 0 50px 40px;
+    @include type(
+      (
+        size: 30px,
+        height: 30px,
+        family: $secondaryfont,
+        color: $white,
+        weight: 800,
+        spacing: 1.5px,
+        transform: uppercase,
+      )
+    );
+  }
+  ul {
+    list-style: none;
+    li {
+      @include type(
+        (
+          size: 18px,
+          height: 22px,
+          family: $secondaryfont,
+        )
+      );
+      a {
+        display: block;
+        color: $white;
+        padding: 19px 30px 19px 10px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(142, 153, 172, 0.5);
+        transition: all 200ms ease-in-out;
+      }
+    }
+  }
+  ul.menu {
+    > li {
+      &:last-of-type {
+        a {
+          border-bottom: none;
+        }
+      }
+      &.menu-item-has-children {
+        > a {
+          position: relative;
+          &.active {
+            border-bottom: 1px solid transparent;
+            &::after {
+              transform: rotate(180deg);
+            }
+          }
+          &::after {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 9px 5.5px 0 5.5px;
+            border-color: $white transparent transparent transparent;
+            @include abs(25px, 10px, null, null);
+            @include contentdisplay();
+          }
+        }
+      }
+      &.current-menu-ancestor {
+        > a {
+          color: $red;
+        }
+      }
+      > a {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+    }
+  }
+  ul.sub-menu {
+    background: $bluemed;
+    display: none;
+    li {
+      padding-left: 40px;
+      padding-right: 40px;
+      &.current-menu-item {
+        a {
+          color: $red;
+        }
+      }
+      a {
+      }
+    }
+  }
+  h3,
+  ul {
+    position: relative;
+    z-index: 1;
+  }
+  &.widget_recent_entries {
+    ul {
+      margin-left: 40px;
+      margin-right: 40px;
+      li {
+        &:last-of-type {
+          a {
+            border-bottom: none;
+          }
+        }
+        a {
+        }
+      }
+    }
+  }
 }

@@ -62,6 +62,12 @@
     padding: 18px 20px;
     @include margin_lr();
   }
+  @include mq(small_laptop) {
+    margin-top: 37px;
+    font-size: 17px;
+    max-width: 292px;
+    padding: 23px 20px;
+  }
 }
 
 .button-two {

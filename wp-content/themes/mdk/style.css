@@ -734,7 +734,7 @@ body.internal-header.no-banner #internal-main {
 }
 @media screen and (min-width: 768px) {
   #page-container {
-    padding: 75px 55px 47px;
+    padding: 75px 55px 95px;
   }
 }
 
@@ -751,6 +751,12 @@ body.internal-header.no-banner #internal-main {
   .page-title {
     font-size: 45px;
     line-height: 45px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .page-title {
+    font-size: 60px;
+    line-height: 65px;
   }
 }
 
@@ -850,6 +856,14 @@ body.internal-header.no-banner #internal-main {
     margin-right: auto;
   }
 }
+@media screen and (min-width: 1170px) {
+  .banner-button.button-one {
+    margin-top: 37px;
+    font-size: 17px;
+    max-width: 292px;
+    padding: 23px 20px;
+  }
+}
 
 .button-two {
   background: #c61f20;
@@ -905,7 +919,7 @@ body.sticky header, body.internal-header header {
 }
 @media screen and (min-width: 675px) {
   body.sticky header #header-left, body.internal-header header #header-left {
-    padding: 16px 16px 0px;
+    padding: 31px 16px 0px;
   }
 }
 @media screen and (min-width: 675px) {
@@ -1009,6 +1023,11 @@ body.internal-header header {
 body.sticky.internal-header header {
   background: #07121c;
   position: fixed;
+}
+@media screen and (min-width: 1170px) {
+  body.sticky.internal-header header {
+    position: absolute;
+  }
 }
 @media screen and (min-width: 675px) {
   body.sticky.internal-header header #header-left {
@@ -1753,7 +1772,12 @@ nav.nav-desktop ul li a:hover {
 }
 @media screen and (min-width: 675px) {
   #banner-content {
-    padding: 140px 36px 27px;
+    padding: 131px 36px 27px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #banner-content {
+    padding: 174px 36px 57px;
   }
 }
 
@@ -1778,11 +1802,132 @@ nav.nav-desktop ul li a:hover {
     line-height: 40px;
   }
 }
+@media screen and (min-width: 1170px) {
+  .banner-title {
+    max-width: 727px;
+    font-size: 50px;
+    line-height: 55px;
+  }
+}
 
 #sidebar-wrapper {
   display: none;
 }
+@media screen and (min-width: 768px) {
+  #sidebar-wrapper {
+    display: block;
+    padding-top: 85px;
+  }
+}
 
+.widget {
+  background: #07121c;
+  padding: 45px 0px 35px;
+  position: relative;
+  margin-bottom: 37px;
+}
+.widget:last-of-type {
+  margin-bottom: 0px;
+}
+.widget::after {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 145px 155px 0 0;
+  border-color: #c61f20 transparent transparent transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+}
+.widget h3 {
+  display: block;
+  padding: 0 50px 40px;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  line-height: 30px;
+  font-family: industry, sans-serif;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
+}
+.widget ul {
+  list-style: none;
+}
+.widget ul li {
+  font-size: 18px;
+  line-height: 22px;
+  font-family: industry, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+.widget ul li a {
+  display: block;
+  color: #fff;
+  padding: 19px 30px 19px 10px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(142, 153, 172, 0.5);
+  transition: all 200ms ease-in-out;
+}
+.widget ul.menu > li:last-of-type a {
+  border-bottom: none;
+}
+.widget ul.menu > li.menu-item-has-children > a {
+  position: relative;
+}
+.widget ul.menu > li.menu-item-has-children > a.active {
+  border-bottom: 1px solid transparent;
+}
+.widget ul.menu > li.menu-item-has-children > a.active::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.widget ul.menu > li.menu-item-has-children > a::after {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9px 5.5px 0 5.5px;
+  border-color: #fff transparent transparent transparent;
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  content: "";
+  display: block;
+}
+.widget ul.menu > li.current-menu-ancestor > a {
+  color: #c61f20;
+}
+.widget ul.menu > li > a {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.widget ul.sub-menu {
+  background: #1e2633;
+  display: none;
+}
+.widget ul.sub-menu li {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.widget ul.sub-menu li.current-menu-item a {
+  color: #c61f20;
+}
+.widget h3,
+.widget ul {
+  position: relative;
+  z-index: 1;
+}
+.widget.widget_recent_entries ul {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.widget.widget_recent_entries ul li:last-of-type a {
+  border-bottom: none;
+}
 footer {
   background: #07121c;
   padding-bottom: 45px;
