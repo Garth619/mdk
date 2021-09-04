@@ -12,6 +12,21 @@
     line-height: 30px;
   }
   h1 {
+    margin-bottom: 20px;
+    @include type(
+      (
+        size: 30px,
+        height: 35px,
+        family: $secondaryfont,
+        weight: 800,
+      )
+    );
+    @include mq(small_tablet) {
+      @include quick_type(45px, 45px, null);
+    }
+    @include mq(small_laptop) {
+      @include quick_type(60px, 65px, null);
+    }
   }
 
   h2 {
@@ -110,6 +125,14 @@
       @include margin_lr();
       @include quick_type(35px, 35px, null);
     }
+    @include mq(small_laptop) {
+      padding-top: 27px;
+      max-width: 100%;
+      @include quick_type(35px, 40px, null);
+    }
+    @include mq(large_laptop) {
+      @include quick_type(40px, 50px, null);
+    }
     &::before {
       width: 0;
       height: 0;
@@ -129,35 +152,42 @@
 }
 
 .wp-block-image {
-  figure {
-    &.alignleft {
-      @media screen and (min-width: 1100px) {
-        img {
-          float: left;
-          margin-right: 39px;
-        }
-      }
-    }
-    &.aligncenter {
+  &.alignleft {
+    @media screen and (min-width: 1100px) {
       img {
-        @include margin_lr();
+        float: left;
+        margin-right: 39px;
       }
     }
-    &.alignright {
-      @media screen and (min-width: 1100px) {
-        img {
-          float: right;
-          margin-left: 39px;
-        }
-      }
-    }
+  }
+  &.aligncenter {
     img {
-      margin-bottom: 20px;
-      @include image();
-      @include mq(small_tablet) {
-        margin-top: 60px;
-        margin-bottom: 60px;
+      @include margin_lr();
+    }
+  }
+  &.alignright {
+    @media screen and (min-width: 1100px) {
+      img {
+        float: right;
+        margin-left: 39px;
       }
+    }
+  }
+  img {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    @include image();
+    @include margin_lr();
+    @include mq(small_tablet) {
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
+    @include mq(small_laptop) {
+      margin-top: 50px;
+    }
+    @include mq(large_laptop) {
+      margin-top: 70px;
+      margin-bottom: 80px;
     }
   }
 }

@@ -268,6 +268,16 @@ nav.nav-desktop {
   }
 }
 
+body.internal-header.no-banner {
+  nav {
+    ul.sub-menu {
+      @include mq(small_laptop) {
+        box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.36);
+      }
+    }
+  }
+}
+
 #close-wrapper {
   cursor: pointer;
   @include abs(26px, 32px, null, null);

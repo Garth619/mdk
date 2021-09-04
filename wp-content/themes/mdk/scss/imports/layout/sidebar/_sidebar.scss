@@ -4,6 +4,19 @@
     display: block;
     padding-top: 85px;
   }
+  @include mq(small_laptop) {
+    order: 1;
+    flex-basis: 329px;
+    flex-shrink: 0;
+    padding-top: 8px;
+    margin-right: 62px;
+  }
+  @include mq(large_laptop) {
+    flex-basis: 422px;
+  }
+  @include mq(small_monitor) {
+    margin-right: 155px;
+  }
 }
 
 .widget {
@@ -11,6 +24,9 @@
   padding: 45px 0px 35px;
   position: relative;
   margin-bottom: 37px;
+  @include mq(small_laptop) {
+    padding: 37px 0px 35px;
+  }
   &:last-of-type {
     margin-bottom: 0px;
   }
@@ -37,6 +53,12 @@
         transform: uppercase,
       )
     );
+    @include mq(small_laptop) {
+      padding: 0 50px 12px;
+    }
+    @include mq(large_laptop) {
+      padding: 0 50px 35px;
+    }
   }
   ul {
     list-style: none;
@@ -55,6 +77,9 @@
         text-decoration: none;
         border-bottom: 1px solid rgba(142, 153, 172, 0.5);
         transition: all 200ms ease-in-out;
+        &:hover {
+          color: $red;
+        }
       }
     }
   }

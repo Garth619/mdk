@@ -28,11 +28,16 @@
 
   <picture>
 
-    <!-- <source media='(min-width: 1380px)' srcset='<?php //bloginfo('template_directory'); ?>/images'> -->
+    <source media='(min-width: 1800px)' srcset='<?php bloginfo('template_directory');?>/images/int-hero-1920.jpg'>
+
+    <source media='(min-width: 1380px)' srcset='<?php bloginfo('template_directory');?>/images/int-hero-1400.jpg'>
+
+    <source media='(min-width: 1170px)' srcset='<?php bloginfo('template_directory');?>/images/int-hero-1200.jpg'>
+
+    <source media='(min-width: 768px)' srcset='<?php bloginfo('template_directory');?>/images/int-hero-768.jpg'>
 
     <img id='banner-image' src='<?php bloginfo('template_directory');?>/images/int-hero-360.jpg' alt='' />
 
   </picture>
-  <!-- remove 'data-' and 'lazyload' if needs to load on page load -->
 
 </div><!-- banner-wrapper -->

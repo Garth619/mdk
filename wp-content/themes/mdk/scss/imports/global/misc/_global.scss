@@ -11,6 +11,9 @@ body.internal-header.no-banner {
     @media screen and (min-width: 675px) and (max-width: 1170px) {
       margin-top: 85px;
     }
+    @include mq(small_laptop) {
+      margin-top: 0px;
+    }
   }
 }
 
@@ -18,6 +21,27 @@ body.internal-header.no-banner {
   padding: 30px 30px 47px;
   @include mq(small_tablet) {
     padding: 75px 55px 95px;
+  }
+  @include mq(small_laptop) {
+    padding: 92px 55px 95px;
+  }
+  @include mq(large_laptop) {
+    padding: 92px 75px 95px;
+  }
+  &.two-col {
+    @include mq(small_laptop) {
+      @include flex();
+    }
+    @include mq(small_monitor) {
+      max-width: 1610px;
+      @include margin_lr();
+    }
+  }
+}
+
+#page-content {
+  @include mq(small_laptop) {
+    order: 2;
   }
 }
 

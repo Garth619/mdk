@@ -145,6 +145,11 @@ body {
     header {
       background: $bluedark;
       @include fixed(0, null, null, 0);
+      @include mq(small_laptop) {
+        position: relative;
+        height: 142px;
+        overflow: visible;
+      }
       #header-left {
         @media screen and (min-width: 675px) and (max-width: 1170px) {
           padding: 16px 16px 0 16px;
