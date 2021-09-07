@@ -99,6 +99,10 @@ if (is_front_page()) {
     }
 }
 
+if (!cms_is_in_menu('main-menu')) {
+    $header .= ' current-page-not-in-menu';
+}
+
 ?>
 
 <body <?php body_class($header);?>>

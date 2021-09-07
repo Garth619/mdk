@@ -307,6 +307,8 @@ jQuery(document).ready(function ($) {
     goBack();
   });
 
+  $(".widget_categories").prepend("<h3>Categories</h3>");
+
   /* Sidebar slideToggle
 --------------------------------------------------------------------------------------- */
 

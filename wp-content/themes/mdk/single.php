@@ -6,16 +6,23 @@
 
   <div id='page-container' class='two-col'>
 
-    <div id='page-content' class='content'>
+    <div id='page-content'>
 
-      <a id='banner-button' class='button pa-banner-button' href='#consultation'>
+      <?php if (!get_field('banner_h1') == "Yes"): ?>
 
-        <button><?php the_field('global_internal_banner_button_verbiage', 'option');?><span
-            class='button-tri'><span></button>
+      <h1 class='page-title'><?php the_title();?></h1><!-- page-title -->
 
-      </a><!-- button -->
+      <?php endif;?>
 
-      <?php get_template_part('loop', 'single');?>
+      <a class='page-button button-one'
+        href='#consultation'><?php the_field('global_internal_banner_button_verbiage', 'option');?></a>
+      <!-- button-one -->
+
+      <div id='page-content-inner' class='content'>
+
+        <?php get_template_part('loop', 'single');?>
+
+      </div><!-- page-content-inner -->
 
     </div><!-- page-content -->
 

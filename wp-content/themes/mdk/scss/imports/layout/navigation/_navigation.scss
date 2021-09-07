@@ -166,6 +166,12 @@ nav {
             right: -10px;
           }
         }
+        @include mq(large_laptop) {
+          ul.sub-menu {
+            left: -18px;
+            right: auto;
+          }
+        }
       }
       &:last-of-type {
         > a {
@@ -252,6 +258,12 @@ nav {
         }
       }
     }
+  }
+}
+
+body.current-page-not-in-menu {
+  nav ul.menu > li#magic-line {
+    display: none;
   }
 }
 

@@ -18,7 +18,9 @@
 
       <?php endif;?>
 
-      <a class='page-button button-one' href='#consultation'>Request Free Consultation</a><!-- button-one -->
+      <a class='page-button button-one'
+        href='#consultation'><?php the_field('global_internal_banner_button_verbiage', 'option');?></a>
+      <!-- button-one -->
 
       <div id='page-content-inner' class='content'>
 

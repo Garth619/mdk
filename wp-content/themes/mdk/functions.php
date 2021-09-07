@@ -136,7 +136,6 @@ register_sidebar(array(
 ));
 
 }
- */
 
 /* Add Theme Support Page Thumbnails
 -------------------------------------------------------------- */
@@ -236,7 +235,7 @@ function my_numeric_posts_nav()
 
     /** Previous Post Link */
     if (get_previous_posts_link()) {
-        printf('<li class="blog_arrow myprev">%s</li>' . "\n", get_previous_posts_link('Prev'));
+        printf('<li class="blog-arrow myprev">%s</li>' . "\n", get_previous_posts_link(''));
     }
 // put "prev" string in get_previous_posts_link
 
@@ -271,7 +270,7 @@ function my_numeric_posts_nav()
 
     /** Next Post Link */
     if (get_next_posts_link()) {
-        printf('<li class="blog_arrow mynext">%s</li>' . "\n", get_next_posts_link('Next'));
+        printf('<li class="blog-arrow mynext">%s</li>' . "\n", get_next_posts_link(''));
     }
     // put "next" string in get_previous_posts_link
 
@@ -319,3 +318,31 @@ function ilaw_post_thumbnail_sizes_attr($attr, $attachment, $size)
     return $attr;
 }
 add_filter('wp_get_attachment_image_attributes', 'ilaw_post_thumbnail_sizes_attr', 10, 3);
+
+/* Check if post is in a menu to hide red magic line
+-------------------------------------------------------------- */
+
+function cms_is_in_menu($menu = null, $object_id = null)
+{
+
+    // get menu object
+    $menu_object = wp_get_nav_menu_items(esc_attr($menu));
+
+    // stop if there isn't a menu
+    if (!$menu_object) {
+        return false;
+    }
+
+    // get the object_id field out of the menu object
+    $menu_items = wp_list_pluck($menu_object, 'object_id');
+
+    // use the current post if object_id is not specified
+    if (!$object_id) {
+        global $post;
+        $object_id = get_queried_object_id();
+    }
+
+    // test if the specified page is in the menu or not. return true or false.
+    return in_array((int) $object_id, $menu_items);
+
+}

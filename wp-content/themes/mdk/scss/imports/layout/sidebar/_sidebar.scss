@@ -81,6 +81,11 @@
           color: $red;
         }
       }
+      &.blog-active {
+        a {
+          color: $red;
+        }
+      }
     }
   }
   ul.menu {
@@ -141,7 +146,8 @@
     position: relative;
     z-index: 1;
   }
-  &.widget_recent_entries {
+  &.widget_recent_entries,
+  &.widget_categories {
     ul {
       margin-left: 40px;
       margin-right: 40px;

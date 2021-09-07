@@ -10,26 +10,9 @@
   </ul>
   <?php endif;?>
 
-  <div class="blog-meta">
-
-    <span class='author'>By <?php the_author();?></span><!-- author -->
-
-    <?php echo get_the_category_list(); ?>
-
-    <span class="date"><?php $pfx_date = get_the_date();
-    echo $pfx_date?></span>
-
-  </div><!-- blog-meta -->
-
-  <div class="blog_content content">
+  <div class="blog_content">
 
     <?php the_content();?>
-
-    <?php if (get_field('view_pdf')) {?>
-
-    <a class="read-more view-pdf" href="<?php the_field('view_pdf');?>" target='_blank'>View PDF</a>
-
-    <?php }?>
 
   </div><!-- blog_content -->
 
