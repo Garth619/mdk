@@ -6,7 +6,17 @@ get_header();?>
 
 <div id="internal-main">
 
+  <?php if (!get_field('disable_banner')) {
+
+    get_template_part('page-templates/includes/page_banner/template', 'banner_page_title');
+
+}?>
+
   <div id='page-container'>
+
+    <a class='page-button button-one'
+      href='#consultation'><?php the_field('global_internal_banner_button_verbiage', 'option');?></a>
+    <!-- button-one -->
 
     <div id='pa-wrapper'>
 
