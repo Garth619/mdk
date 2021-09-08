@@ -2,7 +2,7 @@
 
   <div id='banner-content'>
 
-    <h1 class='banner-title'><?php the_title();?></h1><!-- banner-title -->
+    <h1 class='banner-title banner-title-large'><?php the_title();?></h1><!-- banner-title -->
 
     <a class='banner-button button-one'
       href='#consultation'><?php the_field('global_internal_banner_button_verbiage', 'option');?></a><!-- button-one -->

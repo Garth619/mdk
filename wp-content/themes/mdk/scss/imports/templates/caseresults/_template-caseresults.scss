@@ -1,0 +1,173 @@
+#case-results-wrapper {
+  @include mq(small_tablet) {
+    max-width: 600px;
+    @include margin_lr();
+  }
+  @media screen and (min-width: 850px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 0px 40px;
+    max-width: 100%;
+  }
+  @include mq(large_laptop) {
+    max-width: 1745px;
+    padding-top: 15px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.case-results-single-slide {
+  margin-bottom: 30px;
+  @include mq(small_tablet) {
+    padding-bottom: 15px;
+  }
+  @include mq(small_laptop) {
+    margin-bottom: 60px;
+  }
+  @include mq(large_laptop) {
+    margin-bottom: 90px;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  &::after {
+    background: $red;
+    margin-top: 10px;
+    box-shadow: 0px 3px 10px rgba(198, 31, 32, 0);
+    transition: all 300ms ease-in-out;
+    @include box(100%, 8px);
+    @include contentdisplay();
+  }
+  &.show {
+    &::after {
+      background: $red;
+      box-shadow: 0px 3px 10px rgba(198, 31, 32, 1);
+    }
+    .case-results-single-inner {
+      .case-results-single-hover {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  span {
+    display: block;
+    color: $white;
+    text-align: center;
+  }
+  .case-results-single-inner {
+    position: relative;
+  }
+}
+
+.case-results-single-cr {
+  position: relative;
+  height: 550px;
+  @include mq(small_laptop) {
+    height: 599px;
+  }
+  .case-results-single-cr-content {
+    position: relative;
+    z-index: 1;
+    background: $bluedark;
+    @include flex(center, center, column);
+    @include box(100%, 100%);
+    span {
+      &.case-results-single-amount {
+        margin-top: -46px;
+        @include type(
+          (
+            size: 70px,
+            height: 80px,
+            family: $secondaryfont,
+            weight: 800,
+            transform: uppercase,
+          )
+        );
+        @include mq(small_laptop) {
+          font-size: 80px;
+          margin-top: -20px;
+        }
+        @include mq(large_laptop) {
+          font-size: 100px;
+        }
+        &::after {
+          background: $red;
+          margin-top: 25px;
+          @include contentdisplay();
+          @include margin_lr();
+          @include box(158px, 2px);
+          @include mq(small_laptop) {
+            margin-top: 15px;
+          }
+        }
+      }
+      &.case-results-single-type {
+        margin-top: 45px;
+        max-width: 270px;
+        @include margin_lr();
+        @include type(
+          (
+            size: 17px,
+            height: 22px,
+            family: $secondaryfont,
+            weight: 700,
+            spacing: 1px,
+            transform: uppercase,
+          )
+        );
+        @include mq(small_laptop) {
+          margin-top: 30px;
+          @include quick_type(20px, 25px, null);
+        }
+      }
+    }
+    img.svg-arrow {
+      position: relative;
+      top: 100px;
+      @include mq(small_laptop) {
+        top: 85px;
+      }
+    }
+  }
+}
+
+.case-results-single-hover {
+  background: $bluelight;
+  opacity: 0;
+  visibility: hidden;
+  padding: 0 20px;
+  transition: all 300ms ease-in-out;
+  @include flex(center, center, column);
+  @include box(100%, 100%);
+  @include abs(0, null, null, 0, 1);
+  span {
+    &.case-results-hover-type {
+      max-width: 370px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 25px,
+          height: 30px,
+          spacing: 1.25px,
+          family: $secondaryfont,
+          weight: 800,
+          transform: uppercase,
+        )
+      );
+    }
+    &.case-results-hover-descrip {
+      margin-top: 33px;
+      max-width: 370px;
+      @include margin_lr();
+      @include type(
+        (
+          size: 17px,
+          height: 30px,
+          family: $primaryfont,
+        )
+      );
+    }
+  }
+}

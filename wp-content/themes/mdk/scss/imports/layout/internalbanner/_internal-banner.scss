@@ -44,4 +44,9 @@
     max-width: 727px;
     @include quick_type(50px, 55px, null);
   }
+  &.banner-title-large {
+    @include mq(large_laptop) {
+      @include quick_type(60px, 65px, null);
+    }
+  }
 }
