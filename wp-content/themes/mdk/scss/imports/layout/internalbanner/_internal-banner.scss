@@ -1,9 +1,11 @@
 #banner-wrapper {
   position: relative;
+  overflow: hidden;
   img#banner-image {
     object-fit: cover;
     transform: translateX(-50%);
-    @include box(100%, 100%);
+    margin-left: -1px;
+    @include box(101%, 100%);
     @include abs(0, null, null, 50%);
   }
 }
@@ -26,7 +28,7 @@
   @include margin_lr();
   @include type(
     (
-      size: 25px,
+      size: 22px,
       height: 30px,
       family: $secondaryfont,
       color: $white,
