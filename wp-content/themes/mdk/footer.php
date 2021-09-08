@@ -13,6 +13,8 @@
 
     </div><!-- footer-form-wrapper -->
 
+    <?php if (!is_page_template('page-templates/template-contact.php')) {?>
+
     <div id='footer-info-wrapper'>
 
       <span id='footer-info-title'>CONTACT MDK LAw</span><!-- footer-info-title -->
@@ -89,6 +91,8 @@
       </div><!-- footer-info-inner -->
 
     </div><!-- footer-info-wrapper -->
+
+    <?php }?>
 
   </div><!-- footer-inner -->
 

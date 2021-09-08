@@ -118,7 +118,7 @@ footer {
       margin-top: 55px;
       max-width: 620px;
     }
-    @include mq(small_monitor) {
+    @include mq(monitor) {
       max-width: 850px;
     }
     .gform_fields {
