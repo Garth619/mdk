@@ -89,7 +89,7 @@
           font-size: 80px;
           margin-top: -20px;
         }
-        @include mq(large_laptop) {
+        @include mq(small_monitor) {
           font-size: 100px;
         }
         &::after {

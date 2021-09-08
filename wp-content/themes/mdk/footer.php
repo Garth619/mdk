@@ -28,7 +28,10 @@
             <span class='footer-info-content'>4105 N. 20th Street, Suite 260<br> Phoenix Az 85016</span>
             <!-- footer-info-subtitle -->
 
-            <a class='footer-info-content directions' href=''>DIRECTIONs</a><!-- directions -->
+            <a class='footer-info-content directions'
+              href='https://www.google.com/maps/place/Tudor+Plaza+Office+Condominium,+4105+N+20th+St+STE+260,+Phoenix,+AZ+85016/@33.4957353,-112.0408288,17z/data=!3m1!4b1!4m5!3m4!1s0x872b0d79aab07657:0xc5ed7a49ced85afc!8m2!3d33.4957353!4d-112.0386401'
+              target="_blank" rel="noopener">DIRECTIONs</a>
+            <!-- directions -->
 
           </div><!-- footer-info-row-inner -->
 
@@ -67,13 +70,13 @@
 
           <div class='footer-info-row-inner'>
 
-            <a class='social-icon' href=''>
+            <a class='social-icon' href='https://www.facebook.com/mdkattorneys' target="_blank" rel="noopener">
 
               <?php echo file_get_contents(get_template_directory() . '/images/social-fb.svg'); ?>
 
             </a><!-- social-icon -->
 
-            <a class='social-icon' href=''>
+            <a class='social-icon' href='https://www.instagram.com/mdklawgroup' target="_blank" rel="noopener">
 
               <?php echo file_get_contents(get_template_directory() . '/images/social-insta.svg'); ?>
 

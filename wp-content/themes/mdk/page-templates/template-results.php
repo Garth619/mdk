@@ -20,39 +20,8 @@ get_header();?>
 
     <div id='case-results-wrapper'>
 
-      <div class='case-results-single-slide'>
-
-        <div class='case-results-single-inner'>
-
-          <div class='case-results-single-cr'>
-
-            <div class='case-results-single-cr-content'>
-
-              <span class='case-results-single-amount'>$6.0M</span><!-- case-results-single-amount -->
-
-              <span class='case-results-single-type'>Automobile Passenger
-                Accident settlement</span><!-- case-results-single-type -->
-
-              <img class='svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-            </div><!-- case-results-single-cr-content -->
-
-          </div><!-- case-results-single-cr -->
-
-          <div class='case-results-single-hover'>
-
-            <span class='case-results-hover-type'>$6.0 Million Motorcycle
-              Accident Settlement</span><!-- case-results-hover-type -->
-
-            <span class='case-results-hover-descrip'>Motorcyclist cut off by SUV. Serious injuries with future care.
-              Liability heavily disputed. We were able to show fault and get a large settlement. Call for a free
-              consultation and case review. </span><!-- case-results-hover-descrip -->
-
-          </div><!-- case-results-single-hover -->
-
-        </div><!-- case-results-single-inner -->
-
-      </div><!-- case-results-single-slide -->
+      <?php if (have_rows('case_results')): ?>
+      <?php while (have_rows('case_results')): the_row();?>
 
       <div class='case-results-single-slide'>
 
@@ -62,44 +31,11 @@ get_header();?>
 
             <div class='case-results-single-cr-content'>
 
-              <span class='case-results-single-amount'>$6.0M</span><!-- case-results-single-amount -->
+              <span class='case-results-single-amount'><?php the_sub_field('amount');?></span>
+              <!-- case-results-single-amount -->
 
-              <span class='case-results-single-type'>Automobile Passenger
-                Accident settlement</span><!-- case-results-single-type -->
-
-              <img class='svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-            </div><!-- case-results-single-cr-content -->
-
-          </div><!-- case-results-single-cr -->
-
-          <div class='case-results-single-hover'>
-
-            <span class='case-results-hover-type'>$6.0 Million Motorcycle
-              Accident Settlement</span><!-- case-results-hover-type -->
-
-            <span class='case-results-hover-descrip'>Motorcyclist cut off by SUV. Serious injuries with future care.
-              Liability heavily disputed. We were able to show fault and get a large settlement. Call for a free
-              consultation and case review. </span><!-- case-results-hover-descrip -->
-
-          </div><!-- case-results-single-hover -->
-
-        </div><!-- case-results-single-inner -->
-
-      </div><!-- case-results-single-slide -->
-
-      <div class='case-results-single-slide'>
-
-        <div class='case-results-single-inner'>
-
-          <div class='case-results-single-cr'>
-
-            <div class='case-results-single-cr-content'>
-
-              <span class='case-results-single-amount'>$6.0M</span><!-- case-results-single-amount -->
-
-              <span class='case-results-single-type'>Automobile Passenger
-                Accident settlement</span><!-- case-results-single-type -->
+              <span class='case-results-single-type'><?php the_sub_field('type');?></span>
+              <!-- case-results-single-type -->
 
               <img class='svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
 
@@ -109,46 +45,11 @@ get_header();?>
 
           <div class='case-results-single-hover'>
 
-            <span class='case-results-hover-type'>$6.0 Million Motorcycle
-              Accident Settlement</span><!-- case-results-hover-type -->
+            <span class='case-results-hover-type'><?php the_sub_field('hover_title');?></span>
+            <!-- case-results-hover-type -->
 
-            <span class='case-results-hover-descrip'>Motorcyclist cut off by SUV. Serious injuries with future care.
-              Liability heavily disputed. We were able to show fault and get a large settlement. Call for a free
-              consultation and case review. </span><!-- case-results-hover-descrip -->
-
-          </div><!-- case-results-single-hover -->
-
-        </div><!-- case-results-single-inner -->
-
-      </div><!-- case-results-single-slide -->
-
-      <div class='case-results-single-slide'>
-
-        <div class='case-results-single-inner'>
-
-          <div class='case-results-single-cr'>
-
-            <div class='case-results-single-cr-content'>
-
-              <span class='case-results-single-amount'>$6.0M</span><!-- case-results-single-amount -->
-
-              <span class='case-results-single-type'>Automobile Passenger
-                Accident settlement</span><!-- case-results-single-type -->
-
-              <img class='svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-            </div><!-- case-results-single-cr-content -->
-
-          </div><!-- case-results-single-cr -->
-
-          <div class='case-results-single-hover'>
-
-            <span class='case-results-hover-type'>$6.0 Million Motorcycle
-              Accident Settlement</span><!-- case-results-hover-type -->
-
-            <span class='case-results-hover-descrip'>Motorcyclist cut off by SUV. Serious injuries with future care.
-              Liability heavily disputed. We were able to show fault and get a large settlement. Call for a free
-              consultation and case review. </span><!-- case-results-hover-descrip -->
+            <span class='case-results-hover-descrip'> <?php the_sub_field('description');?></span>
+            <!-- case-results-hover-descrip -->
 
           </div><!-- case-results-single-hover -->
 
@@ -156,39 +57,9 @@ get_header();?>
 
       </div><!-- case-results-single-slide -->
 
-      <div class='case-results-single-slide'>
+      <?php endwhile;?>
 
-        <div class='case-results-single-inner'>
-
-          <div class='case-results-single-cr'>
-
-            <div class='case-results-single-cr-content'>
-
-              <span class='case-results-single-amount'>$6.0M</span><!-- case-results-single-amount -->
-
-              <span class='case-results-single-type'>Automobile Passenger
-                Accident settlement</span><!-- case-results-single-type -->
-
-              <img class='svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-            </div><!-- case-results-single-cr-content -->
-
-          </div><!-- case-results-single-cr -->
-
-          <div class='case-results-single-hover'>
-
-            <span class='case-results-hover-type'>$6.0 Million Motorcycle
-              Accident Settlement</span><!-- case-results-hover-type -->
-
-            <span class='case-results-hover-descrip'>Motorcyclist cut off by SUV. Serious injuries with future care.
-              Liability heavily disputed. We were able to show fault and get a large settlement. Call for a free
-              consultation and case review. </span><!-- case-results-hover-descrip -->
-
-          </div><!-- case-results-single-hover -->
-
-        </div><!-- case-results-single-inner -->
-
-      </div><!-- case-results-single-slide -->
+      <?php endif;?>
 
     </div><!-- case-results-wrapper -->
 
