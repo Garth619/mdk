@@ -256,6 +256,60 @@ jQuery(document).ready(function ($) {
     ],
   });
 
+  $("#bio-slider").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          arrows: true,
+          prevArrow: "#bio-arrow-left",
+          nextArrow: "#bio-arrow-right",
+          dots: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          arrows: true,
+          prevArrow: "#bio-arrow-left",
+          nextArrow: "#bio-arrow-right",
+          dots: false,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 1399,
+        settings: {
+          arrows: true,
+          prevArrow: "#bio-arrow-left",
+          nextArrow: "#bio-arrow-right",
+          dots: false,
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 1600,
+        settings: {
+          arrows: true,
+          prevArrow: "#bio-arrow-left",
+          nextArrow: "#bio-arrow-right",
+          dots: false,
+          slidesToShow: 5,
+          slidesToScroll: 5,
+        },
+      },
+    ],
+  });
+
   // $("#sec-three-slider").slick({
   //   infinite: true,
   //   slidesToShow: 2,

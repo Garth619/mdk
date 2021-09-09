@@ -24,7 +24,7 @@ get_header();?>
 
   </div><!-- banner-wrapper -->
 
-  <div id='page-container' class='two-col'>
+  <div id='page-container' class='two-col bio-container'>
 
     <div id='bio-page-content'>
 
@@ -42,18 +42,23 @@ get_header();?>
 
           <span class='att-title'>CLIENT TESTIMONIALs</span><!-- att-title -->
 
-          <blockquote>
+          <div id='single-client-testimonials'>
 
-            <p>“I cannot say enough about Sargon. He is not only an amazing attorney, but also a genuine and kind
-              person.
-              The level of support, communication and genuine concern for me was unparalleled. Highly recommend Sargon.
-              He’s an exceptional lawyer and fights for his clients.</p>
+            <blockquote>
 
-            <p class='bio-client-name'>- JDA V.</p>
+              <p>“I cannot say enough about Sargon. He is not only an amazing attorney, but also a genuine and kind
+                person.
+                The level of support, communication and genuine concern for me was unparalleled. Highly recommend
+                Sargon.
+                He’s an exceptional lawyer and fights for his clients.</p>
 
-          </blockquote>
+              <p class='bio-client-name'>- JDA V.</p>
 
-        </div><!-- client-testimonials -->
+            </blockquote>
+
+          </div><!-- client-testimonials -->
+
+        </div><!-- single-client-testimonials -->
 
       </div><!-- page-content-inner -->
 
@@ -100,6 +105,104 @@ get_header();?>
     </div><!-- bio-sidebar-wrapper -->
 
   </div><!-- page-container -->
+
+  <div id='bio-awards-wrapper'>
+
+    <span id='bio-awards-title'>AWARDS, MEDIA<br> AND ACCOLADEs</span><!-- bio-awards-title -->
+
+    <div id='bio-awards-inner'>
+
+      <div id='bio-arrow-left' class='bio-arrow'>
+
+        <img class='bio-svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+      </div><!-- bio-arrow-left -->
+
+      <div id='bio-slider'>
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-2.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-1.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-3.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-4.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-5.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-6.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-7.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-8.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-9.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-10.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-11.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+        <div class='bio-slide'>
+
+          <img src='<?php bloginfo('template_directory');?>/images/award-12.png' alt='' />
+
+        </div><!-- bio-slide -->
+
+      </div><!-- bio-slider -->
+
+      <div id='bio-arrow-right' class='bio-arrow'>
+
+        <img class='bio-svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+      </div><!-- bio-arrow-right -->
+
+    </div><!-- bio-awards-inner -->
+
+  </div><!-- bio-awards-wrapper -->
 
 </div><!-- internal-main -->
 
