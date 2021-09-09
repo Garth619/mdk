@@ -5107,6 +5107,122 @@ span#sec-six-awards-title {
   font-weight: 700;
 }
 
+.bio-banner {
+  background: #07121c;
+}
+
+#banner-bio-content {
+  padding: 175px 40px;
+  text-align: center;
+}
+
+#att-title {
+  position: relative;
+  display: inline;
+  z-index: 1;
+  font-size: 40px;
+  line-height: 45px;
+  font-family: industry, sans-serif;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  font-style: normal;
+  text-decoration: none;
+}
+#att-title::after {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 53px 59px;
+  border-color: transparent transparent #c61f20 transparent;
+  z-index: -1;
+  position: absolute;
+  right: -17px;
+  bottom: -5px;
+  content: "";
+  display: inline-block;
+}
+
+span#att-position {
+  display: block;
+  font-size: 25px;
+  line-height: 33px;
+  font-family: "Inter", sans-serif;
+  color: #c61f20;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+}
+
+#bio-page-content {
+  margin-top: -160px;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 1170px) {
+  #bio-page-content .bio-att-img-wrapper {
+    display: none;
+  }
+}
+
+.bio-att-img-wrapper {
+  margin-bottom: 30px;
+  max-width: 445px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bio-att-img-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+span.att-title {
+  display: block;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
+}
+span.att-title::after {
+  background: #8e99ac;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 4px;
+  content: "";
+  display: block;
+}
+
+blockquote p.bio-client-name {
+  font-size: 20px;
+}
+
+#client-testimonials {
+  padding-top: 40px;
+}
+
+#bio-sidebar-wrapper {
+  padding-top: 30px;
+}
+#bio-sidebar-wrapper .bio-att-img-wrapper {
+  display: none;
+}
+@media screen and (min-width: 1170px) {
+  #bio-sidebar-wrapper .bio-att-img-wrapper {
+    display: block;
+  }
+}
+#bio-sidebar-wrapper ul {
+  margin-bottom: 50px;
+}
+#bio-sidebar-wrapper ul li {
+  margin-bottom: 22px;
+}
+
 @media screen and (min-width: 768px) {
   #case-results-wrapper {
     max-width: 600px;

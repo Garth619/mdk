@@ -1,0 +1,118 @@
+.bio-banner {
+  background: $bluedark;
+}
+
+#banner-bio-content {
+  padding: 175px 40px;
+  text-align: center;
+}
+
+#att-title {
+  position: relative;
+  display: inline;
+  z-index: 1;
+  @include type(
+    (
+      size: 40px,
+      height: 45px,
+      family: $secondaryfont,
+      color: $white,
+      weight: 800,
+      align: center,
+    )
+  );
+  &::after {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 53px 59px;
+    border-color: transparent transparent $red transparent;
+    z-index: -1;
+    @include abs(null, -17px, -5px, null);
+    @include contentdisplay(inline-block, "");
+  }
+}
+
+span#att-position {
+  display: block;
+  @include type(
+    (
+      size: 25px,
+      height: 33px,
+      family: $primaryfont,
+      color: $red,
+      weight: 800,
+    )
+  );
+}
+
+.bio-container {
+}
+
+#bio-page-content {
+  margin-top: -160px;
+  position: relative;
+  z-index: 1;
+  .bio-att-img-wrapper {
+    @include mq(small_laptop) {
+      display: none;
+    }
+  }
+}
+
+.bio-att-img-wrapper {
+  margin-bottom: 30px;
+  max-width: 445px;
+  @include margin_lr();
+  img {
+    @include image();
+  }
+}
+
+span.att-title {
+  display: block;
+  @include type(
+    (
+      size: 18px,
+      height: 22px,
+      family: $primaryfont,
+      weight: 700,
+      transform: uppercase,
+    )
+  );
+  &::after {
+    background: $grey;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    @include box(100%, 4px);
+    @include contentdisplay();
+  }
+}
+
+blockquote {
+  p {
+    &.bio-client-name {
+      font-size: 20px;
+    }
+  }
+}
+
+#client-testimonials {
+  padding-top: 40px;
+}
+
+#bio-sidebar-wrapper {
+  padding-top: 30px;
+  .bio-att-img-wrapper {
+    display: none;
+    @include mq(small_laptop) {
+      display: block;
+    }
+  }
+  ul {
+    margin-bottom: 50px;
+    li {
+      margin-bottom: 22px;
+    }
+  }
+}
