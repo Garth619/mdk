@@ -16,7 +16,11 @@ get_header();?>
 
         <h1 id='att-title'><?php the_title();?></h1><!-- banner-title -->
 
-        <span id='att-position'>Partner</span><!-- att-position -->
+        <?php if (get_field('attorney_positions')) {?>
+
+        <span id='att-position'><?php the_field('attorney_positions');?></span><!-- att-position -->
+
+        <?php }?>
 
       </div><!-- banner-bio-title-wrapper -->
 
@@ -30,85 +34,102 @@ get_header();?>
 
       <div id='page-content-inner' class='content'>
 
+        <?php $attorney_bio_image = get_field('attorney_bio_image');?>
+
+        <?php if ($attorney_bio_image) {?>
+
         <div class='bio-att-img-wrapper'>
 
-          <img class='bio-att-img' src='<?php bloginfo('template_directory');?>/images/att-sargon.jpg' alt='' />
+          <img class='bio-att-img' src="<?php echo $attorney_bio_image['url']; ?>"
+            alt="<?php echo $attorney_bio_image['alt']; ?>" />
 
         </div><!-- bio-att-img-wrapper -->
 
+        <?php }?>
+
         <?php the_content();?>
+
+        <?php if (have_rows('client_testimonials')): ?>
 
         <div id='client-testimonials'>
 
-          <span class='att-title'>CLIENT TESTIMONIALs</span><!-- att-title -->
+          <?php while (have_rows('client_testimonials')): the_row();?>
+
+          <span class='att-title'><?php the_sub_field('title');?></span><!-- att-title -->
+
+          <?php if (have_rows('single_testimonial')): ?>
 
           <div id='single-client-testimonials'>
 
+            <?php while (have_rows('single_testimonial')): the_row();?>
+
             <blockquote>
 
-              <p>“I cannot say enough about Sargon. He is not only an amazing attorney, but also a genuine and kind
-                person.
-                The level of support, communication and genuine concern for me was unparalleled. Highly recommend
-                Sargon.
-                He’s an exceptional lawyer and fights for his clients.</p>
+              <?php the_sub_field('description');?>
 
-              <p class='bio-client-name'>- JDA V.</p>
+              <p class='bio-client-name'><?php the_sub_field('name');?></p>
 
             </blockquote>
 
-          </div><!-- client-testimonials -->
+            <?php endwhile;?>
 
-        </div><!-- single-client-testimonials -->
+          </div><!-- single-client-testimonials -->
+          <?php endif;?>
+
+          <?php endwhile;?>
+
+        </div><!-- client-testimonials -->
+
+        <?php endif;?>
 
       </div><!-- page-content-inner -->
 
     </div><!-- bio-page-content -->
 
     <div id='bio-sidebar-wrapper' class='content'>
+      <?php if ($attorney_bio_image) {?>
 
       <div class='bio-att-img-wrapper'>
 
-        <img class='bio-att-img' src='<?php bloginfo('template_directory');?>/images/att-sargon.jpg' alt='' />
+        <img class='bio-att-img' src="<?php echo $attorney_bio_image['url']; ?>"
+          alt="<?php echo $attorney_bio_image['alt']; ?>" />
 
       </div><!-- bio-att-img-wrapper -->
 
-      <span class='att-title'>EDUCATION</span><!-- att-title -->
+      <?php }?>
+
+      <?php if (have_rows('sidebar_box')): ?>
+
+      <?php while (have_rows('sidebar_box')): the_row();?>
+
+      <span class='att-title'><?php the_sub_field('title');?></span><!-- att-title -->
+
+      <?php if (have_rows('sidebar_list')): ?>
 
       <ul>
-        <li><strong>Phoenix School of Law </strong><br>
-          Juris Doctor, 2013 </li>
-        <li><strong>Arizona State University</strong><br>
-          B.A., Political Science, 2011 </li>
-        <li><strong>Arizona State University</strong><br>
-          B.A., Communication, 2011</li>
+
+        <?php while (have_rows('sidebar_list')): the_row();?>
+
+        <li><?php the_sub_field('list_item');?></li>
+
+        <?php endwhile;?>
+
       </ul>
+      <?php endif;?>
 
-      <span class='att-title'>ACTIVITIES & AFFILIATIONS</span><!-- att-title -->
+      <?php endwhile;?>
 
-      <ul>
-        <li><strong>Assyrian American Cultural Organization of Arizona (AACO),</strong><br> Board Member
-        <li><strong>Assyrian American National Federation (AANF),</strong><br> Constitutional Bylaws Chairman</li>
-      </ul>
-
-      <span class='att-title'>LANGUAGES</span><!-- att-title -->
-
-      <ul>
-        <li>Fluent in Assyrian</li>
-      </ul>
-
-      <span class='att-title'>BAR ADMISSIONS</span><!-- att-title -->
-
-      <ul>
-        <li>Arizona</li>
-      </ul>
+      <?php endif;?>
 
     </div><!-- bio-sidebar-wrapper -->
 
   </div><!-- page-container -->
 
+  <?php if (have_rows('bio_awards_slider')): ?>
+
   <div id='bio-awards-wrapper'>
 
-    <span id='bio-awards-title'>AWARDS, MEDIA<br> AND ACCOLADEs</span><!-- bio-awards-title -->
+    <span id='bio-awards-title'><?php the_field('bio_awards_title');?></span><!-- bio-awards-title -->
 
     <div id='bio-awards-inner'>
 
@@ -120,77 +141,21 @@ get_header();?>
 
       <div id='bio-slider'>
 
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-2.png' alt='' />
-
-        </div><!-- bio-slide -->
+        <?php while (have_rows('bio_awards_slider')): the_row();?>
 
         <div class='bio-slide'>
 
-          <img src='<?php bloginfo('template_directory');?>/images/award-1.png' alt='' />
+          <?php $image = get_sub_field('image');?>
+
+          <?php if ($image) {?>
+
+          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+          <?php }?>
 
         </div><!-- bio-slide -->
 
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-3.png' alt='' />
-
-        </div><!-- bio-slide -->
-
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-4.png' alt='' />
-
-        </div><!-- bio-slide -->
-
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-5.png' alt='' />
-
-        </div><!-- bio-slide -->
-
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-6.png' alt='' />
-
-        </div><!-- bio-slide -->
-
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-7.png' alt='' />
-
-        </div><!-- bio-slide -->
-
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-8.png' alt='' />
-
-        </div><!-- bio-slide -->
-
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-9.png' alt='' />
-
-        </div><!-- bio-slide -->
-
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-10.png' alt='' />
-
-        </div><!-- bio-slide -->
-
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-11.png' alt='' />
-
-        </div><!-- bio-slide -->
-
-        <div class='bio-slide'>
-
-          <img src='<?php bloginfo('template_directory');?>/images/award-12.png' alt='' />
-
-        </div><!-- bio-slide -->
+        <?php endwhile;?>
 
       </div><!-- bio-slider -->
 
@@ -203,6 +168,8 @@ get_header();?>
     </div><!-- bio-awards-inner -->
 
   </div><!-- bio-awards-wrapper -->
+
+  <?php endif;?>
 
 </div><!-- internal-main -->
 
