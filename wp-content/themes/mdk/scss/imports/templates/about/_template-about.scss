@@ -2,6 +2,11 @@
 }
 
 #about-banner-content {
+  @include mq(small_laptop) {
+    background: $bluedark;
+    padding: 200px 55px 0;
+    @include flex();
+  }
 }
 
 #about-banner-top {
@@ -10,6 +15,11 @@
   @include mq(small_tablet) {
     padding: 175px 40px 165px;
   }
+  @include mq(small_laptop) {
+    order: 2;
+    background: transparent;
+    padding: 0px 0px 45px 50px;
+  }
 }
 
 a.about-button {
@@ -17,6 +27,9 @@ a.about-button {
   padding: 22px 20px;
   font-size: 17px;
   @include margin_lr();
+  @include mq(small_laptop) {
+    @include margin_lr(0);
+  }
 }
 
 #about-banner-bottom {
@@ -28,9 +41,20 @@ a.about-button {
   @include mq(small_tablet) {
     margin-top: -135px;
   }
+  @include mq(small_laptop) {
+    flex-shrink: 0;
+    flex-basis: 360px;
+    order: 1;
+    margin-top: 0;
+    position: relative;
+    @include margin_lr(0);
+  }
 }
 
 #about-banner-img {
+  @include mq(small_laptop) {
+    @include abs(0, null, null, 0);
+  }
   img {
     @include image();
   }
@@ -55,6 +79,8 @@ span.about-title {
     @include quick_type(50px, 60px, null);
   }
   @include mq(small_laptop) {
+    text-align: left;
+    max-width: 100%;
     @include quick_type(60px, 65px, null);
   }
 }
@@ -62,7 +88,20 @@ span.about-title {
 body.page-template-template-about {
   .content {
     h2 {
-      @include quick_type(25px, 33px, null);
+      @include mq(small_tablet) {
+        @include quick_type(25px, 33px, null);
+      }
+    }
+    blockquote {
+      @include mq(small_tablet) {
+        padding-left: 95px;
+        padding-right: 50px;
+        margin-top: 78px;
+        @include quick_type(40px, 50px, null);
+      }
+      @include mq(small_laptop) {
+        margin-top: 38px;
+      }
     }
   }
 }
@@ -71,20 +110,44 @@ body.page-template-template-about {
   @include mq(small_tablet) {
     margin-top: -35px;
   }
+  @include mq(small_laptop) {
+    padding-left: 405px;
+    margin-top: -70px;
+  }
 }
 
 #page-content-middle {
   margin-top: 40px;
+  @include mq(small_laptop) {
+    padding-bottom: 40px;
+    @include flex(center, center);
+  }
 }
 
 #page-content-middle-img {
   padding-top: 20px;
   padding-bottom: 30px;
-
+  max-width: 600px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    padding-bottom: 70px;
+  }
+  @include mq(small_laptop) {
+    flex-shrink: 0;
+    flex-basis: 500px;
+    padding-bottom: 0;
+  }
   img {
     @include image();
   }
 }
 
 #page-content-bottom {
+  text-align: center;
+  @include mq(small_laptop) {
+    max-width: 783px;
+    @include margin_lr();
+  }
+  h2 {
+  }
 }

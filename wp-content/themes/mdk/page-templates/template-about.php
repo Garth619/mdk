@@ -12,7 +12,7 @@ get_header();?>
 
       <div id='about-banner-top'>
 
-        <span class='about-title'>About our experienced personal injury law firm</span><!-- about-title -->
+        <span class='about-title'>About our experienced personal injury law&nbsp;firm</span><!-- about-title -->
 
         <a class='about-button button-one'
           href='#consultation'><?php the_field('global_internal_banner_button_verbiage', 'option');?></a>
@@ -77,7 +77,8 @@ get_header();?>
     <div id='page-content-bottom'>
 
       <h2>If you or a loved one has been injured on another’s property, MDK Law Group can help represent your interests
-        and pursue compensation for the applicable injuries, pain and suffering, future care, and medical bills. </h2>
+        and pursue compensation for the applicable injuries, pain and suffering, future care, and medical&nbsp;bills.
+      </h2>
 
       <p>Morbi viverra lacus ut erat hendrerit feugiat. Cras cursus tempus volutpat. Maecenas sit amet sem sit amet
         ligula pulvinar varius. Inline link style Hover link style Duis sit amet libero eget tellus venenatis
