@@ -158,6 +158,7 @@ span#sec-six-awards-title {
   display: none;
   @include mq(small_tablet) {
     margin: auto 0;
+    cursor: pointer;
     display: flex !important;
     justify-content: center;
     align-items: center;

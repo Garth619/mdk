@@ -1959,8 +1959,8 @@ nav.nav-desktop ul li a:hover {
 }
 @media screen and (min-width: 1380px) {
   #sidebar-wrapper {
-    -webkit-flex-basis: 422px;
-            flex-basis: 422px;
+    -webkit-flex-basis: 434px;
+            flex-basis: 434px;
   }
 }
 @media screen and (min-width: 1695px) {
@@ -1978,6 +1978,11 @@ nav.nav-desktop ul li a:hover {
 @media screen and (min-width: 1170px) {
   .widget {
     padding: 37px 0px 35px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .widget {
+    padding: 48px 0px 35px;
   }
 }
 .widget:last-of-type {
@@ -2015,7 +2020,7 @@ nav.nav-desktop ul li a:hover {
 }
 @media screen and (min-width: 1380px) {
   .widget h3 {
-    padding: 0 50px 35px;
+    padding: 0 48px 35px;
   }
 }
 .widget ul {
@@ -2032,6 +2037,7 @@ nav.nav-desktop ul li a:hover {
 .widget ul li a {
   display: block;
   color: #fff;
+  cursor: pointer;
   padding: 19px 30px 19px 10px;
   text-decoration: none;
   border-bottom: 1px solid rgba(142, 153, 172, 0.5);
@@ -3700,6 +3706,7 @@ img#hero-image {
           justify-content: center;
   -webkit-align-items: center;
           align-items: center;
+  cursor: pointer;
   transition: all 200ms ease-in-out;
 }
 @media screen and (min-width: 768px) {
@@ -4598,6 +4605,7 @@ img#hero-image {
           justify-content: center;
   -webkit-align-items: center;
           align-items: center;
+  cursor: pointer;
   transition: all 200ms ease-in-out;
 }
 @media screen and (min-width: 768px) {
@@ -4866,6 +4874,7 @@ span#sec-six-awards-title {
 @media screen and (min-width: 768px) {
   .sec-six-arrow {
     margin: auto 0;
+    cursor: pointer;
     display: -webkit-flex !important;
     display: flex !important;
     -webkit-justify-content: center;
@@ -5473,6 +5482,7 @@ span#bio-awards-title {
 }
 @media screen and (min-width: 768px) {
   .bio-arrow {
+    cursor: pointer;
     margin: auto 0;
     display: -webkit-flex !important;
     display: flex !important;

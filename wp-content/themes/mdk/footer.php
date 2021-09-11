@@ -103,7 +103,7 @@
       <ul>
         <li>&copy; <?php echo date('Y'); ?> MDK Law Group</li>
         <li>All Rights Reserved</li>
-        <li><a href=''>Disclaimer</a></li>
+        <li><a href='<?php bloginfo('url');?>/disclaimer'>Disclaimer</a></li>
       </ul>
 
     </div><!-- copyright-inner -->

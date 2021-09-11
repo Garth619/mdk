@@ -7,7 +7,7 @@
     <span id='sec-five-descrip'>Clients know they have the right team on their side when they hire MDK.</span>
     <!-- sec-five-descrip -->
 
-    <a id='sec-five-button' class='button-two' href='<?php bloginfo('url');?>/href'>View All Results</a>
+    <a id='sec-five-button' class='button-two' href='<?php bloginfo('url');?>/testimonials'>View All Results</a>
     <!-- sec-five-button -->
 
   </div><!-- sec-five-content -->

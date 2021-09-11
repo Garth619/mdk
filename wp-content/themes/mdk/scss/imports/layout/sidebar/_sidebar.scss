@@ -12,7 +12,7 @@
     margin-right: 62px;
   }
   @include mq(large_laptop) {
-    flex-basis: 422px;
+    flex-basis: 434px;
   }
   @include mq(small_monitor) {
     margin-right: 155px;
@@ -26,6 +26,9 @@
   margin-bottom: 37px;
   @include mq(small_laptop) {
     padding: 37px 0px 35px;
+  }
+  @include mq(large_laptop) {
+    padding: 48px 0px 35px;
   }
   &:last-of-type {
     margin-bottom: 0px;
@@ -57,7 +60,7 @@
       padding: 0 50px 12px;
     }
     @include mq(large_laptop) {
-      padding: 0 50px 35px;
+      padding: 0 48px 35px;
     }
   }
   ul {
@@ -73,6 +76,7 @@
       a {
         display: block;
         color: $white;
+        cursor: pointer;
         padding: 19px 30px 19px 10px;
         text-decoration: none;
         border-bottom: 1px solid rgba(142, 153, 172, 0.5);

@@ -111,6 +111,7 @@ a#sec-three-button {
   display: flex !important;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   transition: all 200ms ease-in-out;
   @include mq(small_tablet) {
     margin: auto 0;

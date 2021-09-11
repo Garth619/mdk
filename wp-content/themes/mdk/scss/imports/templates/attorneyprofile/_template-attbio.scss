@@ -274,6 +274,7 @@ span#bio-awards-title {
 .bio-arrow {
   display: none;
   @include mq(small_tablet) {
+    cursor: pointer;
     margin: auto 0;
     display: flex !important;
     justify-content: center;
