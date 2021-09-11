@@ -136,51 +136,7 @@ get_header();?>
 
   </div><!-- page-container -->
 
-  <?php if (have_rows('bio_awards_slider')): ?>
-
-  <div id='bio-awards-wrapper'>
-
-    <span id='bio-awards-title'><?php the_field('bio_awards_title');?></span><!-- bio-awards-title -->
-
-    <div id='bio-awards-inner'>
-
-      <div id='bio-arrow-left' class='bio-arrow'>
-
-        <img class='bio-svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-      </div><!-- bio-arrow-left -->
-
-      <div id='bio-slider'>
-
-        <?php while (have_rows('bio_awards_slider')): the_row();?>
-
-        <div class='bio-slide'>
-
-          <?php $image = get_sub_field('image');?>
-
-          <?php if ($image) {?>
-
-          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-          <?php }?>
-
-        </div><!-- bio-slide -->
-
-        <?php endwhile;?>
-
-      </div><!-- bio-slider -->
-
-      <div id='bio-arrow-right' class='bio-arrow'>
-
-        <img class='bio-svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-      </div><!-- bio-arrow-right -->
-
-    </div><!-- bio-awards-inner -->
-
-  </div><!-- bio-awards-wrapper -->
-
-  <?php endif;?>
+  <?php get_template_part('page-templates/includes/awards-slider/template', 'awards_slider');?>
 
 </div><!-- internal-main -->
 
