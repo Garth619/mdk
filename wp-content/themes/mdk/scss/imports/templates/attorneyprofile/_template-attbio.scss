@@ -187,9 +187,8 @@ span.att-title {
       padding-top: 0px;
     }
     p {
-      @include quick_type(30px, 40px, null);
-      &.bio-client-name {
-        font-size: 20px;
+      @include mq(small_tablet) {
+        @include quick_type(30px, 40px, null);
       }
     }
   }

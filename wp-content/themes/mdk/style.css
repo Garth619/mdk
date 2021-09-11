@@ -722,6 +722,12 @@ h4 {
     left: 0px;
   }
 }
+.content blockquote p.client-name {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 @media screen and (min-width: 1100px) {
   .wp-block-image.alignleft img {
     float: left;
@@ -869,6 +875,7 @@ body.internal-header.no-banner #internal-main {
   display: block;
   position: relative;
   padding: 27px 20px;
+  z-index: 1;
   transition: border 200ms ease-in-out;
   font-size: 18px;
   letter-spacing: 0.9px;
@@ -5127,6 +5134,97 @@ span#sec-six-title::after {
   font-weight: 700;
 }
 
+#about-banner-top {
+  background: #07121c;
+  padding: 175px 40px 115px;
+}
+@media screen and (min-width: 768px) {
+  #about-banner-top {
+    padding: 175px 40px 165px;
+  }
+}
+
+a.about-button {
+  max-width: 292px;
+  padding: 22px 20px;
+  font-size: 17px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about-banner-bottom {
+  padding: 0px 40px;
+  margin-top: -80px;
+  margin-bottom: 10px;
+  max-width: 555px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  #about-banner-bottom {
+    margin-top: -135px;
+  }
+}
+
+#about-banner-img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+span.about-title {
+  display: block;
+  margin-bottom: 20px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 40px;
+  line-height: 45px;
+  font-family: industry, sans-serif;
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  font-style: normal;
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  span.about-title {
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  span.about-title {
+    font-size: 60px;
+    line-height: 65px;
+  }
+}
+
+body.page-template-template-about .content h2 {
+  font-size: 25px;
+  line-height: 33px;
+}
+
+@media screen and (min-width: 768px) {
+  #page-content-top {
+    margin-top: -35px;
+  }
+}
+
+#page-content-middle {
+  margin-top: 40px;
+}
+
+#page-content-middle-img {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+#page-content-middle-img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .bio-banner {
   background: #07121c;
 }
@@ -5374,12 +5472,11 @@ span.att-title::after {
     padding-top: 0px;
   }
 }
-#client-testimonials blockquote p {
-  font-size: 30px;
-  line-height: 40px;
-}
-#client-testimonials blockquote p.bio-client-name {
-  font-size: 20px;
+@media screen and (min-width: 768px) {
+  #client-testimonials blockquote p {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
 
 #bio-sidebar-wrapper {

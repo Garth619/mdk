@@ -1,0 +1,90 @@
+#about-banner {
+}
+
+#about-banner-content {
+}
+
+#about-banner-top {
+  background: $bluedark;
+  padding: 175px 40px 115px;
+  @include mq(small_tablet) {
+    padding: 175px 40px 165px;
+  }
+}
+
+a.about-button {
+  max-width: 292px;
+  padding: 22px 20px;
+  font-size: 17px;
+  @include margin_lr();
+}
+
+#about-banner-bottom {
+  padding: 0px 40px;
+  margin-top: -80px;
+  margin-bottom: 10px;
+  max-width: 555px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    margin-top: -135px;
+  }
+}
+
+#about-banner-img {
+  img {
+    @include image();
+  }
+}
+
+span.about-title {
+  display: block;
+  margin-bottom: 20px;
+  max-width: 560px;
+  @include margin_lr();
+  @include type(
+    (
+      size: 40px,
+      height: 45px,
+      family: $secondaryfont,
+      color: $white,
+      weight: 800,
+      align: center,
+    )
+  );
+  @include mq(small_tablet) {
+    @include quick_type(50px, 60px, null);
+  }
+  @include mq(small_laptop) {
+    @include quick_type(60px, 65px, null);
+  }
+}
+
+body.page-template-template-about {
+  .content {
+    h2 {
+      @include quick_type(25px, 33px, null);
+    }
+  }
+}
+
+#page-content-top {
+  @include mq(small_tablet) {
+    margin-top: -35px;
+  }
+}
+
+#page-content-middle {
+  margin-top: 40px;
+}
+
+#page-content-middle-img {
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  img {
+    @include image();
+  }
+}
+
+#page-content-bottom {
+}

@@ -14,7 +14,7 @@ get_header();?>
 
         <span class='about-title'>About our experienced personal injury law firm</span><!-- about-title -->
 
-        <a class='page-button button-one'
+        <a class='about-button button-one'
           href='#consultation'><?php the_field('global_internal_banner_button_verbiage', 'option');?></a>
         <!-- button-one -->
 
@@ -59,7 +59,11 @@ get_header();?>
     <div id='page-content-middle'>
 
       <blockquote>
+
         <p>“The entire team at MDK was easy to work with and highly skilled. It was a great experience!”</p>
+
+        <p class='client-name'>— DaRIEN B.</p>
+
       </blockquote>
 
       <div id='page-content-middle-img'>

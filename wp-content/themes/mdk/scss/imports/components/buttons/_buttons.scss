@@ -3,6 +3,7 @@
   display: block;
   position: relative;
   padding: 27px 20px;
+  z-index: 1;
   transition: border 200ms ease-in-out;
   @include type(
     (

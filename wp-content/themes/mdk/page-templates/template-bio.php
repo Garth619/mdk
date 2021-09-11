@@ -72,7 +72,7 @@ get_header();?>
 
               <?php the_sub_field('description');?>
 
-              <p class='bio-client-name'><?php the_sub_field('name');?></p>
+              <p class='client-name'><?php the_sub_field('name');?></p>
 
             </blockquote>
 
