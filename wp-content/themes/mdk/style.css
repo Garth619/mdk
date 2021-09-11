@@ -1918,6 +1918,17 @@ nav.nav-desktop ul li a:hover {
     line-height: 55px;
   }
 }
+.banner-title.banner-title-large {
+  font-size: 35px;
+  line-height: 40px;
+}
+@media screen and (min-width: 1170px) {
+  .banner-title.banner-title-large {
+    padding-top: 30px;
+    font-size: 50px;
+    line-height: 55px;
+  }
+}
 @media screen and (min-width: 1380px) {
   .banner-title.banner-title-large {
     font-size: 60px;
@@ -5535,6 +5546,206 @@ span#bio-awards-title {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+body.page-template-template-meetteam a.banner-button {
+  display: none;
+}
+body.page-template-template-meetteam #banner-content {
+  padding-bottom: 96px;
+}
+@media screen and (min-width: 1170px) {
+  body.page-template-template-meetteam #banner-content {
+    padding-bottom: 116px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  body.page-template-template-meetteam #banner-content {
+    padding-bottom: 178px;
+  }
+}
+
+#meetteam {
+  margin-top: -90px;
+  margin-bottom: -25px;
+}
+@media screen and (min-width: 768px) {
+  #meetteam {
+    margin-top: -130px;
+    margin-bottom: -65px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #meetteam {
+    margin-top: -150px;
+  }
+}
+
+#meetteam-top,
+#meetteam-bottom {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  #meetteam-top,
+#meetteam-bottom {
+    max-width: 750px;
+    grid-gap: 0px 30px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #meetteam-top,
+#meetteam-bottom {
+    grid-gap: 0px 55px;
+    max-width: 1065px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #meetteam-top,
+#meetteam-bottom {
+    max-width: 1250px;
+    grid-gap: 0px 70px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #meetteam-top {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+            justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  #meetteam-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #meetteam-bottom {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media screen and (min-width: 1800px) {
+  #meetteam-bottom {
+    max-width: 1480px;
+  }
+}
+
+.single-att {
+  margin-bottom: 35px;
+}
+@media screen and (min-width: 768px) {
+  .single-att {
+    margin-bottom: 55px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .single-att {
+    margin-bottom: 95px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .single-att {
+    margin-bottom: 135px;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .single-att {
+    margin-bottom: 165px;
+  }
+}
+.single-att a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  border-bottom: 8px solid #07121c;
+  padding-bottom: 35px;
+  transition: border 300ms ease-in-out;
+}
+.single-att a .single-att-img {
+  position: relative;
+}
+.single-att a .single-att-img::after {
+  background: rgba(7, 18, 28, 0.8);
+  opacity: 0;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+  transition: opacity 300ms ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "View Profile";
+  display: -webkit-flex;
+  display: flex;
+  font-size: 25px;
+  line-height: 28px;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+.single-att a .single-att-img img {
+  max-width: 446px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 1170px) {
+  .single-att a .single-att-img img {
+    max-width: 318px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .single-att a .single-att-img img {
+    max-width: 375px;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .single-att a .single-att-img img {
+    max-width: 445px;
+  }
+}
+.single-att a span {
+  display: block;
+}
+.single-att a span.single-att-title {
+  margin-top: 15px;
+  font-size: 20px;
+  line-height: 15px;
+  font-family: "Inter", sans-serif;
+  color: #07121c;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+.single-att a span.single-att-position {
+  margin-top: 10px;
+  font-size: 17px;
+  line-height: 20px;
+  font-family: "Inter", sans-serif;
+  color: #c61f20;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
+}
+.single-att a:hover {
+  border-bottom: 8px solid #c61f20;
+}
+.single-att a:hover .single-att-img::after {
+  opacity: 1;
 }
 
 @media screen and (min-width: 768px) {

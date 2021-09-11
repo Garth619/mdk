@@ -36,16 +36,21 @@ get_header();?>
 
         <?php $attorney_bio_image = get_field('attorney_bio_image');?>
 
-        <?php if ($attorney_bio_image) {?>
-
         <div class='bio-att-img-wrapper'>
+
+          <?php if ($attorney_bio_image) {?>
 
           <img class='bio-att-img' src="<?php echo $attorney_bio_image['url']; ?>"
             alt="<?php echo $attorney_bio_image['alt']; ?>" />
 
-        </div><!-- bio-att-img-wrapper -->
+          <?php } else {?>
 
-        <?php }?>
+          <img class='bio-att-img' src="<?php bloginfo('template_directory');?>/images/att-placeholder.jpg"
+            alt="placeholder" />
+
+          <?php }?>
+
+        </div><!-- bio-att-img-wrapper -->
 
         <?php the_content();?>
 
@@ -87,16 +92,22 @@ get_header();?>
     </div><!-- bio-page-content -->
 
     <div id='bio-sidebar-wrapper' class='content'>
-      <?php if ($attorney_bio_image) {?>
 
       <div class='bio-att-img-wrapper'>
+
+        <?php if ($attorney_bio_image) {?>
 
         <img class='bio-att-img' src="<?php echo $attorney_bio_image['url']; ?>"
           alt="<?php echo $attorney_bio_image['alt']; ?>" />
 
-      </div><!-- bio-att-img-wrapper -->
+        <?php } else {?>
 
-      <?php }?>
+        <img class='bio-att-img' src="<?php bloginfo('template_directory');?>/images/att-placeholder.jpg"
+          alt="placeholder" />
+
+        <?php }?>
+
+      </div><!-- bio-att-img-wrapper -->
 
       <?php if (have_rows('sidebar_box')): ?>
 

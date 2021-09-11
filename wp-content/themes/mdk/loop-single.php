@@ -2,14 +2,6 @@
 
 <div id='single_post'>
 
-  <?php if (have_rows('page_overview')): ?>
-  <ul id='page_meta'>
-    <?php while (have_rows('page_overview')): the_row();?>
-    <li><?php the_sub_field('list_item');?></li>
-    <?php endwhile;?>
-  </ul>
-  <?php endif;?>
-
   <div class="blog_content">
 
     <?php the_content();?>

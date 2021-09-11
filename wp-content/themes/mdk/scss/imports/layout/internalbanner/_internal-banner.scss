@@ -45,6 +45,11 @@
     @include quick_type(50px, 55px, null);
   }
   &.banner-title-large {
+    @include quick_type(35px, 40px, null);
+    @include mq(small_laptop) {
+      padding-top: 30px;
+      @include quick_type(50px, 55px, null);
+    }
     @include mq(large_laptop) {
       @include quick_type(60px, 65px, null);
     }
