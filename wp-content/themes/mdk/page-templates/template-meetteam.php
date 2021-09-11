@@ -16,103 +16,100 @@ get_header();?>
 
     <div id='meetteam'>
 
+      <?php $meet_the_team = get_field('meet_the_team');?>
+      <?php if ($meet_the_team): ?>
+
       <div id='meetteam-top'>
+        <?php foreach ($meet_the_team as $post): ?>
+        <?php setup_postdata($post);?>
 
         <div class='single-att'>
 
-          <a href=''>
+          <a href='<?php the_permalink();?>'>
 
-            <div class='single-att-img'>
+            <?php $attorney_bio_image = get_field('attorney_bio_image');?>
+            <?php if (!$attorney_bio_image) {$placeholder = 'placeholder';}?>
 
-              <img src='<?php bloginfo('template_directory');?>/images/att-michael.jpg' alt='' />
+            <div class='single-att-img <?php echo $placeholder; ?>'>
+
+              <?php if ($attorney_bio_image) {?>
+
+              <img src="<?php echo $attorney_bio_image['url']; ?>" alt="<?php echo $attorney_bio_image['alt']; ?>" />
+
+              <?php } else {?>
+
+              <img src="<?php bloginfo('template_directory');?>/images/att-placeholder.jpg" alt="placeholder" />
+
+              <?php }?>
 
             </div><!-- single-att-img -->
 
-            <span class='single-att-title'>Michael Morgan</span><!-- single-att-title -->
+            <span class='single-att-title'><?php the_title();?></span><!-- single-att-title -->
 
-            <span class='single-att-position'>Partner</span><!-- single-att-title -->
+            <?php if (get_field('attorney_positions')) {?>
+
+            <span class='single-att-position'><?php the_field('attorney_positions');?></span><!-- single-att-title -->
+
+            <?php }?>
 
           </a>
 
         </div><!-- single-att -->
 
-        <div class='single-att'>
-
-          <a href=''>
-
-            <div class='single-att-img'>
-
-              <img src='<?php bloginfo('template_directory');?>/images/att-michael.jpg' alt='' />
-
-            </div><!-- single-att-img -->
-
-            <span class='single-att-title'>Michael Morgan</span><!-- single-att-title -->
-
-            <span class='single-att-position'>Partner</span><!-- single-att-title -->
-
-          </a>
-
-        </div><!-- single-att -->
+        <?php endforeach;?>
 
       </div><!-- meetteam-top -->
 
+      <?php wp_reset_postdata();?>
+      <?php endif;?>
+
+      <?php $attorneys = get_field('attorneys');?>
+      <?php if ($attorneys): ?>
+
       <div id='meetteam-bottom'>
 
+        <?php foreach ($attorneys as $post): ?>
+        <?php setup_postdata($post);?>
+
         <div class='single-att'>
 
-          <a href=''>
+          <a href='<?php the_permalink();?>'>
 
-            <div class='single-att-img'>
+            <?php $attorney_bio_image = get_field('attorney_bio_image');?>
 
-              <img src='<?php bloginfo('template_directory');?>/images/att-michael.jpg' alt='' />
+            <?php if (!$attorney_bio_image) {$placeholder = 'placeholder';}?>
 
+            <div class='single-att-img <?php echo $placeholder; ?>'>
+
+              <?php if ($attorney_bio_image) {?>
+
+              <img src="<?php echo $attorney_bio_image['url']; ?>" alt="<?php echo $attorney_bio_image['alt']; ?>" />
+
+              <?php } else {?>
+
+              <img src="<?php bloginfo('template_directory');?>/images/att-placeholder.jpg" alt="placeholder" />
+
+              <?php }?>
             </div><!-- single-att-img -->
 
-            <span class='single-att-title'>Michael Morgan</span><!-- single-att-title -->
+            <span class='single-att-title'><?php the_title();?></span><!-- single-att-title -->
 
-            <span class='single-att-position'>Partner</span><!-- single-att-title -->
+            <?php if (get_field('attorney_positions')) {?>
+
+            <span class='single-att-position'><?php the_field('attorney_positions');?></span><!-- single-att-title -->
+
+            <?php }?>
 
           </a>
 
         </div><!-- single-att -->
 
-        <div class='single-att'>
-
-          <a href=''>
-
-            <div class='single-att-img'>
-
-              <img src='<?php bloginfo('template_directory');?>/images/att-michael.jpg' alt='' />
-
-            </div><!-- single-att-img -->
-
-            <span class='single-att-title'>Michael Morgan</span><!-- single-att-title -->
-
-            <span class='single-att-position'>Partner</span><!-- single-att-title -->
-
-          </a>
-
-        </div><!-- single-att -->
-
-        <div class='single-att'>
-
-          <a href=''>
-
-            <div class='single-att-img'>
-
-              <img src='<?php bloginfo('template_directory');?>/images/att-michael.jpg' alt='' />
-
-            </div><!-- single-att-img -->
-
-            <span class='single-att-title'>Michael Morgan</span><!-- single-att-title -->
-
-            <span class='single-att-position'>Partner</span><!-- single-att-title -->
-
-          </a>
-
-        </div><!-- single-att -->
+        <?php endforeach;?>
+        <?php wp_reset_postdata();?>
 
       </div><!-- meetteam-bottom -->
+
+      <?php endif;?>
 
     </div><!-- meetteam -->
 

@@ -5669,6 +5669,9 @@ body.page-template-template-meetteam #banner-content {
 .single-att a .single-att-img {
   position: relative;
 }
+.single-att a .single-att-img.placeholder::after {
+  background: #07121c;
+}
 .single-att a .single-att-img::after {
   background: rgba(7, 18, 28, 0.8);
   opacity: 0;

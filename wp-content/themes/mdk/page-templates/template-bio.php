@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Att Bio */
+/* Template Name: Attorney Bio */
 
 get_header();?>
 

@@ -88,6 +88,11 @@ body.page-template-template-meetteam {
     transition: border 300ms ease-in-out;
     .single-att-img {
       position: relative;
+      &.placeholder {
+        &::after {
+          background: $bluedark;
+        }
+      }
       &::after {
         background: rgba(7, 18, 28, 0.8);
         opacity: 0;
