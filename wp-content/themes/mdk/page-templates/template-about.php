@@ -34,7 +34,7 @@ get_header();?>
 
   </div><!-- about-banner -->
 
-  <div id='page-container' class='content'>
+  <div id='page-container' class='about-container content'>
 
     <div id='page-content-top'>
 
@@ -81,7 +81,7 @@ get_header();?>
       </h2>
 
       <p>Morbi viverra lacus ut erat hendrerit feugiat. Cras cursus tempus volutpat. Maecenas sit amet sem sit amet
-        ligula pulvinar varius. Inline link style Hover link style Duis sit amet libero eget tellus venenatis
+        ligula pulvinar varius. <a href=''>Inline link style</a> style Duis sit amet libero eget tellus venenatis
         scelerisque. Sed nec nunc id ligula vestibulum lobortis. Nunc feugiat mattis lectus vitae porta. Maecenas
         vulputate eros id maximus vulputate. Ut vitae augue semper, sodales est id, auctor leo. Praesent sit amet
         tincidunt lacus. Etiam lobortis diam et viverra consequat. Duis vulputate sem in augue vestibulum maximus. </p>

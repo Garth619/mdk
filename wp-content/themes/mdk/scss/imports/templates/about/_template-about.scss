@@ -1,11 +1,20 @@
 #about-banner {
+  @include mq(small_laptop) {
+    background: $bluedark;
+  }
 }
 
 #about-banner-content {
   @include mq(small_laptop) {
-    background: $bluedark;
     padding: 200px 55px 0;
     @include flex();
+  }
+  @include mq(large_laptop) {
+    padding: 200px 75px 0;
+  }
+  @media screen and (min-width: 1550px) {
+    max-width: 1600px;
+    @include margin_lr();
   }
 }
 
@@ -19,6 +28,9 @@
     order: 2;
     background: transparent;
     padding: 0px 0px 45px 50px;
+  }
+  @media screen and (min-width: 1550px) {
+    padding: 0px 0px 45px 82px;
   }
 }
 
@@ -48,6 +60,12 @@ a.about-button {
     margin-top: 0;
     position: relative;
     @include margin_lr(0);
+  }
+  @include mq(large_laptop) {
+    flex-basis: 410px;
+  }
+  @media screen and (min-width: 1550px) {
+    flex-basis: 556px;
   }
 }
 
@@ -102,6 +120,22 @@ body.page-template-template-about {
       @include mq(small_laptop) {
         margin-top: 38px;
       }
+      @include mq(large_laptop) {
+        padding-right: 120px;
+      }
+      @media screen and (min-width: 1550px) {
+        padding-right: 149px;
+      }
+    }
+  }
+}
+
+#page-container {
+  &.about-container {
+    @media screen and (min-width: 1550px) {
+      max-width: 1600px;
+      padding-right: 145px;
+      @include margin_lr();
     }
   }
 }
@@ -114,6 +148,12 @@ body.page-template-template-about {
     padding-left: 405px;
     margin-top: -70px;
   }
+  @include mq(large_laptop) {
+    padding-left: 457px;
+  }
+  @media screen and (min-width: 1550px) {
+    padding-left: 635px;
+  }
 }
 
 #page-content-middle {
@@ -121,6 +161,15 @@ body.page-template-template-about {
   @include mq(small_laptop) {
     padding-bottom: 40px;
     @include flex(center, center);
+  }
+  @include mq(large_laptop) {
+    padding-bottom: 81px;
+    margin-top: 75px;
+  }
+  @media screen and (min-width: 1550px) {
+    margin-top: 110px;
+    max-width: 1340px;
+    @include margin_lr();
   }
 }
 
@@ -137,6 +186,9 @@ body.page-template-template-about {
     flex-basis: 500px;
     padding-bottom: 0;
   }
+  @include mq(large_laptop) {
+    flex-basis: 600px;
+  }
   img {
     @include image();
   }
@@ -148,6 +200,7 @@ body.page-template-template-about {
     max-width: 783px;
     @include margin_lr();
   }
+
   h2 {
   }
 }
