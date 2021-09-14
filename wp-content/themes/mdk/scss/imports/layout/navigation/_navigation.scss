@@ -173,7 +173,7 @@ nav {
           }
         }
       }
-      &:last-of-type {
+      &:nth-last-of-type(-n + 2) {
         > a {
           border-bottom: 1px solid transparent;
         }

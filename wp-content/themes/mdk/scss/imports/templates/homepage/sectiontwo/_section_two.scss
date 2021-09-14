@@ -42,7 +42,7 @@
     }
     @include mq(small_laptop) {
       max-width: 900px;
-      margin-bottom: 50px;
+      margin-bottom: 26px;
       @include margin_lr();
       @include quick_type(80px, 80px, null);
     }

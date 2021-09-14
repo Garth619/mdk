@@ -106,7 +106,8 @@ footer {
         )
       );
       @include mq(small_tablet) {
-        @include quick_type(17px, 25px, null);
+        max-width: 500px;
+        @include quick_type(17px, 25px, 0.85px);
       }
     }
   }

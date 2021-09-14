@@ -8,7 +8,7 @@
   }
   @include mq(small_laptop) {
     max-width: 1120px;
-    padding: 84px 90px 109px;
+    padding: 108px 90px 109px;
     @include margin_lr();
     @include flex();
   }
@@ -35,7 +35,7 @@
   @include mq(large_laptop) {
     margin-top: 12px;
   }
-  @include mq(small_laptop) {
+  @include mq(small_monitor) {
     margin-top: -9px;
   }
 }

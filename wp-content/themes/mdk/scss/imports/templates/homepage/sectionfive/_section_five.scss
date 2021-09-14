@@ -74,7 +74,7 @@
         )
       );
       @include mq(small_tablet) {
-        max-width: 280px;
+        max-width: 355px;
       }
       @include mq(small_laptop) {
         margin-left: 0;
@@ -83,6 +83,7 @@
         position: relative;
         top: 13px;
         text-align: left;
+        max-width: 280px;
       }
       @include mq(large_laptop) {
         max-width: 428px;

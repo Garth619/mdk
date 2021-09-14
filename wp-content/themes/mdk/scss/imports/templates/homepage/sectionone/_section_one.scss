@@ -308,13 +308,18 @@ a#sec-one-button {
     border-right: 1px solid #283243;
   }
   @include mq(small_laptop) {
-    padding: 29px 37px 60px;
+    padding: 29px 30px 60px;
   }
   @include mq(large_laptop) {
     padding: 29px 40px 35px;
   }
   &:last-of-type {
-    border-right: none;
+    @include mq(small_tablet) {
+      border-right: 1px solid #283243;
+    }
+    @include mq(small_laptop) {
+      border-right: none;
+    }
   }
   .sec-one-single-icon {
     position: relative;
