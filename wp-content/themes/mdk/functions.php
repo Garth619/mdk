@@ -319,7 +319,7 @@ function ilaw_post_thumbnail_sizes_attr($attr, $attachment, $size)
 }
 add_filter('wp_get_attachment_image_attributes', 'ilaw_post_thumbnail_sizes_attr', 10, 3);
 
-/* Check if post is in a menu to hide red magic line
+/* Check if post is in menu to hide red magic line
 -------------------------------------------------------------- */
 
 function cms_is_in_menu($menu = null, $object_id = null)
