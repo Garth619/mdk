@@ -5,7 +5,7 @@ header {
   @include box(100%, auto);
   @include abs(0, null, null, 0);
   @include mq(large_laptop) {
-    overflow: hidden;
+    //overflow: hidden;
   }
   //  &.fade-header {
   //    opacity: 0;
@@ -26,8 +26,8 @@ body {
       }
       #header-left {
         @media screen and (min-width: 675px) {
-          padding: 31px 16px 0px;
-          //padding: 16px 16px 0px;
+          //padding: 31px 16px 0px;
+          padding: 16px 16px 0px;
         }
 
         a {
@@ -200,7 +200,7 @@ body {
       width: 177px;
     }
     @include mq(large_laptop) {
-      padding-top: 214px / 100px * 100%;
+      //padding-top: 214px / 100px * 100%;
       width: 214px;
     }
     img {

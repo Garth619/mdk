@@ -1,6 +1,5 @@
 // @codekit-prepend 'waypoints.js'
 // @codekit-prepend 'slick.js'
-// @codekit-prepend 'lity.js'
 // @codekit-prepend 'underscore.js'
 // @codekit-prepend 'lazysizes.js'
 
@@ -374,11 +373,11 @@ jQuery(document).ready(function ($) {
   //$('nav ul.menu > li.current-menu-ancestor > a').addClass('active');
 
   $("#menu-wrapper").on("click", function (e) {
-    $("nav").addClass("open");
+    $("nav, #nav-bg").addClass("open");
   });
 
   $("#close-wrapper").on("click", function (e) {
-    $("nav").removeClass("open");
+    $("nav, #nav-bg").removeClass("open");
   });
 
   function navDesktop() {

@@ -151,6 +151,8 @@ if (!cms_is_in_menu('main-menu')) {
 
         </nav>
 
+        <div id='nav-bg'></div><!-- nav-bg -->
+
       </div><!-- header-middle -->
 
       <div id='header-right'>

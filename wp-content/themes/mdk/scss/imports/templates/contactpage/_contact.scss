@@ -29,6 +29,9 @@ span#contact-description {
   @include mq(small_tablet) {
     padding-bottom: 15px;
   }
+  @include mq(large_laptop) {
+    max-width: 640px;
+  }
 }
 
 #contact-info-inner {

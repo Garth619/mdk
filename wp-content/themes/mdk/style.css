@@ -991,12 +991,6 @@ header {
   top: 0;
   left: 0;
 }
-@media screen and (min-width: 1380px) {
-  header {
-    overflow: hidden;
-  }
-}
-
 body.sticky header, body.internal-header header {
   opacity: 1;
   background: #07121c;
@@ -1011,7 +1005,7 @@ body.sticky header, body.internal-header header {
 }
 @media screen and (min-width: 675px) {
   body.sticky header #header-left, body.internal-header header #header-left {
-    padding: 31px 16px 0px;
+    padding: 16px 16px 0px;
   }
 }
 @media screen and (min-width: 675px) {
@@ -1215,7 +1209,6 @@ body.internal-header.no-banner header {
 }
 @media screen and (min-width: 1380px) {
   #header-left a {
-    padding-top: 214%;
     width: 214px;
   }
 }
@@ -1494,6 +1487,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 @media screen and (min-width: 675px) {
   nav {
@@ -1863,6 +1857,31 @@ nav.nav-desktop ul li a:hover {
   font-weight: 500;
   font-style: normal;
   text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  #nav-bg {
+    opacity: 0;
+    visibility: hidden;
+    background: #000;
+    transition: all 300ms ease-in-out;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #nav-bg {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  #nav-bg.open {
+    opacity: 0.9;
+    visibility: visible;
+  }
 }
 
 #banner-wrapper {
@@ -6161,6 +6180,11 @@ span#contact-description {
 @media screen and (min-width: 768px) {
   span#contact-description {
     padding-bottom: 15px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  span#contact-description {
+    max-width: 640px;
   }
 }
 
