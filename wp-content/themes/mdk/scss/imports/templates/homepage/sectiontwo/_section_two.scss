@@ -116,17 +116,16 @@
 
 #sec-two-image-wrapper {
   position: relative;
-  max-width: 360px;
+  width: 305px;
   @include margin_lr();
   @include mq(small_tablet) {
-    flex-basis: 305px;
     flex-shrink: 0;
-    height: 304px;
+    height: 313px;
     @include margin_lr(0);
   }
   @include mq(large_laptop) {
-    flex-basis: 436px;
-    height: 538px;
+    width: 436px;
+    height: 558px;
     max-width: 100%;
   }
   &::after {
@@ -137,14 +136,21 @@
     border-color: transparent transparent $red transparent;
     @include abs(null, 20px, -11px, null);
     @include contentdisplay();
+    @include mq(small_tablet) {
+      @include abs(null, 20px, 0px, null);
+    }
     @include mq(large_laptop) {
       border-width: 0 0 130px 130px;
-      @include abs(null, 40px, -29px, null);
+      @include abs(null, 40px, 0px, null);
     }
   }
   #sec-two-image-inner {
     position: relative;
-    padding-top: 305px / 291px * 100%;
+    height: 291px;
+    overflow: hidden;
+    @include mq(large_laptop) {
+      height: 538px;
+    }
     img#sec-two-image {
       width: 100%;
       @include abs(0, null, null, 0);

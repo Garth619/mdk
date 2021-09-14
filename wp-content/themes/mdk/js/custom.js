@@ -79,6 +79,17 @@ jQuery(document).ready(function ($) {
   createWaypoint("section-one", "body", "sticky", -250, null, true);
   createWaypoint("internal-main", "body", "sticky", -250, null, true);
 
+  createWaypoint("section-two", "#section-two", "visible", -200, null, true);
+
+  createWaypoint(
+    "sec-three-slider",
+    "#sec-three-slider",
+    "visible",
+    300,
+    null,
+    true
+  );
+
   /* Smooth Scroll down to section on click (<a href="#id_of_section_to_be_scrolled_to">)
   --------------------------------------------------------------------------------------- */
 

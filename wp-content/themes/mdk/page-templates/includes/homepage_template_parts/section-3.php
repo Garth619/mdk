@@ -223,7 +223,7 @@
 
             </div><!-- sec-three-single-cr-content -->
 
-            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-1.jpg'
+            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-4.jpg'
               alt='' />
 
           </div><!-- sec-three-single-cr -->

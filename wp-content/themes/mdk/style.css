@@ -3627,26 +3627,23 @@ img#hero-image {
 
 #sec-two-image-wrapper {
   position: relative;
-  max-width: 360px;
+  width: 305px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 768px) {
   #sec-two-image-wrapper {
-    -webkit-flex-basis: 305px;
-            flex-basis: 305px;
     -webkit-flex-shrink: 0;
             flex-shrink: 0;
-    height: 304px;
+    height: 313px;
     margin-left: 0;
     margin-right: 0;
   }
 }
 @media screen and (min-width: 1380px) {
   #sec-two-image-wrapper {
-    -webkit-flex-basis: 436px;
-            flex-basis: 436px;
-    height: 538px;
+    width: 436px;
+    height: 558px;
     max-width: 100%;
   }
 }
@@ -3662,17 +3659,30 @@ img#hero-image {
   content: "";
   display: block;
 }
+@media screen and (min-width: 768px) {
+  #sec-two-image-wrapper::after {
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
+  }
+}
 @media screen and (min-width: 1380px) {
   #sec-two-image-wrapper::after {
     border-width: 0 0 130px 130px;
     position: absolute;
     right: 40px;
-    bottom: -29px;
+    bottom: 0px;
   }
 }
 #sec-two-image-wrapper #sec-two-image-inner {
   position: relative;
-  padding-top: 104.8109965636%;
+  height: 291px;
+  overflow: hidden;
+}
+@media screen and (min-width: 1380px) {
+  #sec-two-image-wrapper #sec-two-image-inner {
+    height: 538px;
+  }
 }
 #sec-two-image-wrapper #sec-two-image-inner img#sec-two-image {
   width: 100%;
@@ -6652,6 +6662,63 @@ body.error404 .go_back:hover {
     transition-delay: 500ms;
   }
   body.ready img#hero-image {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    transition-delay: 0ms, 0ms;
+  }
+
+  #sec-two-image-wrapper::after {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    transition: -webkit-transform 1550ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1550ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1550ms cubic-bezier(0.17, 0.66, 0.34, 0.98), -webkit-transform 1550ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  }
+  #sec-two-image-wrapper #sec-two-image-inner img {
+    -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+    transition: opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear;
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  }
+
+  #section-two.visible #sec-two-image-wrapper::after {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  #section-two.visible #sec-two-image-wrapper #sec-two-image-inner img {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    transition-delay: 0ms, 0ms;
+  }
+
+  .sec-three-single-cr {
+    overflow: hidden;
+  }
+  .sec-three-single-cr .sec-three-single-cr-content span.sec-three-single-amount,
+.sec-three-single-cr .sec-three-single-cr-content span.sec-three-single-type,
+.sec-three-single-cr .sec-three-single-cr-content img.svg-arrow {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+    transition: -webkit-transform 1550ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1550ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1550ms cubic-bezier(0.17, 0.66, 0.34, 0.98), -webkit-transform 1550ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  }
+  .sec-three-single-cr img.sec-three-single-img {
+    -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+    transition: opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear;
+    transition: transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98), opacity 500ms linear, -webkit-transform 1400ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+  }
+
+  #sec-three-slider.visible .sec-three-single-cr .sec-three-single-cr-content span.sec-three-single-amount,
+#sec-three-slider.visible .sec-three-single-cr .sec-three-single-cr-content span.sec-three-single-type,
+#sec-three-slider.visible .sec-three-single-cr .sec-three-single-cr-content img.svg-arrow {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  #sec-three-slider.visible .sec-three-single-cr img.sec-three-single-img {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
     transition-delay: 0ms, 0ms;
