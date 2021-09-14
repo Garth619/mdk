@@ -176,6 +176,11 @@ body {
       transition-delay: 200ms;
     }
   }
+  &.fade-header.no-banner {
+    header {
+      opacity: 1;
+    }
+  }
 }
 
 #header-inner {

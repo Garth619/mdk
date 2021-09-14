@@ -1,0 +1,10 @@
+body.error404 {
+  a,
+  .go_back {
+    color: $red;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      color: $bluedark;
+    }
+  }
+}

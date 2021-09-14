@@ -1,4 +1,9 @@
 .contact-title {
+  max-width: 280px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    max-width: 100%;
+  }
   &::after {
     background: $red;
     margin-top: 10px;

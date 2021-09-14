@@ -82,10 +82,12 @@ body.page-template-template-meetteam {
     display: block;
     text-decoration: none;
     text-align: center;
-    border-bottom: 8px solid $bluedark;
+    border-bottom: 4px solid $bluedark;
     padding-bottom: 35px;
-
     transition: border 300ms ease-in-out;
+    @include mq(small_laptop) {
+      border-bottom: 8px solid $bluedark;
+    }
     .single-att-img {
       position: relative;
       &.placeholder {
