@@ -1,15 +1,12 @@
 header {
   z-index: 5;
   opacity: 1;
-  transition: opacity 200ms ease-in-out;
+
   @include box(100%, auto);
   @include abs(0, null, null, 0);
   @include mq(large_laptop) {
     //overflow: hidden;
   }
-  //  &.fade-header {
-  //    opacity: 0;
-  //  }
 }
 
 // sorry this ended up being trash code, trying to rearrange the layout in different scenarios
@@ -17,16 +14,14 @@ body {
   &.sticky,
   &.internal-header {
     header {
-      opacity: 1;
+      //opacity: 1;
       background: $bluedark;
-      //border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       @include fixed(0, null, null, 0);
       @include mq(small_laptop) {
         position: absolute;
       }
       #header-left {
         @media screen and (min-width: 675px) {
-          //padding: 31px 16px 0px;
           padding: 16px 16px 0px;
         }
 
@@ -165,6 +160,21 @@ body {
           padding: 6px 12px 9px;
         }
       }
+    }
+  }
+  &.fade-header {
+    header {
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
+      @include mq(small_laptop) {
+        opacity: 1;
+      }
+    }
+  }
+  &.fade-header.sticky {
+    header {
+      opacity: 1;
+      transition-delay: 200ms;
     }
   }
 }

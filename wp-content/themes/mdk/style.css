@@ -984,7 +984,6 @@ body.internal-header.no-banner #internal-main {
 header {
   z-index: 5;
   opacity: 1;
-  transition: opacity 200ms ease-in-out;
   width: 100%;
   height: auto;
   position: absolute;
@@ -992,7 +991,6 @@ header {
   left: 0;
 }
 body.sticky header, body.internal-header header {
-  opacity: 1;
   background: #07121c;
   position: fixed;
   top: 0;
@@ -1157,6 +1155,19 @@ body.internal-header.no-banner header {
   body.internal-header.no-banner header #header-middle {
     padding: 6px 12px 9px;
   }
+}
+body.fade-header header {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+@media screen and (min-width: 1170px) {
+  body.fade-header header {
+    opacity: 1;
+  }
+}
+body.fade-header.sticky header {
+  opacity: 1;
+  transition-delay: 200ms;
 }
 
 #header-inner {
