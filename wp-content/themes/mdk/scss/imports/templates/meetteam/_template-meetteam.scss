@@ -30,14 +30,23 @@ body.page-template-template-meetteam {
   @include margin_lr();
   @include mq(small_tablet) {
     max-width: 750px;
-    grid-gap: 0px 30px;
   }
   @include mq(small_laptop) {
-    grid-gap: 0px 55px;
     max-width: 1065px;
   }
   @include mq(large_laptop) {
     max-width: 1250px;
+  }
+}
+
+#meetteam-bottom {
+  @include mq(small_tablet) {
+    grid-gap: 0px 30px;
+  }
+  @include mq(small_laptop) {
+    grid-gap: 0px 55px;
+  }
+  @include mq(large_laptop) {
     grid-gap: 0px 70px;
   }
 }
@@ -46,7 +55,30 @@ body.page-template-template-meetteam {
   @include mq(small_tablet) {
     @include flex(center);
   }
-  @include mq(small_laptop) {
+  .single-att {
+    // safari hack for older browsers
+    &:first-of-type {
+      @include mq(small_tablet) {
+        padding-right: 15px;
+      }
+      @include mq(small_laptop) {
+        padding-right: 27.5px;
+      }
+      @include mq(large_laptop) {
+        padding-right: 35px;
+      }
+    }
+    &:last-of-type {
+      @include mq(small_tablet) {
+        padding-left: 15px;
+      }
+      @include mq(small_laptop) {
+        padding-left: 27.5px;
+      }
+      @include mq(large_laptop) {
+        padding-left: 35px;
+      }
+    }
   }
 }
 

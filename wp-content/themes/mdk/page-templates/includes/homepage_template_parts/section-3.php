@@ -38,7 +38,44 @@
 
             </div><!-- sec-three-single-cr-content -->
 
-            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-3.jpg'
+            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-1.jpg'
+              alt='' />
+
+          </div><!-- sec-three-single-cr -->
+
+          <div class='sec-three-single-hover'>
+
+            <span class='sec-three-hover-type'>$6.0 Million Motorcycle
+              Accident Settlement</span><!-- sec-three-hover-type -->
+
+            <span class='sec-three-hover-descrip'>Motorcyclist cut off by SUV. Serious injuries with future care.
+              Liability heavily disputed. We were able to show fault and get a large settlement. Call for a free
+              consultation and case review. </span><!-- sec-three-hover-descrip -->
+
+          </div><!-- sec-three-single-hover -->
+
+        </div><!-- sec-three-single-inner -->
+
+      </div><!-- sec-three-single-slide -->
+
+      <div class='sec-three-single-slide'>
+
+        <div class='sec-three-single-inner'>
+
+          <div class='sec-three-single-cr'>
+
+            <div class='sec-three-single-cr-content'>
+
+              <span class='sec-three-single-amount'>$6.0M</span><!-- sec-three-single-amount -->
+
+              <span class='sec-three-single-type'>Automobile Passenger
+                Accident settlement</span><!-- sec-three-single-type -->
+
+              <img class='svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+
+            </div><!-- sec-three-single-cr-content -->
+
+            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-2.jpg'
               alt='' />
 
           </div><!-- sec-three-single-cr -->
@@ -112,7 +149,7 @@
 
             </div><!-- sec-three-single-cr-content -->
 
-            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-3.jpg'
+            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-4.jpg'
               alt='' />
 
           </div><!-- sec-three-single-cr -->
@@ -149,7 +186,7 @@
 
             </div><!-- sec-three-single-cr-content -->
 
-            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-3.jpg'
+            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-5.jpg'
               alt='' />
 
           </div><!-- sec-three-single-cr -->
@@ -186,44 +223,7 @@
 
             </div><!-- sec-three-single-cr-content -->
 
-            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-3.jpg'
-              alt='' />
-
-          </div><!-- sec-three-single-cr -->
-
-          <div class='sec-three-single-hover'>
-
-            <span class='sec-three-hover-type'>$6.0 Million Motorcycle
-              Accident Settlement</span><!-- sec-three-hover-type -->
-
-            <span class='sec-three-hover-descrip'>Motorcyclist cut off by SUV. Serious injuries with future care.
-              Liability heavily disputed. We were able to show fault and get a large settlement. Call for a free
-              consultation and case review. </span><!-- sec-three-hover-descrip -->
-
-          </div><!-- sec-three-single-hover -->
-
-        </div><!-- sec-three-single-inner -->
-
-      </div><!-- sec-three-single-slide -->
-
-      <div class='sec-three-single-slide'>
-
-        <div class='sec-three-single-inner'>
-
-          <div class='sec-three-single-cr'>
-
-            <div class='sec-three-single-cr-content'>
-
-              <span class='sec-three-single-amount'>$6.0M</span><!-- sec-three-single-amount -->
-
-              <span class='sec-three-single-type'>Automobile Passenger
-                Accident settlement</span><!-- sec-three-single-type -->
-
-              <img class='svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
-
-            </div><!-- sec-three-single-cr-content -->
-
-            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-3.jpg'
+            <img class='sec-three-single-img' src='<?php bloginfo('template_directory');?>/images/results-image-1.jpg'
               alt='' />
 
           </div><!-- sec-three-single-cr -->

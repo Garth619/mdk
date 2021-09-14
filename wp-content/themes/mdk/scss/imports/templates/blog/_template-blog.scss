@@ -1,13 +1,17 @@
 #blog-feed {
   padding-top: 30px;
-  @include mq(small_laptop) {
+  @include mq(small_tablet) {
     padding-top: 0;
   }
 }
 .blog-post {
   border-bottom: 4px solid $grey;
-  padding-bottom: 55px;
-  margin-bottom: 25px;
+  padding-bottom: 35px;
+  margin-bottom: 35px;
+  @include mq(small_laptop) {
+    padding-bottom: 55px;
+    margin-bottom: 35px;
+  }
 }
 
 h2.blog-header {

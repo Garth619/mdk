@@ -29,7 +29,8 @@
 
       <picture>
 
-        <source media='(min-width: 768px)' srcset='<?php bloginfo('template_directory');?>/images/hero-bg-img-768.jpg'>
+        <source media='(min-width: 1170px)'
+          srcset='<?php bloginfo('template_directory');?>/images/hero-bg-img-1920.jpg'>
 
         <img id='hero-image' src='<?php bloginfo('template_directory');?>/images/hero-bg-img-768.jpg' alt='' />
 

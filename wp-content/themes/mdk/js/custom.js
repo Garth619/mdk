@@ -79,6 +79,33 @@ jQuery(document).ready(function ($) {
   createWaypoint("section-one", "body", "sticky", -250, null, true);
   createWaypoint("internal-main", "body", "sticky", -250, null, true);
 
+  /* Smooth Scroll down to section on click (<a href="#id_of_section_to_be_scrolled_to">)
+  --------------------------------------------------------------------------------------- */
+
+  $(function () {
+    $('a[href*="#"]:not([href="#"])').click(function () {
+      if (
+        location.pathname.replace(/^\//, "") ==
+          this.pathname.replace(/^\//, "") &&
+        location.hostname == this.hostname
+      ) {
+        var target = $(this.hash);
+        target = target.length
+          ? target
+          : $("[name=" + this.hash.slice(1) + "]");
+        if (target.length) {
+          $("html, body").animate(
+            {
+              scrollTop: target.offset().top,
+            },
+            1000
+          );
+          return false;
+        }
+      }
+    });
+  });
+
   /* Slick Carousel ( http://kenwheeler.github.io/slick/ )
 --------------------------------------------------------------------------------------- */
 
