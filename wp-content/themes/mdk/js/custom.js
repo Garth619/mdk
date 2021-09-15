@@ -90,6 +90,8 @@ jQuery(document).ready(function ($) {
     true
   );
 
+  createWaypoint("section-five", "#section-five", "visible", 200, null, true);
+
   /* Smooth Scroll down to section on click (<a href="#id_of_section_to_be_scrolled_to">)
   --------------------------------------------------------------------------------------- */
 
