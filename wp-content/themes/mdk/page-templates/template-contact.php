@@ -20,15 +20,15 @@ get_header();?>
 
         <div class='contact-info-row contact-info-row-one'>
 
-          <span class='contact-info-subtitle'>Location</span><!-- contact-info-subtitle -->
+          <span class='contact-info-subtitle'><?php the_field('location_title', 'option');?></span>
+          <!-- contact-info-subtitle -->
 
           <div class='contact-info-row-inner'>
 
-            <span class='contact-info-content'>4105 N. 20th Street, Suite 260<br> Phoenix Az 85016</span>
+            <span class='contact-info-content'><?php the_field('address', 'option');?></span>
             <!-- contact-info-subtitle -->
 
-            <a class='contact-info-content directions'
-              href='https://www.google.com/maps/place/Tudor+Plaza+Office+Condominium,+4105+N+20th+St+STE+260,+Phoenix,+AZ+85016/@33.4957353,-112.0408288,17z/data=!3m1!4b1!4m5!3m4!1s0x872b0d79aab07657:0xc5ed7a49ced85afc!8m2!3d33.4957353!4d-112.0386401'
+            <a class='contact-info-content directions' href='<?php the_field('address_link', 'option');?>'
               target="_blank" rel="noopener">DIRECTIONs</a>
             <!-- directions -->
 
@@ -38,14 +38,15 @@ get_header();?>
 
         <div class='contact-info-row contact-info-row-two'>
 
-          <span class='contact-info-subtitle'>Office Hours</span><!-- contact-info-subtitle -->
+          <span class='contact-info-subtitle'><?php the_field('office_hours_title', 'option');?></span>
+          <!-- contact-info-subtitle -->
 
           <div class='contact-info-row-inner'>
 
-            <span class='contact-info-content'>Monday - Friday<br> 8AM - 6PM</span>
+            <span class='contact-info-content'><?php the_field('office_hours', 'option');?></span>
             <!-- contact-info-subtitle -->
 
-            <span class='available'>aVAILABLE 24/7</span>
+            <span class='available'><?php the_field('available_verbiage', 'option');?></span>
             <!-- contact-info-subtitle -->
 
           </div><!-- contact-info-row-inner -->
@@ -54,12 +55,15 @@ get_header();?>
 
         <div class='contact-info-row contact-info-row-three'>
 
-          <span class='contact-info-subtitle'>Call Today</span><!-- contact-info-subtitle -->
+          <span class='contact-info-subtitle'><?php the_field('call_today_title', 'option');?></span>
+          <!-- contact-info-subtitle -->
 
           <div class='contact-info-row-inner'>
 
-            <span class='contact-info-content'><a href='tel:6232255635'> <span>(623) 225-5635</span>
-              </a>Se Habla Español</span>
+            <span class='contact-info-content'><a
+                href='tel:+1<?php echo str_replace(['-', '(', ')', ' '], '', get_field('phone', 'option')); ?>'>
+                <span><?php the_field('phone', 'option');?></span>
+              </a><?php the_field('call_today_content', 'option');?></span>
             <!-- contact-info-subtitle -->
 
           </div><!-- contact-info-row-inner -->
@@ -68,21 +72,30 @@ get_header();?>
 
         <div class='contact-info-row contact-info-row-four'>
 
-          <span class='contact-info-subtitle'>Social</span><!-- contact-info-subtitle -->
+          <span class='contact-info-subtitle'><?php the_field('social_title', 'option');?></span>
+          <!-- contact-info-subtitle -->
 
           <div class='contact-info-row-inner'>
 
-            <a class='social-icon' href='https://www.facebook.com/mdkattorneys' target="_blank" rel="noopener">
+            <?php if (get_field('facebook_link', 'option')) {?>
+
+            <a class='social-icon' href='<?php the_field('facebook_link', 'option');?>' target="_blank" rel="noopener">
 
               <?php echo file_get_contents(get_template_directory() . '/images/social-fb.svg'); ?>
 
             </a><!-- social-icon -->
 
-            <a class='social-icon' href='https://www.instagram.com/mdklawgroup' target="_blank" rel="noopener">
+            <?php }?>
+
+            <?php if (get_field('instagram_link', 'option')) {?>
+
+            <a class='social-icon' href='<?php the_field('instagram_link', 'option');?>' target="_blank" rel="noopener">
 
               <?php echo file_get_contents(get_template_directory() . '/images/social-insta.svg'); ?>
 
             </a><!-- social-icon -->
+
+            <?php }?>
 
           </div><!-- contact-info-row-inner -->
 

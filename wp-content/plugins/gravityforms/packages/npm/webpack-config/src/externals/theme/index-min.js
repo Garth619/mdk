@@ -1,0 +1,1 @@
+const merge=require("webpack-merge"),config=require("../../config");module.exports=merge({jquery:"jQuery"},config.overrides.externals.theme);

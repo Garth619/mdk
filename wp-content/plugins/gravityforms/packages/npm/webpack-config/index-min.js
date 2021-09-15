@@ -1,0 +1,1 @@
+const{NODE_ENV:NODE_ENV}=process.env,packageJson=require("./package.json");console.info(`@gravityforms/webpack-config v${packageJson.version}`),module.exports=require(`./src/${NODE_ENV}`);

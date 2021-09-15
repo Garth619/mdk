@@ -4,10 +4,10 @@
 
     <div id='footer-form-wrapper'>
 
-      <span id='footer-form-title'>Request Free Consultation</span><!-- footer-form-title -->
+      <span id='footer-form-title'><?php the_field('footer_form_title', 'option');?></span><!-- footer-form-title -->
 
-      <span id='footer-form-description'>Use the form below to tell us about your legal inquiry, and we’ll call you back
-        to schedule an appointment.</span><!-- footer-form-description -->
+      <span id='footer-form-description'><?php the_field('footer_form_description', 'option');?></span>
+      <!-- footer-form-description -->
 
       <?php gravity_form(1, false, false, false, '', true, 12);?>
 
@@ -17,21 +17,22 @@
 
     <div id='footer-info-wrapper'>
 
-      <span id='footer-info-title'>CONTACT MDK LAw</span><!-- footer-info-title -->
+      <span id='footer-info-title'><?php the_field('footer_title_verbiage', 'option');?></span>
+      <!-- footer-info-title -->
 
       <div id='footer-info-inner'>
 
         <div class='footer-info-row footer-info-row-one'>
 
-          <span class='footer-info-subtitle'>Location</span><!-- footer-info-subtitle -->
+          <span class='footer-info-subtitle'><?php the_field('location_title', 'option');?></span>
+          <!-- footer-info-subtitle -->
 
           <div class='footer-info-row-inner'>
 
-            <span class='footer-info-content'>4105 N. 20th Street, Suite 260<br> Phoenix Az 85016</span>
+            <span class='footer-info-content'><?php the_field('address', 'option');?></span>
             <!-- footer-info-subtitle -->
 
-            <a class='footer-info-content directions'
-              href='https://www.google.com/maps/place/Tudor+Plaza+Office+Condominium,+4105+N+20th+St+STE+260,+Phoenix,+AZ+85016/@33.4957353,-112.0408288,17z/data=!3m1!4b1!4m5!3m4!1s0x872b0d79aab07657:0xc5ed7a49ced85afc!8m2!3d33.4957353!4d-112.0386401'
+            <a class='footer-info-content directions' href='<?php the_field('address_link', 'option');?>'
               target="_blank" rel="noopener">DIRECTIONs</a>
             <!-- directions -->
 
@@ -41,11 +42,12 @@
 
         <div class='footer-info-row footer-info-row-two'>
 
-          <span class='footer-info-subtitle'>Office Hours</span><!-- footer-info-subtitle -->
+          <span class='footer-info-subtitle'><?php the_field('office_hours_title', 'option');?></span>
+          <!-- footer-info-subtitle -->
 
           <div class='footer-info-row-inner'>
 
-            <span class='footer-info-content'>Monday - Friday<br> 8AM - 6PM</span>
+            <span class='footer-info-content'><?php the_field('office_hours', 'option');?></span>
             <!-- footer-info-subtitle -->
 
           </div><!-- footer-info-row-inner -->
@@ -54,12 +56,15 @@
 
         <div class='footer-info-row footer-info-row-three'>
 
-          <span class='footer-info-subtitle'>Call Today</span><!-- footer-info-subtitle -->
+          <span class='footer-info-subtitle'><?php the_field('call_today_title', 'option');?></span>
+          <!-- footer-info-subtitle -->
 
           <div class='footer-info-row-inner'>
 
-            <span class='footer-info-content'><a href='tel:6232255635'> <span>(623) 225-5635</span>
-              </a>Se Habla Español</span>
+            <span class='footer-info-content'><a
+                href='tel:+1<?php echo str_replace(['-', '(', ')', ' '], '', get_field('phone', 'option')); ?>'>
+                <span><?php the_field('phone', 'option');?></span>
+              </a><?php the_field('call_today_content', 'option');?></span>
             <!-- footer-info-subtitle -->
 
           </div><!-- footer-info-row-inner -->
@@ -68,21 +73,30 @@
 
         <div class='footer-info-row footer-info-row-four'>
 
-          <span class='footer-info-subtitle'>Social</span><!-- footer-info-subtitle -->
+          <span class='footer-info-subtitle'><?php the_field('social_title', 'option');?></span>
+          <!-- footer-info-subtitle -->
 
           <div class='footer-info-row-inner'>
 
-            <a class='social-icon' href='https://www.facebook.com/mdkattorneys' target="_blank" rel="noopener">
+            <?php if (get_field('facebook_link', 'option')) {?>
+
+            <a class='social-icon' href='<?php the_field('facebook_link', 'option');?>' target="_blank" rel="noopener">
 
               <?php echo file_get_contents(get_template_directory() . '/images/social-fb.svg'); ?>
 
             </a><!-- social-icon -->
 
-            <a class='social-icon' href='https://www.instagram.com/mdklawgroup' target="_blank" rel="noopener">
+            <?php }?>
+
+            <?php if (get_field('instagram_link', 'option')) {?>
+
+            <a class='social-icon' href='<?php the_field('instagram_link', 'option');?>' target="_blank" rel="noopener">
 
               <?php echo file_get_contents(get_template_directory() . '/images/social-insta.svg'); ?>
 
             </a><!-- social-icon -->
+
+            <?php }?>
 
           </div><!-- footer-info-row-inner -->
 
@@ -101,9 +115,13 @@
     <div id='copyright-inner'>
 
       <ul>
-        <li>&copy; <?php echo date('Y'); ?> MDK Law Group</li>
-        <li>All Rights Reserved</li>
-        <li><a href='<?php bloginfo('url');?>/disclaimer'>Disclaimer</a></li>
+        <li>&copy; <?php echo date('Y'); ?> <?php the_field('lawfirm_name', 'option');?></li>
+        <li><?php the_field('all_rights_reserved', 'option');?></li>
+        <?php if (get_field('disclaimer_link', 'option')) {?>
+        <li><a
+            href='<?php the_field('disclaimer_link', 'option');?>'><?php the_field('disclaimer_title', 'option');?></a>
+        </li>
+        <?php }?>
       </ul>
 
     </div><!-- copyright-inner -->

@@ -1,0 +1,1 @@
+const TerserPlugin=require("terser-webpack-plugin");module.exports=[new TerserPlugin({cache:!0,parallel:!0,sourceMap:!1,extractComments:!1,terserOptions:{compress:{warnings:!1,drop_console:!0},output:{comments:!1}}})];

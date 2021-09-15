@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="gravityformswebpackconfig">Gravity Forms Webpack Config</h1>
+
+<p><a href="https://github.com/webpack/webpack">Webpack</a> configurations and custom babel configuration for Gravity Forms JavaScript development.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Install the module</p>
+
+<pre><code class="bash">npm install @gravityforms/webpack-config --save-dev
+</code></pre>
+
+<p><strong>Note</strong>: This package requires <code>node</code> 14.15.0 or later, and <code>npm</code> 6.14.8 or later.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>This configuration is tailored for use on Gravity Forms projects, but may be useful to others. It abstracts away the complex Webpack configuration we use, so it can be utilized by our add on repos along with the core plugin as needed from one managed package.</p>
+
+<p>It is opinionated in one main way: A single admin and single theme bundle is output, to match the contexts which WordPress presents. Code splitting is used to keep the core enqueue for each context minimal.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>This config provides 4 main npm scripts to run:</p>
+
+<pre><code class="json">&quot;js:theme:dev&quot;: &quot;cross-env NODE_ENV=themedev BROWSERSLIST_ENV=theme npx webpack&quot;,
+&quot;js:admin:dev&quot;: &quot;cross-env NODE_ENV=admindev BROWSERSLIST_ENV=admin npx webpack&quot;,
+&quot;js:theme:prod&quot;: &quot;cross-env NODE_ENV=themeprod BROWSERSLIST_ENV=theme npx webpack&quot;,
+&quot;js:admin:prod&quot;: &quot;cross-env NODE_ENV=adminprod BROWSERSLIST_ENV=admin npx webpack&quot;
+</code></pre>
+
+<p>Each one produces the admin and theme dev and prod bundles respectively. ev bundles use <code>eval-source-map</code> for quality browser source mapping for modules, so don&#8217;t be concerned by their output size, it&#8217;s due to that.</p>
+
+<p>To call these scripts from your project, place this in your package json in the scripts object:</p>
+
+<pre><code class="json">&quot;js:theme:dev&quot;: &quot;cd node_modules/@gravityforms/webpack-config &amp;&amp; npm run js:theme:dev&quot;,
+</code></pre>
+
+<p>Map each of the four tasks that way. Changing directories into the package directory is needed for now.</p>
+
+<p>Output files default to being output in <code>assets/js/dist</code> as <code>scripts-admin.js</code>, <code>vendor-admin.js</code>, <code>scripts-theme.js</code> and <code>vendor-theme.js</code> with <code>.min</code> equivalents for the production variants. Vendor files contain all imported node_modules sourced third party libraries.</p>
+
+<p>To customize your output and the webpack configuration, place a <code>gravityform.config.js</code> file in your project root. The webpack config can be modified like so:</p>
+
+<pre><code class="js">const { resolve } = require( 'path' );
+
+module.exports = {
+	webpackConfig: {
+		alias: {
+			common: resolve( __dirname, 'assets/js/src/common'),
+		},
+		paths: {
+			src: resolve( __dirname, 'assets/js/src/'),
+			dist: resolve( __dirname, 'assets/js/dist/'),
+			reports: resolve( __dirname, 'reports/webpack-%s.html' ),
+		},
+		overrides: {
+			externals: {
+				admin: {
+					'gform-admin-config': 'gform_admin_config',
+					'gform-admin-i18n': 'gform_admin_i18n',
+				},
+				theme: {
+					'gform-theme-config': 'gform_theme_config',
+					'gform-theme-i18n': 'gform_theme_i18n',
+				},
+			},
+			output: {
+				uniqueName: 'gravityforms',
+			},
+		},
+	}
+}
+</code></pre>
+
+<p>The <code>alias</code> section allows you to pass custom short paths to the babel module resolver plugin so webpack uses them for module resolution. <code>paths</code> allows you to change source and output directories. <code>overrides</code> allows for tweaking of the actual webpack config internals, and will be extended much more shortly.</p>
+
+</body>
+</html>
+

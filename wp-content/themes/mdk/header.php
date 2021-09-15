@@ -115,7 +115,10 @@ if (!cms_is_in_menu('main-menu')) {
 
         <a href='<?php bloginfo('url');?>'>
 
-          <img src='<?php bloginfo('template_directory');?>/images/mdk-logo.svg' alt='' />
+          <?php $logo = get_field('logo', 'option');?>
+          <?php if ($logo) {?>
+          <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+          <?php }?>
 
         </a>
 
@@ -127,13 +130,16 @@ if (!cms_is_in_menu('main-menu')) {
 
           <div id='cta'>
 
-            <span id='available'>Available 24/7</span><!-- available -->
+            <span id='available'><?php the_field('available_verbiage', 'option');?></span><!-- available -->
 
-            <span id='free-consultation'>Free Consultation</span><!-- available -->
+            <span id='free-consultation'><?php the_field('free_consultation_verbiage', 'option');?></span>
+            <!-- available -->
 
           </div><!-- cta -->
 
-          <a id='phone' href='tel:6232255635'>(623) 225-5635</a><!-- phone -->
+          <a id='phone'
+            href='tel:+1<?php echo str_replace(['-', '(', ')', ' '], '', get_field('phone', 'option')); ?>'><?php the_field('phone', 'option');?></a>
+          <!-- phone -->
 
         </div><!-- cta-wrapper -->
 

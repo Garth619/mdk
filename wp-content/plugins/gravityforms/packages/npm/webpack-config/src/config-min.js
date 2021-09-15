@@ -1,0 +1,1 @@
+const merge=require("webpack-merge"),findConfig=require("find-config"),defaults=require("./defaults"),configModule=findConfig.require("gravityforms.config",{module:!0}),config=configModule?.webpackConfig||{};module.exports=merge(defaults,config);
