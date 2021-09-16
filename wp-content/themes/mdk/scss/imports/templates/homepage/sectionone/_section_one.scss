@@ -143,8 +143,20 @@ span#sec-one-subtitle {
     @include box(584px, 757px);
   }
   img {
-    width: 100%;
+    @include box(263px, 239px);
     @include abs(0, null, null, 0);
+    @include mq(small_tablet) {
+      @include box(316px, 409px);
+    }
+    @include mq(small_laptop) {
+      @include box(459px, 595px);
+    }
+    @include mq(large_laptop) {
+      @include box(492px, 638px);
+    }
+    @include mq(monitor) {
+      @include box(584px, 757px);
+    }
   }
 }
 

@@ -197,10 +197,22 @@ jQuery(document).ready(function ($) {
     ],
   });
 
-  $(".sec-three-single-slide").on("click", function (e) {
+  function caseResultsclick() {
     $(".sec-three-single-slide").not(this).removeClass("show");
     $(this).toggleClass("show");
-  });
+  }
+
+  if ($(window).width() < 1170) {
+    $(".sec-three-single-slide").off().on("click", caseResultsclick);
+  }
+
+  $(window).resize(
+    _.debounce(function () {
+      if ($(window).width() < 1170) {
+        $(".sec-three-single-slide").off().on("click", caseResultsclick);
+      }
+    }, 100)
+  );
 
   $("#sec-five-slider").slick({
     infinite: true,

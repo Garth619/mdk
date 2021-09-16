@@ -25,7 +25,7 @@
 
     <div id='awards-arrow-left' class='awards-arrow'>
 
-      <img class='svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='arrow' />
+      <img class='svg-arrow lazyload' data-src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='arrow' />
 
     </div><!-- awards-arrow-left -->
 
@@ -37,7 +37,7 @@
 
         <?php $image = get_sub_field('image');?>
 
-        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+        <img class='lazyload' data-src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
       </div><!-- awards-slide -->
 
@@ -47,7 +47,7 @@
 
     <div id='awards-arrow-right' class='awards-arrow'>
 
-      <img class='svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='arrow' />
+      <img class='svg-arrow lazyload' data-src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='arrow' />
 
     </div><!-- awards-arrow-right -->
 

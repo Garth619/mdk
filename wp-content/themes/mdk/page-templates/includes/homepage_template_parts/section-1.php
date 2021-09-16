@@ -6,33 +6,78 @@
 
       <div id='sec-one-left-content'>
 
-        <span id='sec-one-subtitle'>Experienced Personal injury attorneys</span><!-- sec-one-subtitle -->
+        <span id='sec-one-subtitle'><?php the_field('section_one_subtitle');?></span><!-- sec-one-subtitle -->
 
         <div id='sec-one-image'>
 
           <picture>
 
-            <source media='(min-width: 768px)'
-              srcset='<?php bloginfo('template_directory');?>/images/hero-att-img-1920.jpg'>
+            <?php $section_one_hero_image_desktop_webp = get_field('section_one_hero_image_desktop_webp');?>
+            <?php if ($section_one_hero_image_desktop_webp) {?>
 
-            <img src='<?php bloginfo('template_directory');?>/images/hero-att-img-mobile.jpg' alt='' />
+            <source media='(min-width: 768px)' srcset='<?php echo $section_one_hero_image_desktop_webp['url']; ?>'
+              type='image/webp'>
+
+            <?php }?>
+
+            <?php $section_one_hero_image_desktop = get_field('section_one_hero_image_desktop');?>
+            <?php if ($section_one_hero_image_desktop) {?>
+
+            <source media='(min-width: 768px)' srcset='<?php echo $section_one_hero_image_desktop['url']; ?>'>
+
+            <?php }?>
+
+            <?php $section_one_hero_image_mobile_webp = get_field('section_one_hero_image_mobile_webp');?>
+            <?php if ($section_one_hero_image_mobile_webp) {?>
+
+            <source srcset='<?php echo $section_one_hero_image_mobile_webp['url']; ?>' type='image/webp'>
+
+            <?php }?>
+
+            <?php $section_one_hero_image_mobile = get_field('section_one_hero_image_mobile');?>
+
+            <img src="<?php echo $section_one_hero_image_mobile['url']; ?>"
+              alt="<?php echo $section_one_hero_image_mobile['alt']; ?>" />
 
           </picture>
 
         </div><!-- sec-one-image -->
 
-        <span id='sec-one-title'>Dedicated to the best results for our clients, every time.</span><!-- sec-one-title -->
+        <span id='sec-one-title'><?php the_field('section_one_title');?></span><!-- sec-one-title -->
 
-        <a id='sec-one-button' class='button-one' href='#consultation'>Request free consultation</a><!-- button -->
+        <a id='sec-one-button' class='button-one'
+          href='#consultation'><?php the_field('section_one_button_verbiage');?></a><!-- button -->
 
       </div><!-- sec-one-left-content -->
 
       <picture>
 
-        <source media='(min-width: 1170px)'
-          srcset='<?php bloginfo('template_directory');?>/images/hero-bg-img-1920.jpg'>
+        <?php $section_one_background_image_desktop_webp = get_field('section_one_background_image_desktop_webp');?>
+        <?php if ($section_one_background_image_desktop_webp) {?>
 
-        <img id='hero-image' src='<?php bloginfo('template_directory');?>/images/hero-bg-img-768.jpg' alt='' />
+        <source media='(min-width: 1170px)' srcset='<?php echo $section_one_background_image_desktop_webp['url']; ?>'
+          type='image/webp'>
+
+        <?php }?>
+
+        <?php $section_one_background_image_desktop = get_field('section_one_background_image_desktop');?>
+        <?php if ($section_one_background_image_desktop) {?>
+
+        <source media='(min-width: 1170px)' srcset='<?php echo $section_one_background_image_desktop['url']; ?>'>
+
+        <?php }?>
+
+        <?php $section_one_background_image_mobile_webp = get_field('section_one_background_image_mobile_webp');?>
+        <?php if ($section_one_background_image_mobile_webp) {?>
+
+        <source srcset='<?php echo $section_one_background_image_mobile_webp['url']; ?>' type='image/webp'>
+
+        <?php }?>
+
+        <?php $section_one_background_image_mobile = get_field('section_one_background_image_mobile');?>
+
+        <img id='hero-image' src='<?php echo $section_one_background_image_mobile['url']; ?>'
+          alt='<?php echo $section_one_background_image_mobile_webp['alt']; ?>' />
 
       </picture>
 
@@ -46,53 +91,43 @@
 
         <div id='sec-one-slider'>
 
+          <?php if (have_rows('section_one_selling_points')): ?>
+          <?php while (have_rows('section_one_selling_points')): the_row();?>
+
           <div class='sec-one-single-slide'>
 
             <div class='sec-one-single-icon'>
+
+              <?php if (get_sub_field('icon') == 'One') {?>
 
               <img src='<?php bloginfo('template_directory');?>/images/sp-icon-1.svg' alt='' />
 
-            </div><!-- sec-one-single-icon -->
+              <?php }?>
 
-            <span class='sec-one-single-title'>PERSONAL TOUCh</span><!-- sec-one-single-title -->
-
-            <span class='sec-one-single-descrip'>At MDK Law Group, we have helped countless individuals and families.
-              When you hire MDK, you get a direct line to the attorney working for and with you.</span>
-            <!-- sec-one-single-descrip -->
-
-          </div><!-- sec-one-single-slide -->
-
-          <div class='sec-one-single-slide'>
-
-            <div class='sec-one-single-icon'>
+              <?php if (get_sub_field('icon') == 'Two') {?>
 
               <img src='<?php bloginfo('template_directory');?>/images/sp-icon-2.svg' alt='' />
 
-            </div><!-- sec-one-single-icon -->
+              <?php }?>
 
-            <span class='sec-one-single-title'>Expert Litigators</span><!-- sec-one-single-title -->
-
-            <span class='sec-one-single-descrip'>The attorneys at MDK bring decades of experience, insurance expertise
-              and litigation know how to put our clients in the best position. </span>
-            <!-- sec-one-single-descrip -->
-
-          </div><!-- sec-one-single-slide -->
-
-          <div class='sec-one-single-slide'>
-
-            <div class='sec-one-single-icon'>
+              <?php if (get_sub_field('icon') == 'Three') {?>
 
               <img src='<?php bloginfo('template_directory');?>/images/sp-icon-3.svg' alt='' />
 
+              <?php }?>
+
             </div><!-- sec-one-single-icon -->
 
-            <span class='sec-one-single-title'>Proven Results</span><!-- sec-one-single-title -->
+            <span class='sec-one-single-title'><?php the_sub_field('title');?></span><!-- sec-one-single-title -->
 
-            <span class='sec-one-single-descrip'>We outperform other attorneys and our clients see the difference.
-              Clients know they have the right team on their side when they hire MDK. </span>
+            <span class='sec-one-single-descrip'><?php the_sub_field('description');?></span>
             <!-- sec-one-single-descrip -->
 
           </div><!-- sec-one-single-slide -->
+
+          <?php endwhile;?>
+
+          <?php endif;?>
 
         </div><!-- sec-one-slider -->
 

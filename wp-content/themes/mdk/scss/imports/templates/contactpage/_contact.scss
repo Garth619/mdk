@@ -1,3 +1,10 @@
+#contact-wrapper {
+  padding-top: 10px;
+  @include mq(small_tablet) {
+    padding-top: 0px;
+  }
+}
+
 .contact-title {
   max-width: 280px;
   @include margin_lr();

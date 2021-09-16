@@ -14,10 +14,6 @@ get_header();?>
 
   <div id='page-container'>
 
-    <a class='page-button button-one'
-      href='#consultation'><?php the_field('global_internal_banner_button_verbiage', 'option');?></a>
-    <!-- button-one -->
-
     <div id='case-results-wrapper'>
 
       <?php if (have_rows('case_results')): ?>

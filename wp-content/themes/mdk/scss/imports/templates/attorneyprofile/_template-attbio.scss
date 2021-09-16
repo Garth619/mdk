@@ -170,6 +170,7 @@ span.att-title {
       transform: uppercase,
     )
   );
+
   &::after {
     background: $grey;
     margin-top: 16px;
@@ -191,6 +192,7 @@ span.att-title {
   blockquote {
     @include mq(large_laptop) {
       padding-top: 0px;
+      padding-right: 50px;
     }
     p {
       @include mq(small_tablet) {

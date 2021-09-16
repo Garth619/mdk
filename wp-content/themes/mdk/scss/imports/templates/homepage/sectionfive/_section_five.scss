@@ -24,6 +24,8 @@
     display: block;
     &#sec-five-title {
       padding: 0 20px;
+      max-width: 300px;
+      @include margin_lr();
       @include type(
         (
           size: 35px,
@@ -33,6 +35,9 @@
           transform: uppercase,
         )
       );
+      @include mq(small_tablet) {
+        max-width: 100%;
+      }
       @include mq(small_laptop) {
         padding: 0px 4px 0 20px;
         @include flex();
@@ -163,7 +168,7 @@
     margin-left: 145px;
   }
   @include mq(large_laptop) {
-    max-width: 100%;
+    max-width: 745px;
     width: calc(100% - 515px);
   }
   @include mq(monitor) {

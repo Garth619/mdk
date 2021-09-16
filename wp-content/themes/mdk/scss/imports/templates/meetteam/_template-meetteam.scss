@@ -115,7 +115,7 @@ body.page-template-template-meetteam {
     text-decoration: none;
     text-align: center;
     border-bottom: 4px solid $bluedark;
-    padding-bottom: 35px;
+    padding-bottom: 24px;
     transition: border 300ms ease-in-out;
     @include mq(small_laptop) {
       border-bottom: 8px solid $bluedark;
@@ -164,7 +164,7 @@ body.page-template-template-meetteam {
     span {
       display: block;
       &.single-att-title {
-        margin-top: 15px;
+        margin-top: 25px;
         @include type(
           (
             size: 20px,
@@ -173,6 +173,10 @@ body.page-template-template-meetteam {
             family: $primaryfont,
           )
         );
+        @include mq(small_tablet) {
+          margin-top: 20px;
+          @include quick_type(25px, 30px, null);
+        }
       }
       &.single-att-position {
         margin-top: 10px;

@@ -4,22 +4,15 @@
 
     <div id='sec-six-top'>
 
-      <span id='sec-six-subtitle'>BRING THE BEST TOGETHEr</span><!-- sec-six-subtitle -->
+      <span id='sec-six-subtitle'><?php the_field('section_six_subtitle');?></span><!-- sec-six-subtitle -->
 
-      <span id='sec-six-title'>Passion.<br> Experience.<br> Diligence.</span><!-- sec-six-title -->
+      <span id='sec-six-title'><?php the_field('section_six_title');?></span><!-- sec-six-title -->
 
     </div><!-- sec-six-top -->
 
     <div id='sec-six-bottom' class='content'>
 
-      <p>Morbi viverra lacus ut erat hendrerit feugiat. Cras cursus tempus volutpat. Maecenas sit amet sem sit amet
-        ligula pulvinar varius. Nunc vehicula tempus erat vel hendrerit. Phasellus pulvinar euismod cursus. Duis sit
-        amet libero eget tellus venenatis scelerisque. Sed nec nunc id ligula vestibulum lobortis. Nunc feugiat mattis
-        lectus vitae porta. Maecenas vulputate eros id maximus vulputate. Ut vitae augue semper, sodales est id, auctor
-        leo. </p>
-
-      <p>Praesent sit amet tincidunt lacus. Etiam lobortis diam et viverra consequat. Duis vulputate sem in augue
-        vestibulum maximus. In hac habitasse platea dictumst.</p>
+      <?php the_field('section_six_content');?>
 
     </div><!-- sec-six-bottom -->
 

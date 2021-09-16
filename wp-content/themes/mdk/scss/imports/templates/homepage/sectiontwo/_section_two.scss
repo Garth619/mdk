@@ -152,8 +152,11 @@
       height: 538px;
     }
     img#sec-two-image {
-      width: 100%;
+      @include box(305px, 291px);
       @include abs(0, null, null, 0);
+      @include mq(small_laptop) {
+        @include box(436px, 538px);
+      }
     }
   }
 }

@@ -186,10 +186,6 @@ body {
 #header-inner {
   @include flex(space-between);
   flex-wrap: wrap;
-  @include mq(monitor) {
-    max-width: 1990px;
-    @include margin_lr();
-  }
 }
 
 #header-left {
@@ -334,7 +330,7 @@ body {
     margin-top: 28px;
   }
   @include mq(large_laptop) {
-    margin-top: 35px;
+    margin-top: 45px;
   }
   #spanish-cta {
     background: $red;

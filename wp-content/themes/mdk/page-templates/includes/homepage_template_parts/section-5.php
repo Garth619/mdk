@@ -2,12 +2,13 @@
 
   <div id='sec-five-content'>
 
-    <span id='sec-five-title'>WHAT OUR CLIENTS SAY</span><!-- sec-five-title -->
+    <span id='sec-five-title'><?php the_field('section_five_title');?></span><!-- sec-five-title -->
 
-    <span id='sec-five-descrip'>Clients know they have the right team on their side when they hire MDK.</span>
+    <span id='sec-five-descrip'><?php the_field('section_five_description');?></span>
     <!-- sec-five-descrip -->
 
-    <a id='sec-five-button' class='button-two' href='<?php bloginfo('url');?>/testimonials'>View All Reviews</a>
+    <a id='sec-five-button' class='button-two'
+      href='<?php the_field('section_five_button_link');?>'><?php the_field('section_five_button_verbiage');?></a>
     <!-- sec-five-button -->
 
   </div><!-- sec-five-content -->
@@ -18,68 +19,45 @@
 
       <div id='sec-five-slider'>
 
+        <?php if (have_rows('section_five_testimonials')): ?>
+        <?php while (have_rows('section_five_testimonials')): the_row();?>
+
         <div class='sec-five-slide'>
 
-          <img class='sec-five-slide-quote' src='<?php bloginfo('template_directory');?>/images/quote.svg' alt='' />
+          <img class='sec-five-slide-quote lazyload' data-src='<?php bloginfo('template_directory');?>/images/quote.svg'
+            alt='' />
 
           <div class='sec-five-slide-inner'>
 
-            <span class='sec-five-slide-title'>Sargon was outstanding! Very professional and super responsive.</span>
+            <span class='sec-five-slide-title'><?php the_sub_field('intro');?></span>
             <!-- sec-five-slide-title -->
 
-            <span class='sec-five-slide-descrip'>Always took the time to go over every detail of the case thoroughly and
-              guided me all along. Got me exactly what I deserved! Very pleased with his work. I highly recommend Sargon
-              at
-              MDK if you have a personal injury case. As good as it gets. Thank you!</span>
+            <span class='sec-five-slide-descrip'><?php the_sub_field('description');?></span>
             <!-- sec-five-slide-descrip -->
 
-            <span class='sec-five-slide-name'>Andres Alonzo</span>
+            <span class='sec-five-slide-name'><?php the_sub_field('name');?></span>
             <!-- sec-five-slide-name -->
+
+            <?php $icon = get_sub_field('icon');?>
+            <?php if ($icon) {?>
 
             <div class='sec-five-slide-icon-wrapper'>
 
-              <img id='sec-five-slide-icon' src='<?php bloginfo('template_directory');?>/images/google-logo.png'
-                alt='' />
+              <img class='sec-five-slide-icon lazyload' data-src="<?php echo $icon['url']; ?>"
+                alt="<?php echo $icon['alt']; ?>" />
 
               <span class='sec-five-icon-title'>Review</span><!-- sec-five-icon-title -->
 
             </div><!-- sec-five-slide-icon-wrapper -->
+            <?php }?>
 
           </div><!-- sec-five-slide-inner -->
 
         </div><!-- sec-five-slide -->
 
-        <div class='sec-five-slide'>
+        <?php endwhile;?>
 
-          <img class='sec-five-slide-quote' src='<?php bloginfo('template_directory');?>/images/quote.svg' alt='' />
-
-          <div class='sec-five-slide-inner'>
-
-            <span class='sec-five-slide-title'>Sargon was outstanding! Very professional and super responsive.</span>
-            <!-- sec-five-slide-title -->
-
-            <span class='sec-five-slide-descrip'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-            <!-- sec-five-slide-descrip -->
-
-            <span class='sec-five-slide-name'>Andres Alonzo</span>
-            <!-- sec-five-slide-name -->
-
-            <div class='sec-five-slide-icon-wrapper'>
-
-              <img id='sec-five-slide-icon' src='<?php bloginfo('template_directory');?>/images/google-logo.png'
-                alt='' />
-
-              <span class='sec-five-icon-title'>Review</span><!-- sec-five-icon-title -->
-
-            </div><!-- sec-five-slide-icon-wrapper -->
-
-          </div><!-- sec-five-slide-inner -->
-
-        </div><!-- sec-five-slide -->
+        <?php endif;?>
 
       </div><!-- sec-five-slider -->
 
@@ -89,13 +67,15 @@
 
       <div id='sec-five-arrow-left' class='sec-five-arrow'>
 
-        <img class='sec-five-svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+        <img class='sec-five-svg-arrow lazyload' data-src='<?php bloginfo('template_directory');?>/images/arrow.svg'
+          alt='' />
 
       </div><!-- sec-five-arrow-left -->
 
       <div id='sec-five-arrow-right' class='sec-five-arrow'>
 
-        <img class='sec-five-svg-arrow' src='<?php bloginfo('template_directory');?>/images/arrow.svg' alt='' />
+        <img class='sec-five-svg-arrow lazyload' data-src='<?php bloginfo('template_directory');?>/images/arrow.svg'
+          alt='' />
 
       </div><!-- sec-five-arrow-right -->
 
@@ -103,13 +83,24 @@
 
         <picture>
 
-          <source media='(min-width: 1800px)'
-            srcset='<?php bloginfo('template_directory');?>/images/testimonial-image-1920.jpg'>
+          <?php $section_five_image_monitor = get_field('section_five_image_monitor');?>
+          <?php if ($section_five_image_monitor) {?>
 
-          <source media='(min-width: 1380px)'
-            srcset='<?php bloginfo('template_directory');?>/images/testimonial-image-1400.jpg'>
+          <source media='(min-width: 1800px)' data-srcset='<?php echo $section_five_image_monitor['url']; ?>'>
 
-          <img src='<?php bloginfo('template_directory');?>/images/testimonial-image-1200.jpg' alt='' />
+          <?php }?>
+
+          <?php $section_five_image_large_laptop = get_field('section_five_image_large_laptop');?>
+          <?php if ($section_five_image_large_laptop) {?>
+
+          <source media='(min-width: 1380px)' data-srcset='<?php echo $section_five_image_large_laptop['url']; ?>'>
+
+          <?php }?>
+
+          <?php $section_five_image_small_laptop = get_field('section_five_image_small_laptop');?>
+
+          <img class='lazyload' data-src="<?php echo $section_five_image_small_laptop['url']; ?>"
+            alt="<?php echo $section_five_image_small_laptop['alt']; ?>" />
 
         </picture>
 
