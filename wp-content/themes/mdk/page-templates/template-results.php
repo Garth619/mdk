@@ -19,7 +19,7 @@ get_header();?>
       <?php if (have_rows('case_results')): ?>
       <?php while (have_rows('case_results')): the_row();?>
 
-      <div class='case-results-single-slide'>
+      <div class='case-results-single-slide cr-click'>
 
         <div class='case-results-single-inner'>
 

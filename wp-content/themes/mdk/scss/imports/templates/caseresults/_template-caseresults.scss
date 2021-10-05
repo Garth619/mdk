@@ -28,6 +28,16 @@
   @include mq(large_laptop) {
     margin-bottom: 90px;
   }
+  &:hover {
+    .case-results-single-inner {
+      .case-results-single-hover {
+        @include mq(small_laptop) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
   &:last-of-type {
     margin-bottom: 0;
   }

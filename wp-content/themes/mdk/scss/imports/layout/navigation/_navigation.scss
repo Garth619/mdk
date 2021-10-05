@@ -1,4 +1,5 @@
 // navigation - refer to the resize functions in js->custom.js
+//sorry all these styles below got piled on after dev completion - messy css
 
 nav {
   background: $white;
@@ -25,7 +26,7 @@ nav {
     padding: 0;
     position: relative;
     overflow-y: unset;
-    max-width: 700px;
+
     margin-right: -115px;
     @include box(100%, auto);
   }
@@ -34,11 +35,13 @@ nav {
     order: 1;
     padding-top: 26px;
   }
-  @include mq(monitor) {
-    max-width: 730px;
+  @include mq(small_monitor) {
+    max-width: 985px;
   }
   &::after {
     background: rgba(255, 255, 255, 0.5);
+    position: relative;
+    z-index: -3;
     @include box(100%, 1px);
     @include contentdisplay();
     @include mq(large_laptop) {
@@ -61,9 +64,9 @@ nav {
       margin-top: 25px;
     }
     @include mq(large_laptop) {
-      padding: 0 55px 0 0px;
+      padding: 0 25px 0 0px;
     }
-    @include mq(monitor) {
+    @include mq(small_monitor) {
       padding: 0 78px 0 0px;
     }
   }
@@ -104,6 +107,7 @@ nav {
       @include mq(small_laptop) {
         position: relative;
         padding-bottom: 17px;
+        flex-shrink: 0;
       }
       &.menu-item-has-children {
         &:hover {
@@ -117,7 +121,7 @@ nav {
               }
             }
           }
-          ul.sub-menu {
+          > ul.sub-menu {
             @include mq(small_laptop) {
               opacity: 1;
               visibility: visible;
@@ -157,6 +161,20 @@ nav {
       &.current-menu-item {
         > a {
           color: $red;
+        }
+      }
+      &:nth-last-of-type(-n + 4) {
+        ul.sub-menu {
+          li {
+            ul.sub-menu {
+              @include mq(small_laptop) {
+                left: -207px;
+              }
+              @include mq(large_laptop) {
+                left: -189px;
+              }
+            }
+          }
         }
       }
       &:nth-last-of-type(-n + 3) {
@@ -200,7 +218,7 @@ nav {
           background: $red;
           display: block;
           padding-bottom: 0;
-          @include abs(null, null, -3px, 0);
+          @include abs(null, null, -3px, 0, -1);
           @include box(45px, 7px);
         }
       }
@@ -212,19 +230,16 @@ nav {
     opacity: 0;
     visibility: hidden;
     border-bottom: 1px solid transparent;
-    //transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out,
-    // border-bottom 200ms ease-in-out,
-    //max-height 900ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
     @include mq(small_laptop) {
       max-height: 3000px;
       background: $white;
       width: 190px;
-      padding: 2px 14px;
+      padding: 2px 0px;
       z-index: 1;
       transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+      box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.36);
       @include abs(39px, null, null, -18px);
     }
-
     &.active {
       padding: 18px 0;
       max-height: 3000px;
@@ -236,8 +251,75 @@ nav {
       }
     }
     li {
+      // width: calc(100% - 38px);
+      // @include margin_lr();
+      @include mq(small_laptop) {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+      &.menu-item-has-children {
+        position: relative;
+        > a {
+          @include flex(null, center);
+          &::after {
+            vertical-align: top;
+            margin-left: 10px;
+            display: inline-block;
+            transition: all 200ms ease-in-out;
+            @include tri(down, 4px, 6px, $bluelight);
+            @include contentdisplay();
+            @include mq(small_laptop) {
+              display: none;
+            }
+          }
+        }
+        &:hover {
+          > a {
+            @include mq(small_laptop) {
+              color: $red;
+            }
+            &::after {
+              @include mq(small_laptop) {
+                @include tri(right, 4px, 6px, $red);
+              }
+            }
+          }
+          ul.sub-menu {
+            @include mq(small_laptop) {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+      &.current-menu-ancestor {
+        > a {
+          color: $red;
+          &::after {
+            @include tri(down, 4px, 6px, $red);
+            @include mq(small_laptop) {
+              @include tri(right, 4px, 6px, $red);
+            }
+          }
+        }
+      }
+      ul.sub-menu {
+        @include mq(small_laptop) {
+          left: 186px;
+          opacity: 0;
+          visibility: hidden;
+          top: -2px;
+        }
+        &.active {
+          padding: 0px;
+          border-bottom: none;
+          @include mq(small_laptop) {
+            padding: 18px 0;
+          }
+        }
+      }
       &:last-of-type {
-        a {
+        > a {
           @include mq(small_laptop) {
             border-bottom: none;
           }
@@ -273,16 +355,6 @@ nav.nav-desktop {
         &:hover {
           color: $red;
         }
-      }
-    }
-  }
-}
-
-body.internal-header.no-banner {
-  nav {
-    ul.sub-menu {
-      @include mq(small_laptop) {
-        box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.36);
       }
     }
   }
@@ -343,5 +415,10 @@ body.internal-header.no-banner {
       opacity: 0.9;
       visibility: visible;
     }
+  }
+}
+
+.translated-ltr {
+  nav .menu-header {
   }
 }

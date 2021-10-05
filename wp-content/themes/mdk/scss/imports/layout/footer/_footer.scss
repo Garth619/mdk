@@ -440,7 +440,7 @@ span#footer-form-required {
     vertical-align: middle;
     text-decoration: none;
     @include mq(small_tablet) {
-      margin: 0px 18px 0 0;
+      margin: 0px 11px 0 0;
     }
     svg {
       height: 25px;
@@ -477,17 +477,13 @@ span#footer-form-required {
   grid-area: footer-info-row-four;
   @include mq(small_tablet) {
     margin-top: -15px;
-    @include flex(null, center);
+    //@include flex(null, center);
   }
   @include mq(small_laptop) {
     margin-top: 0px;
     padding-top: 7px;
   }
   span.footer-info-subtitle {
-    @include mq(small_tablet) {
-      margin-bottom: 0;
-      margin-right: 15px;
-    }
   }
 }
 .footer-info-row-three {

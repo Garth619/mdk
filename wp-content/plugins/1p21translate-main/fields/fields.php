@@ -1,0 +1,228 @@
+<?php 
+
+$ilaw_tr_fields = array(
+
+    'ilaw_tr_config' => array(
+        'title' => 'Translation Config',
+        'fields' => array(
+            array(
+                'key' => 'ilaw_tr_config_translation_supported_cpt',
+                'label' => 'Translation Supported Post Types',
+                'name' => 'translation_supported_cpt',
+                'type' => 'repeater',
+                'instructions' => 'Set post types that are created for translation here',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'collapsed' => '',
+                'min' => 0,
+                'max' => 0,
+                'layout' => 'table',
+                'button_label' => '',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'ilaw_tr_config_translation_supported_cpt_lang',
+                        'label' => 'Language Code',
+                        'name' => 'language',
+                        'type' => 'select',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        //https://www.html-code-generator.com/php/array/languages-name-and-code
+                        'choices' => array(),
+                        'default_value' => false,
+                        'allow_null' => 0,
+                        'multiple' => 0,
+                        'ui' => 0,
+                        'return_format' => 'value',
+                        'ajax' => 0,
+                        'placeholder' => '',
+                    ),
+                    array(
+                        'key' => 'ilaw_tr_config_translation_supported_cpt_type',
+                        'label' => 'Post Type',
+                        'name' => 'type',
+                        'type' => 'select',
+                        'instructions' => '',
+                        'required' => 1,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'choices' => array(
+                        ),
+                        'default_value' => false,
+                        'allow_null' => 0,
+                        'multiple' => 0,
+                        'ui' => 0,
+                        'return_format' => 'value',
+                        'ajax' => 0,
+                        'placeholder' => '',
+                    )
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'ilaw-translation-config',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ),
+    'ilaw_tr_rows' => array(
+        'title' => 'Translations',
+        'fields' => array(
+            array(
+                'key' => 'ilaw_tr_rows_translation',
+                'label' => 'Translations',
+                'name' => 'translations',
+                'type' => 'repeater',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'collapsed' => '',
+                'min' => 0,
+                'max' => 0,
+                'layout' => 'table',
+                'button_label' => 'Add Translation',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'ilaw_tr_rows_translation_key',
+                        'label' => 'Key',
+                        'name' => 'key',
+                        'type' => 'text',
+                        'instructions' => 'Key to retreive verbiage. Must be unique.',
+                        'required' => 1,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '(ie. header_cta, footer_social_title, primary_heading, etc.)',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array( //@dynamic
+                        'key' => 'ilaw_tr_rows_translation_fallback',
+                        'label' => 'English/ Fallback',
+                        'name' => 'fallback',
+                        'type' => 'textarea',
+                        'rows' => 3,
+                        'instructions' => 'Non english translations will fallback to this verbiage if empty.',
+                        'required' => 1,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => 'Free Consultation',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'ilaw-translation-text',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ),
+    'ilaw_tr_singular' => array(
+        'title' => 'Translation - Singular Options',
+        'fields' => array(
+            array(
+                'key' => 'ilaw_tr_singular_translate_parts',
+                'label' => 'Language Template Parts',
+                'name' => 'translate_parts',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                ),
+                'default_value' => false,
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            )
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '!=',
+                    'value' => 'post',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'post',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'acf_after_title',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    )
+);

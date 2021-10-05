@@ -1,0 +1,133 @@
+// Classic Editor
+
+#adminmenuwrap {
+  z-index: 99900;
+}
+
+#adminmenuback {
+  z-index: 10000;
+}
+
+@media screen and (min-width: 850px) {
+  body.contentoptimizer-enabled {
+    #poststuff {
+      #post-body {
+        &.columns-2 {
+          margin-right: 0;
+          #post-body-content {
+            min-width: auto;
+            width: calc(100% - 370px);
+          }
+          #postbox-container-1 {
+            margin-right: 0px;
+            width: 350px;
+          }
+          #side-sortables {
+            width: 350px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#contop_box_id.postbox {
+  .inside {
+    margin-top: 0;
+    padding-bottom: 30px;
+    .contop-box {
+      padding: 25px 0 0;
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0px 0 10px;
+      }
+    }
+  }
+}
+
+// Overlay
+
+.contop-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  padding: 40px;
+  transition: all 200ms ease-in-out;
+  box-sizing: border-box;
+  &.contop-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .contop-overlay-inner {
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    overflow-y: scroll;
+    padding: 30px;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    span.contop-close {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      padding: 10px;
+      background: #fff;
+      cursor: pointer;
+      &:hover {
+        color: #2271b1;
+      }
+    }
+    .contop-load {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h2 {
+      font-size: 14px;
+      padding: 8px 0px;
+      margin: 0;
+      line-height: 1.4;
+    }
+    ul.contop-list {
+      li {
+        text-transform: capitalize;
+        cursor: pointer;
+        &:hover {
+          color: #2271b1;
+        }
+      }
+    }
+  }
+}
+
+// Gutenberg
+
+@media (min-width: 782px) {
+  .interface-complementary-area {
+    width: 380px;
+  }
+}
+
+// .plugin-sidebar-content {
+//   padding: 16px;
+// }

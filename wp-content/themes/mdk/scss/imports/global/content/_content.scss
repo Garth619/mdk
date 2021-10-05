@@ -84,6 +84,7 @@
       @include quick_type(18px, 25px, null);
     }
   }
+  ol,
   ul,
   p {
     margin-bottom: 25px;
@@ -94,6 +95,21 @@
       &::marker {
         color: $red;
       }
+    }
+  }
+  ol {
+    list-style: none;
+    counter-reset: item;
+    > li {
+      counter-increment: item;
+      position: relative;
+      padding-left: 25px;
+    }
+    > li:before {
+      content: counter(item) ".";
+      font-weight: 800;
+      color: $red;
+      @include abs(0, null, null, 0);
     }
   }
   a {

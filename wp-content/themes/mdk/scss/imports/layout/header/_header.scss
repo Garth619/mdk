@@ -8,25 +8,26 @@ header {
   }
 }
 
-// sorry this ended up being trash code, trying to rearrange the layout in different scenarios
+// sorry this ended up being trash code, trying to rearrange the layout in different scenarios, then additional request got added later to make everything sticky within multiple scenarios... try to reference scss source map and use chrome inspector
 body {
   &.sticky,
   &.internal-header {
     header {
-      //opacity: 1;
       background: $bluedark;
       @include fixed(0, null, null, 0);
       @include mq(small_laptop) {
-        position: absolute;
+        height: 142px;
       }
       #header-left {
         @media screen and (min-width: 675px) {
           padding: 16px 16px 0px;
         }
-
         a {
           @media screen and (min-width: 675px) {
             width: 120px;
+          }
+          @include mq(small_laptop) {
+            width: 177px;
           }
         }
       }
@@ -115,22 +116,26 @@ body {
     header {
       background: $bluedark;
       position: fixed;
-      @include mq(small_laptop) {
-        position: absolute;
-      }
       #header-left {
         @media screen and (min-width: 675px) {
           padding: 16px 16px 0px;
         }
+
         a {
-          @media screen and (min-width: 675px) {
-            width: 120px;
+          @include mq(small_laptop) {
+            //width: 177px;
           }
         }
       }
       #header-middle {
         @media screen and (min-width: 675px) {
           padding: 0px 12px 9px;
+        }
+        @include mq(small_laptop) {
+          padding: 16px 12px 0px;
+        }
+        @include mq(large_laptop) {
+          padding: 22px 14px 0px 72px;
         }
       }
     }
@@ -140,8 +145,6 @@ body {
       background: $bluedark;
       @include fixed(0, null, null, 0);
       @include mq(small_laptop) {
-        position: relative;
-        height: 142px;
         overflow: visible;
       }
       #header-left {
@@ -161,26 +164,26 @@ body {
       }
     }
   }
-  &.fade-header {
-    header {
-      opacity: 0;
-      transition: opacity 300ms ease-in-out;
-      @include mq(small_laptop) {
-        opacity: 1;
-      }
-    }
-  }
-  &.fade-header.sticky {
-    header {
-      opacity: 1;
-      transition-delay: 200ms;
-    }
-  }
-  &.fade-header.no-banner {
-    header {
-      opacity: 1;
-    }
-  }
+  // &.fade-header {
+  //   header {
+  //     opacity: 0;
+  //     transition: opacity 300ms ease-in-out;
+  //     @include mq(small_laptop) {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
+  // &.fade-header.sticky {
+  //   header {
+  //     opacity: 1;
+  //     transition-delay: 200ms;
+  //   }
+  // }
+  // &.fade-header.no-banner {
+  //   header {
+  //     opacity: 1;
+  //   }
+  // }
 }
 
 #header-inner {
@@ -241,7 +244,7 @@ body {
     justify-content: flex-end;
     align-items: flex-start;
     position: relative;
-    padding: 22px 14px 0px 72px;
+    padding: 22px 14px 0px 50px;
   }
   @include mq(monitor) {
     padding: 22px 33px 0px 72px;
@@ -332,7 +335,7 @@ body {
   @include mq(large_laptop) {
     margin-top: 45px;
   }
-  #spanish-cta {
+  .translation-cta {
     background: $red;
     transition: all 200ms ease-in-out;
     @include box(54px, 100%);
@@ -356,10 +359,21 @@ body {
     @include mq(small_laptop) {
       @include box(103px, 36px);
     }
+  }
+  #spanish-cta {
     &::after {
       @include contentdisplay(block, "ES");
       @include mq(small_laptop) {
         @include contentdisplay(block, "Español");
+      }
+    }
+  }
+  #english-cta {
+    display: none;
+    &::after {
+      @include contentdisplay(block, "EN");
+      @include mq(small_laptop) {
+        @include contentdisplay(block, "English");
       }
     }
   }
@@ -389,6 +403,22 @@ body {
           )
         );
       }
+    }
+  }
+}
+
+html.translated-ltr {
+  #header-middle {
+    @include mq(large_laptop) {
+      padding: 22px 14px 0px 20px;
+    }
+  }
+  #header-right {
+    #spanish-cta {
+      display: none;
+    }
+    #english-cta {
+      display: flex;
     }
   }
 }

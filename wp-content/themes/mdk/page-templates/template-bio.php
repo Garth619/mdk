@@ -126,6 +126,7 @@ get_header();?>
         <?php endwhile;?>
 
       </ul>
+
       <?php endif;?>
 
       <?php endwhile;?>

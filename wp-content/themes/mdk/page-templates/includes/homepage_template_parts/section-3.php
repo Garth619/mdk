@@ -26,7 +26,7 @@
       <?php if (have_rows('section_three_slider')): ?>
       <?php while (have_rows('section_three_slider')): the_row();?>
 
-      <div class='sec-three-single-slide'>
+      <div class='sec-three-single-slide cr-click'>
 
         <div class='sec-three-single-inner'>
 

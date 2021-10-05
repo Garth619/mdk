@@ -97,6 +97,27 @@ get_header();?>
 
             <?php }?>
 
+            <?php if (get_field('google_business_link', 'option')) {?>
+
+            <a class='social-icon' href='<?php the_field('google_business_link', 'option');?>' target="_blank"
+              rel="noopener">
+
+              <?php echo file_get_contents(get_template_directory() . '/images/social-google.svg'); ?>
+
+            </a><!-- social-icon -->
+
+            <?php }?>
+
+            <?php if (get_field('yelp_link', 'option')) {?>
+
+            <a class='social-icon' href='<?php the_field('yelp_link', 'option');?>' target="_blank" rel="noopener">
+
+              <?php echo file_get_contents(get_template_directory() . '/images/social-yelp.svg'); ?>
+
+            </a><!-- social-icon -->
+
+            <?php }?>
+
           </div><!-- contact-info-row-inner -->
 
         </div><!-- contact-info-row -->

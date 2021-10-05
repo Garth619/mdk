@@ -50,19 +50,14 @@ span#contact-description {
   margin-bottom: -45px;
   @include mq(small_tablet) {
     display: grid;
-    grid-template-columns: 191px 140px 191px;
+    grid-template-columns: 191px 190px 191px;
     grid-template-rows: auto;
     gap: 0px 75px;
     grid-template-areas:
       "contact-info-row-one contact-info-row-three contact-info-row-two"
       "contact-info-row-one contact-info-row-four contact-info-row-two";
-    max-width: 328px;
+    max-width: 724px;
     @include margin_lr();
-  }
-  @include mq(small_tablet) {
-    max-width: 674px;
-  }
-  @include mq(small_laptop) {
   }
   @include mq(large_laptop) {
     max-width: 820px;

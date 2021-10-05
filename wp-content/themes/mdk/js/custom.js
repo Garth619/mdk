@@ -73,8 +73,8 @@ jQuery(document).ready(function ($) {
     }
   }
 
-  createWaypoint("section-one", "body", "fade-header", -185, null, true);
-  createWaypoint("internal-main", "body", "fade-header", -185, null, true);
+  //createWaypoint("section-one", "body", "fade-header", -185, null, true);
+  //createWaypoint("internal-main", "body", "fade-header", -185, null, true);
 
   createWaypoint("section-one", "body", "sticky", -250, null, true);
   createWaypoint("internal-main", "body", "sticky", -250, null, true);
@@ -197,23 +197,6 @@ jQuery(document).ready(function ($) {
     ],
   });
 
-  function caseResultsclick() {
-    $(".sec-three-single-slide").not(this).removeClass("show");
-    $(this).toggleClass("show");
-  }
-
-  if ($(window).width() < 1170) {
-    $(".sec-three-single-slide").off().on("click", caseResultsclick);
-  }
-
-  $(window).resize(
-    _.debounce(function () {
-      if ($(window).width() < 1170) {
-        $(".sec-three-single-slide").off().on("click", caseResultsclick);
-      }
-    }, 100)
-  );
-
   $("#sec-five-slider").slick({
     infinite: true,
     slidesToShow: 1,
@@ -332,13 +315,25 @@ jQuery(document).ready(function ($) {
     goBack();
   });
 
-  /* Sidebar Widget H3 Hack
+  /* Case Results Page and Section Three Homepage
 --------------------------------------------------------------------------------------- */
 
-  $(".case-results-single-slide").on("click", function (e) {
-    $(".case-results-single-slide").not(this).removeClass("show");
+  function caseResultsclick() {
+    $(".cr-click").not(this).removeClass("show");
     $(this).toggleClass("show");
-  });
+  }
+
+  if ($(window).width() < 1170) {
+    $(".cr-click").off().on("click", caseResultsclick);
+  }
+
+  $(window).resize(
+    _.debounce(function () {
+      if ($(window).width() < 1170) {
+        $(".cr-click").off().on("click", caseResultsclick);
+      }
+    }, 100)
+  );
 
   /* Sidebar Widget H3 Hack
 --------------------------------------------------------------------------------------- */
@@ -427,10 +422,12 @@ jQuery(document).ready(function ($) {
 
   $("#menu-wrapper").on("click", function (e) {
     $("nav, #nav-bg").addClass("open");
+    $("html,body").css("overflow-y", "hidden");
   });
 
   $("#close-wrapper").on("click", function (e) {
     $("nav, #nav-bg").removeClass("open");
+    $("html,body").css("overflow-y", "scroll");
   });
 
   function navDesktop() {

@@ -130,7 +130,8 @@ if (!cms_is_in_menu('main-menu')) {
 
           <div id='cta'>
 
-            <span id='available'><?php the_field('available_verbiage', 'option');?></span><!-- available -->
+            <span id='available' class='notranslate'><?php the_field('available_verbiage', 'option');?></span>
+            <!-- available -->
 
             <span id='free-consultation'><?php the_field('free_consultation_verbiage', 'option');?></span>
             <!-- available -->
@@ -163,7 +164,11 @@ if (!cms_is_in_menu('main-menu')) {
 
       <div id='header-right'>
 
-        <a id='spanish-cta' href=''></a><!-- spanish-cta -->
+        <a id='spanish-cta' class="translation-cta glink nturl notranslate"
+          onclick="doGTranslate('en|es');return false;" title="Spanish" href='#'></a><!-- spanish-cta -->
+
+        <a id='english-cta' class="translation-cta glink nturl notranslate"
+          onclick="doGTranslate('en|en');return false;" title="Spanish" href='#'></a><!-- spanish-cta -->
 
         <div id='menu-wrapper'>
 

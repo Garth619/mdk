@@ -1,5 +1,6 @@
 body {
   color: $bluedark;
+  top: 0 !important;
 }
 
 #internal-main {
@@ -12,7 +13,7 @@ body.internal-header.no-banner {
       margin-top: 85px;
     }
     @include mq(small_laptop) {
-      margin-top: 0px;
+      margin-top: 142px;
     }
   }
 }

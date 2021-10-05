@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<p><!---DO NOT EDIT welcome.html as it is being compiled based on the contents of its .md counterpart file. Edit .md instead with a compiler such as codekit. --></p>
+
+<style>
+    pre {
+        max-height: 30em;
+        width:40em;
+        max-width:100%;
+        overflow:auto;
+    }
+    pre code {
+        background:none;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 2em;
+    }
+    h1 code,
+    h2 code,
+    h3 code,
+    h4 code,
+    h5 code,
+    h6 code {
+        font-size: 1em;
+    }
+</style>
+
+<h1><big>Welcome to iLawyer Translation Plugin!</big></h1>
+
+<p>Here&#8217;s how to setup translations:</p>
+
+<ol>
+<li><p>If you&#8217;re setting up on a new site or one without translations setup, proceeed to the next step. For older setups that may have an older form of iLawyer translations, double check to make sure no template part or source code in the theme uses the following functions. If these exist or are declared in the theme functions, remove the declarations in <code>functions.php</code> and modify found instances to have their parameters setup to support <a href="/wp-admin/admin.php?page=ilaw-translation-docs">the functions included in the plugin</a>.</p>
+
+<ul>
+<li><code>ilaw_get_translation</code> -&gt; <a href="/wp-admin/admin.php?page=ilaw-translation-docs#ilaw_tr_parsearraydataarray"><code>ilaw_tr_parse</code></a> function is recommended</li>
+<li><code>ilaw_the_translation</code> -&gt; <a href="/wp-admin/admin.php?page=ilaw-translation-docs#ilaw_tr_parsearraydataarray"><code>ilaw_tr_parse</code></a> function is recommended</li>
+<li><code>ilaw_is_lang</code> -&gt; <a href="/wp-admin/admin.php?page=ilaw-translation-docs#is_langstringlanguage_post_typeintidnull"><code>is_lang</code></a> function is recommended</li>
+<li><code>is_spanish</code> -&gt; <a href="/wp-admin/admin.php?page=ilaw-translation-docs#is_langstringlanguage_post_typeintidnull"><code>is_lang</code></a> function is recommended (WARNING: this may or may not be declared from the iLawyer custom theme itself. Evaluate if needed to be modified first)</li>
+<li><code>is_lang</code> -&gt; <a href="/wp-admin/admin.php?page=ilaw-translation-docs#is_langstringlanguage_post_typeintidnull"><code>is_lang</code></a> function is recommended (WARNING: this may or may not be declared from the iLawyer custom theme itself. Evaluate if needed to be modified first)</li>
+</ul></li>
+<li><p><a href="https://developer.wordpress.org/reference/functions/register_post_type/" target="_blank">Register your custom post type</a> for your chosen language/s. For example, here&#8217;s a quick snippet to setup for Spanish pages/post types:</p>
+
+<pre><code class="php">add_action( 'init', 'ilaw_register_cpts' );
+function ilaw_register_cpts() {
+
+    // Verbiage for admin pages
+    $labels = array( 
+
+        'name' =&gt; _x( 'Spanish Pages', 'espanol' ),
+        'singular_name' =&gt; _x( 'Spanish Page', 'espanol' ),
+        'add_new' =&gt; _x( 'Add New', 'espanol' ),
+        'add_new_item' =&gt; _x( 'Add New Spanish Page', 'espanol' ),
+        'edit_item' =&gt; _x( 'Edit Spanish Page', 'espanol' ),
+        'new_item' =&gt; _x( 'New Spanish Page', 'espanol' ),
+        'view_item' =&gt; _x( 'View Spanish Page', 'espanol' ),
+        'search_items' =&gt; _x( 'Search Spanish Pages', 'espanol' ),
+        'not_found' =&gt; _x( 'No Spanish Page found', 'espanol' ),
+        'not_found_in_trash' =&gt; _x( 'No Spanish Page found in Trash', 'espanol' ),
+        'parent_item_colon' =&gt; _x( 'Parent Spanish Page:', 'espanol' ),
+        'menu_name' =&gt; _x( 'Spanish Page', 'espanol' ),
+    );
+
+        
+    //set it all up
+    $args = array( 
+        'labels' =&gt; $labels,
+        'hierarchical' =&gt; true,
+        'description' =&gt; 'Published &amp; protected Spanish Page',
+        'supports' =&gt; array( 'title', 'editor', 'excerpt', 'revisions','thumbnail','page-attributes'),
+        'taxonomies' =&gt; array( 'espanol_category' ),
+        'public' =&gt; true,
+        'show_ui' =&gt; true,
+        'show_in_menu' =&gt; true,
+        'menu_position' =&gt; 20,
+        'menu_icon' =&gt; 'dashicons-media-document',
+        'show_in_nav_menus' =&gt; true,
+        'publicly_queryable' =&gt; true,
+        'exclude_from_search' =&gt; false,
+        'has_archive' =&gt; false,
+        'query_var' =&gt; true,
+        'can_export' =&gt; true,
+        'rewrite' =&gt; array(
+            'slug'=&gt;'es',
+            'with_front'=&gt; false,
+            'feed'=&gt; false,
+            'pages'=&gt; true
+        ),
+        'capability_type' =&gt; 'page'
+    );
+
+    register_post_type( 'es', $args );
+}
+</code></pre></li>
+<li><p><a href="/wp-admin/admin.php?page=ilaw-translation-config">Setup the Custom post types</a> to enable the translation setup to.</p></li>
+<li><p><a href="/wp-admin/admin.php?page=ilaw-translation-text">Setup the verbaige for the translation</a></p></li>
+<li><p><a href="/wp-admin/nav-menus.php">Create and Setup menus</a> for the registered translates versions</p></li>
+<li><p>Setup <a href="/wp-admin/admin.php?page=gf_edit_forms">Gravity forms for translation</a>.</p>
+
+<ol>
+<li>Optional. If you would like to override the header error validation on gravity forms, <a href="/wp-admin/admin.php?page=ilaw-translation-text">setup a translation row</a> with the <a href="/wp-admin/admin.php?page=ilaw-translation-docs#pre-builttranslations">prebuilt key</a> <code>ilaw_tr_gform_validation_message</code></li>
+<li>Admin &gt; Forms &gt; Hover over form &gt; Duplicate &gt; Edit new duplicate form.</li>
+<li>Translate the following:
+
+<ul>
+<li>each field labels</li>
+<li>each field placeholders</li>
+<li>each field validation messages</li>
+<li>each field choices (if applicable)</li>
+</ul></li>
+<li>While in edit form page go to Settings &gt; Form Settings</li>
+<li>Translate the following
+
+<ul>
+<li>Form title</li>
+<li>Description</li>
+<li>Button Text</li>
+</ul></li>
+</ol></li>
+<li><p>If applicable, <a href="/wp-admin/admin.php?page=ilaw-sidebar-options">Setup sidebars</a> for language cpts and add appropriate navigation menu widgets in <a href="/wp-admin/widgets.php">the admin widget settings</a></p></li>
+<li><p>Modify theme templates to output the translations</p>
+
+<ol>
+<li><p><a href="/wp-admin/admin.php?page=ilaw-translation-docs#ilaw_tr_menu_locationstringmenu_name"><code>ilaw_tr_menu_location</code></a> for menu locations (NOTE: this only works if menus are setup using the <code>init</code> action hook)</p></li>
+<li><p><a href="/wp-admin/admin.php?page=ilaw-translation-docs#ilaw_get_translationstringkey"><code>ilaw_get_translation</code></a> For setup text translations from step 3</p></li>
+<li><p><a href="/wp-admin/admin.php?page=ilaw-translation-docs#ilaw_tr_parsearraydataarray"><code>ilaw_tr_parse</code></a> For basic text strings, acf fields aside from those in step 3, or gravity forms, etc..</p></li>
+</ol>
+
+<p>More functions that can be utilized can be found here: <a href="/wp-admin/admin.php?page=ilaw-translation-docs#functions">helpers installed with the plugin</a>.</p>
+
+<ol>
+<li>NOTE: On your <code>header.php</code> template/s . make sure <a href="https://developer.wordpress.org/reference/functions/language_attributes/"><code>&lt;?php language_attributes() ?&gt;</code></a> is being called AND there are no hardcoded <code>lang</code> attributes</li>
+</ol></li>
+</ol>
+
+</body>
+</html>
+

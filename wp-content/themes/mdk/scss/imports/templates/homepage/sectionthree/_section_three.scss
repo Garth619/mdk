@@ -92,7 +92,7 @@
 
 a#sec-three-button {
   @include mq(small_laptop) {
-    height: 45px;
+    //height: 45px;
   }
 }
 
