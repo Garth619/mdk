@@ -1285,7 +1285,7 @@ body.sticky.internal-header header {
 }
 @media screen and (min-width: 1380px) {
   body.sticky.internal-header header #header-middle {
-    padding: 22px 14px 0px 72px;
+    padding: 22px 14px 0px 50px;
   }
 }
 body.internal-header.no-banner header {
@@ -5612,6 +5612,62 @@ span#sec-six-title::after {
 .single-testi .single-testi-social-icon span {
   margin-left: 5px;
   font-weight: 700;
+}
+
+#video-wrapper {
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  #video-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 0px 30px;
+    max-width: 950px;
+    margin-bottom: -80px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #video-wrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1660px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #video-wrapper {
+    margin-bottom: -50px;
+  }
+}
+#video-wrapper .single-video {
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  #video-wrapper .single-video {
+    margin-bottom: 80px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #video-wrapper .single-video {
+    margin-bottom: 100px;
+  }
+}
+#video-wrapper .single-video span.single-video-title {
+  max-width: 290px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 1170px) {
+  #video-wrapper .single-video span.single-video-title {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+@media screen and (min-width: 1380px) {
+  #video-wrapper .single-video span.single-video-title {
+    margin-top: 21px;
+  }
 }
 
 @media screen and (min-width: 1170px) {
