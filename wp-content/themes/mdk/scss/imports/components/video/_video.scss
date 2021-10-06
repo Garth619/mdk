@@ -15,7 +15,7 @@
       .single-video-overlay {
         span.single-play-button {
           &::after {
-            @include tri(right, 13px, 20px, $red);
+            @include tri(right, 10px, 15px, $red);
           }
         }
       }
@@ -75,8 +75,9 @@
         }
         &::after {
           margin: auto;
+          transition: all 200ms ease-in-out;
           @include abs(0, 0, 0, 3px);
-          @include tri(right, 13px, 20px, #07121c);
+          @include tri(right, 10px, 15px, #07121c);
         }
       }
     }

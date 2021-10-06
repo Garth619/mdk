@@ -198,6 +198,9 @@ span.att-title {
       @include mq(small_tablet) {
         @include quick_type(30px, 40px, null);
       }
+      &.client-name {
+        @include quick_type(18px, 28px, null);
+      }
     }
   }
 }

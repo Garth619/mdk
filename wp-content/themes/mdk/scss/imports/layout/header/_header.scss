@@ -120,10 +120,12 @@ body {
         @media screen and (min-width: 675px) {
           padding: 16px 16px 0px;
         }
-
         a {
+          @media screen and (min-width: 675px) {
+            width: 120px;
+          }
           @include mq(small_laptop) {
-            //width: 177px;
+            width: 177px;
           }
         }
       }

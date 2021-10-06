@@ -8,7 +8,7 @@ function load_my_styles_scripts()
 
     // Styles
 
-    // wp_enqueue_style('styles', get_template_directory_uri() . '/style.css', '', 5, 'all');
+    //wp_enqueue_style('styles', get_template_directory_uri() . '/style.css', '', 5, 'all');
 
     // Disables jquery then registers it again to go into footer
 

@@ -259,17 +259,12 @@ nav {
       }
       &.menu-item-has-children {
         position: relative;
-        > a {
-          @include flex(null, center);
-          &::after {
-            vertical-align: top;
-            margin-left: 10px;
-            display: inline-block;
-            transition: all 200ms ease-in-out;
-            @include tri(down, 4px, 6px, $bluelight);
-            @include contentdisplay();
-            @include mq(small_laptop) {
-              display: none;
+        &.active {
+          > a {
+            color: $red;
+            &::after {
+              color: $red;
+              @include contentdisplay(inline-block, "-");
             }
           }
         }
@@ -280,7 +275,8 @@ nav {
             }
             &::after {
               @include mq(small_laptop) {
-                @include tri(right, 4px, 6px, $red);
+                color: $red;
+                @include contentdisplay(inline-block, "-");
               }
             }
           }
@@ -291,16 +287,20 @@ nav {
             }
           }
         }
+        > a {
+          @include flex(null, center);
+          &::after {
+            vertical-align: top;
+            margin-left: 10px;
+            display: inline-block;
+            transition: all 200ms ease-in-out;
+            @include contentdisplay(inline-block, "+");
+          }
+        }
       }
       &.current-menu-ancestor {
         > a {
           color: $red;
-          &::after {
-            @include tri(down, 4px, 6px, $red);
-            @include mq(small_laptop) {
-              @include tri(right, 4px, 6px, $red);
-            }
-          }
         }
       }
       ul.sub-menu {

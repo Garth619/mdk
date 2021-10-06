@@ -54,9 +54,11 @@ body.internal-header.no-banner {
       height: 35px,
       family: $secondaryfont,
       weight: 800,
+      align: center,
     )
   );
   @include mq(small_tablet) {
+    text-align: left;
     @include quick_type(45px, 45px, null);
   }
   @include mq(small_laptop) {
@@ -65,16 +67,16 @@ body.internal-header.no-banner {
 }
 
 .gform_body .gform_fields .gfield ::-webkit-input-placeholder {
-  color: $bluedark;
+  color: #000;
 }
 .gform_body .gform_fields .gfield ::-moz-placeholder {
-  color: $bluedark;
+  color: #000;
 }
 .gform_body .gform_fields .gfield :-moz-placeholder {
-  color: $bluedark;
+  color: #000;
 }
 .gform_body .gform_fields .gfield :-ms-input-placeholder {
-  color: $bluedark;
+  color: #000;
 }
 .gform_body .gform_fields .gfield ::-moz-placeholder {
   opacity: 1;

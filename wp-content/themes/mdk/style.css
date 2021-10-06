@@ -853,11 +853,13 @@ body.internal-header.no-banner #internal-main {
   line-height: 35px;
   font-family: industry, sans-serif;
   font-weight: 800;
+  text-align: center;
   font-style: normal;
   text-decoration: none;
 }
 @media screen and (min-width: 768px) {
   .page-title {
+    text-align: left;
     font-size: 45px;
     line-height: 45px;
   }
@@ -870,19 +872,19 @@ body.internal-header.no-banner #internal-main {
 }
 
 .gform_body .gform_fields .gfield ::-webkit-input-placeholder {
-  color: #07121c;
+  color: #000;
 }
 
 .gform_body .gform_fields .gfield ::-moz-placeholder {
-  color: #07121c;
+  color: #000;
 }
 
 .gform_body .gform_fields .gfield :-moz-placeholder {
-  color: #07121c;
+  color: #000;
 }
 
 .gform_body .gform_fields .gfield :-ms-input-placeholder {
-  color: #07121c;
+  color: #000;
 }
 
 .gform_body .gform_fields .gfield ::-moz-placeholder {
@@ -1018,9 +1020,9 @@ body.internal-header.no-banner #internal-main {
 .single-video:hover .single-video-thumbnail-wrapper .single-video-overlay span.single-play-button::after {
   width: 0;
   height: 0;
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-  border-left: 20px solid #c61f20;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #c61f20;
   border-right: none;
 }
 .single-video .single-wistia {
@@ -1102,6 +1104,7 @@ body.internal-header.no-banner #internal-main {
 }
 .single-video .single-video-thumbnail-wrapper .single-video-overlay span.single-play-button::after {
   margin: auto;
+  transition: all 200ms ease-in-out;
   position: absolute;
   top: 0;
   right: 0;
@@ -1109,9 +1112,9 @@ body.internal-header.no-banner #internal-main {
   left: 3px;
   width: 0;
   height: 0;
-  border-top: 13px solid transparent;
-  border-bottom: 13px solid transparent;
-  border-left: 20px solid #07121c;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #07121c;
   border-right: none;
 }
 .single-video span.single-video-title {
@@ -1272,6 +1275,16 @@ body.sticky.internal-header header {
 @media screen and (min-width: 675px) {
   body.sticky.internal-header header #header-left {
     padding: 16px 16px 0px;
+  }
+}
+@media screen and (min-width: 675px) {
+  body.sticky.internal-header header #header-left a {
+    width: 120px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  body.sticky.internal-header header #header-left a {
+    width: 177px;
   }
 }
 @media screen and (min-width: 675px) {
@@ -1973,6 +1986,32 @@ nav ul.sub-menu.active {
 nav ul.sub-menu li.menu-item-has-children {
   position: relative;
 }
+nav ul.sub-menu li.menu-item-has-children.active > a {
+  color: #c61f20;
+}
+nav ul.sub-menu li.menu-item-has-children.active > a::after {
+  color: #c61f20;
+  content: "-";
+  display: inline-block;
+}
+@media screen and (min-width: 1170px) {
+  nav ul.sub-menu li.menu-item-has-children:hover > a {
+    color: #c61f20;
+  }
+}
+@media screen and (min-width: 1170px) {
+  nav ul.sub-menu li.menu-item-has-children:hover > a::after {
+    color: #c61f20;
+    content: "-";
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 1170px) {
+  nav ul.sub-menu li.menu-item-has-children:hover ul.sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 nav ul.sub-menu li.menu-item-has-children > a {
   display: -webkit-flex;
   display: flex;
@@ -1984,61 +2023,11 @@ nav ul.sub-menu li.menu-item-has-children > a::after {
   margin-left: 10px;
   display: inline-block;
   transition: all 200ms ease-in-out;
-  width: 0;
-  height: 0;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-  border-top: 6px solid #253245;
-  border-bottom: none;
-  content: "";
-  display: block;
-}
-@media screen and (min-width: 1170px) {
-  nav ul.sub-menu li.menu-item-has-children > a::after {
-    display: none;
-  }
-}
-@media screen and (min-width: 1170px) {
-  nav ul.sub-menu li.menu-item-has-children:hover > a {
-    color: #c61f20;
-  }
-}
-@media screen and (min-width: 1170px) {
-  nav ul.sub-menu li.menu-item-has-children:hover > a::after {
-    width: 0;
-    height: 0;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-left: 6px solid #c61f20;
-    border-right: none;
-  }
-}
-@media screen and (min-width: 1170px) {
-  nav ul.sub-menu li.menu-item-has-children:hover ul.sub-menu {
-    opacity: 1;
-    visibility: visible;
-  }
+  content: "+";
+  display: inline-block;
 }
 nav ul.sub-menu li.current-menu-ancestor > a {
   color: #c61f20;
-}
-nav ul.sub-menu li.current-menu-ancestor > a::after {
-  width: 0;
-  height: 0;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-  border-top: 6px solid #c61f20;
-  border-bottom: none;
-}
-@media screen and (min-width: 1170px) {
-  nav ul.sub-menu li.current-menu-ancestor > a::after {
-    width: 0;
-    height: 0;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    border-left: 6px solid #c61f20;
-    border-right: none;
-  }
 }
 @media screen and (min-width: 1170px) {
   nav ul.sub-menu li ul.sub-menu {
@@ -4599,20 +4588,14 @@ img#hero-image {
 @media screen and (min-width: 1170px) {
   #sec-four-middle-content {
     padding: 0px 0px 0 0;
-    margin-top: 24px;
+    margin-top: 82px;
   }
 }
 @media screen and (min-width: 1380px) {
   #sec-four-middle-content {
-    margin-top: 71px;
+    margin-top: 80px;
   }
 }
-@media screen and (min-width: 1695px) {
-  #sec-four-middle-content {
-    margin-top: 53px;
-  }
-}
-
 #sec-five-content {
   text-align: center;
   padding: 0 0 34px;
@@ -4961,6 +4944,16 @@ img#hero-image {
   height: 3px;
   content: "";
   display: inline-block;
+}
+@media screen and (min-width: 1170px) {
+  .sec-five-slide span.sec-five-slide-name::before {
+    background: #fff;
+  }
+}
+@media screen and (min-width: 1380px) {
+  .sec-five-slide span.sec-five-slide-name::before {
+    background: #c61f20;
+  }
 }
 .sec-five-slide span.sec-five-icon-title {
   font-size: 17px;
@@ -6215,6 +6208,10 @@ span.att-title::after {
     font-size: 30px;
     line-height: 40px;
   }
+}
+#client-testimonials blockquote p.client-name {
+  font-size: 18px;
+  line-height: 28px;
 }
 
 #bio-sidebar-wrapper {

@@ -111,13 +111,13 @@
   }
   @include mq(small_laptop) {
     padding: 0px 0px 0 0;
-    margin-top: 24px;
+    margin-top: 82px;
   }
   @include mq(large_laptop) {
-    margin-top: 71px;
+    margin-top: 80px;
   }
   @include mq(small_monitor) {
-    margin-top: 53px;
+    //margin-top: 80px;
   }
 }
 

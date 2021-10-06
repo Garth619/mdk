@@ -261,6 +261,12 @@
         margin-right: 12px;
         @include box(47px, 3px);
         @include contentdisplay(inline-block, "");
+        @include mq(small_laptop) {
+          background: #fff;
+        }
+        @include mq(large_laptop) {
+          background: $red;
+        }
       }
     }
     &.sec-five-icon-title {
