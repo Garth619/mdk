@@ -1,3 +1,106 @@
+#testimonial-video-wrapper {
+  max-width: 580px;
+  margin-bottom: 40px;
+  @include margin_lr();
+  @include mq(small_tablet) {
+    max-width: 715px;
+    @include flex(space-between);
+  }
+  @media screen and (min-width: 945px) {
+    max-width: 100%;
+    align-items: center;
+  }
+  @include mq(small_laptop) {
+    margin-bottom: 100px;
+  }
+  @include mq(large_laptop) {
+    margin-bottom: 110px;
+    max-width: 1770px;
+  }
+}
+
+.testimonial-video-arrow {
+  background: #253245;
+  display: none;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  margin-top: 110px;
+  @include box(60px, 60px);
+  &:hover {
+    background: #8e99ac;
+  }
+  @include mq(small_tablet) {
+    margin-top: 120px;
+    @include flex(center, center);
+  }
+  @media screen and (min-width: 945px) {
+    margin-top: -150px;
+  }
+  @include mq(small_laptop) {
+    margin-top: -240px;
+  }
+  @include mq(large_laptop) {
+    margin-top: -200px;
+  }
+}
+
+#testimonial-video-arrow-left {
+  img {
+    margin-left: -3px;
+    transform: rotate(180deg);
+  }
+}
+
+#testimonial-video-slider {
+  @include mq(small_tablet) {
+    width: calc(100% - 150px);
+  }
+  @include mq(small_laptop) {
+    width: calc(100% - 170px);
+  }
+  .slick-slide {
+    margin: 0 15px;
+  }
+  .slick-list {
+    margin: 0 -15px;
+  }
+  .slick-dots {
+    position: static;
+    margin-top: 30px;
+    @include mq(small_laptop) {
+      margin-top: 90px;
+    }
+    li.slick-active {
+      button {
+        &:before {
+          color: $red;
+        }
+      }
+    }
+    li:hover {
+      button {
+        &:before {
+          color: $red;
+        }
+      }
+    }
+    li {
+      margin: 0;
+      width: 20px;
+      button {
+        width: 20px;
+        &:before {
+          width: 20px;
+          opacity: 1;
+          color: grey;
+          font-size: 32px;
+          transition: all 200ms ease-in-out;
+        }
+      }
+    }
+  }
+}
+
 #testimonial-wrapper {
   max-width: 1000px;
   @include margin_lr();

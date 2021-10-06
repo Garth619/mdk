@@ -2,6 +2,7 @@
 // @codekit-prepend 'slick.js'
 // @codekit-prepend 'underscore.js'
 // @codekit-prepend 'lazysizes.js'
+// @codekit-prepend 'lity.js'
 
 jQuery(document).ready(function ($) {
   $("body").addClass("ready");
@@ -259,6 +260,52 @@ jQuery(document).ready(function ($) {
           dots: false,
           slidesToShow: 5,
           slidesToScroll: 5,
+        },
+      },
+    ],
+  });
+
+  $("#testimonial-video-slider").slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    adaptiveHeight: true,
+    dots: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          dots: true,
+          prevArrow: "#testimonial-video-arrow-left",
+          nextArrow: "#testimonial-video-arrow-right",
+        },
+      },
+      {
+        breakpoint: 945,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          adaptiveHeight: false,
+          arrows: true,
+          dots: true,
+          prevArrow: "#testimonial-video-arrow-left",
+          nextArrow: "#testimonial-video-arrow-right",
+        },
+      },
+      {
+        breakpoint: 1379,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          arrows: true,
+          dots: true,
+          prevArrow: "#testimonial-video-arrow-left",
+          nextArrow: "#testimonial-video-arrow-right",
         },
       },
     ],

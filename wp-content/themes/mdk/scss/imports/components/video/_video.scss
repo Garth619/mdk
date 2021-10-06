@@ -1,0 +1,102 @@
+.single-video {
+  text-align: center;
+  border-bottom: 5px solid $red;
+  padding-bottom: 23px;
+  position: relative;
+  @include mq(small_laptop) {
+    border-bottom: 8px solid $red;
+  }
+  &:hover {
+    .single-video-thumbnail-wrapper {
+      img:not(.single-video-spacer) {
+        transform: scale(1.1);
+      }
+      .single-video-overlay {
+        span.single-play-button {
+          &::after {
+            @include tri(right, 13px, 20px, $red);
+          }
+        }
+      }
+    }
+  }
+  &.single-wistia-html {
+  }
+  .single-wistia {
+    @include box(100%, 100%);
+    @include abs(0, null, null, 0, 1);
+  }
+  a {
+    text-decoration: none;
+  }
+  .single-video-thumbnail-wrapper {
+    position: relative;
+    overflow: hidden;
+    img {
+      @include image();
+      &.single-video-thumb {
+        object-fit: cover;
+        transform: scale(1);
+        transition: all 600ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
+        @include box(100%, 100%);
+        @include abs(0, null, null, 0);
+      }
+      &.single-video-spacer {
+        width: 100%;
+      }
+    }
+    .single-video-overlay {
+      background: rgba(7, 18, 28, 0.8);
+      pointer-events: none;
+      @include abs(0, null, null, 0, 2);
+      @include box(100%, 100%);
+      @include flex(center, center);
+      span.single-play-button {
+        display: block;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        position: relative;
+        @include box(86px, 86px);
+        @include mq(small_monitor) {
+          @include box(116px, 116px);
+        }
+
+        &::before,
+        &::after {
+          @include contentdisplay();
+        }
+        &::before {
+          border-radius: 50%;
+          background: #fff;
+          margin-top: 7px;
+          margin-left: 7px;
+          @include box(calc(100% - 14px), calc(100% - 14px));
+        }
+        &::after {
+          margin: auto;
+          @include abs(0, 0, 0, 3px);
+          @include tri(right, 13px, 20px, #07121c);
+        }
+      }
+    }
+  }
+  span.single-video-title {
+    display: block;
+    color: #07121c;
+    margin-top: 20px;
+    @include type(
+      (
+        size: 17px,
+        height: 22px,
+        family: $primaryfont,
+        weight: 700,
+      )
+    );
+    @include mq(small_laptop) {
+      @include quick_type(20px, 25px, null);
+    }
+    @include mq(large_laptop) {
+      margin-top: 35px;
+    }
+  }
+}

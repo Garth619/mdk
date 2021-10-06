@@ -14,6 +14,44 @@ get_header();?>
 
   <div id='page-container'>
 
+    <?php if (have_rows('video_options')): ?>
+
+    <div id='testimonial-video-wrapper'>
+
+      <div id='testimonial-video-arrow-left' class='testimonial-video-arrow'>
+
+        <img class='testimonial-video-arrow-svg' src='<?php bloginfo('template_directory');?>/images/arrow.svg'
+          alt='' />
+
+      </div><!-- testimonial-video-arrow-left -->
+
+      <div id='testimonial-video-slider'>
+
+        <?php while (have_rows('video_options')): the_row();?>
+
+        <?php get_template_part('page-templates/includes/video/template', 'video');?>
+
+        <?php endwhile;?>
+
+      </div><!-- testimonial-video-slider -->
+
+      <div id='testimonial-video-arrow-right' class='testimonial-video-arrow'>
+
+        <img class='testimonial-video-arrow-svg' src='<?php bloginfo('template_directory');?>/images/arrow.svg'
+          alt='' />
+
+      </div><!-- testimonial-video-arrow-right -->
+
+    </div><!-- testimonial-video-wrapper -->
+
+    <?php if (get_field('wistia_or_youtube') == 'Wistia') {?>
+
+    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+
+    <?php }?>
+
+    <?php endif;?>
+
     <div id='testimonial-wrapper'>
 
       <?php if (have_rows('testimonials')): ?>
