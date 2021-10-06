@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! Theme Name:Fangel
+/*! Theme Name:MDK
 		Author: 1POINT21 */
 /*! 
 
@@ -1004,6 +1004,7 @@ body.internal-header.no-banner #internal-main {
   border-bottom: 5px solid #c61f20;
   padding-bottom: 23px;
   position: relative;
+  cursor: pointer;
 }
 @media screen and (min-width: 1170px) {
   .single-video {

@@ -3,6 +3,7 @@
   border-bottom: 5px solid $red;
   padding-bottom: 23px;
   position: relative;
+  cursor: pointer;
   @include mq(small_laptop) {
     border-bottom: 8px solid $red;
   }
