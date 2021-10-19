@@ -110,5 +110,9 @@ span#sec-six-title {
   }
   @include mq(small_laptop) {
     padding-left: 60px;
+    margin-top: -6px;
+  }
+  @include mq(small_monitor) {
+    margin-top: -26px;
   }
 }

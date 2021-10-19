@@ -264,7 +264,7 @@
         @include mq(small_laptop) {
           background: #fff;
         }
-        @include mq(large_laptop) {
+        @include mq(monitor) {
           background: $red;
         }
       }

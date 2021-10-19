@@ -173,7 +173,7 @@
 }
 
 .wp-block-image {
-  &.alignleft {
+  .alignleft {
     @media screen and (min-width: 1100px) {
       img {
         float: left;
@@ -181,12 +181,12 @@
       }
     }
   }
-  &.aligncenter {
+  .aligncenter {
     img {
       @include margin_lr();
     }
   }
-  &.alignright {
+  .alignright {
     @media screen and (min-width: 1100px) {
       img {
         float: right;
@@ -195,20 +195,64 @@
     }
   }
   img {
-    margin-top: 40px;
     margin-bottom: 30px;
     @include image();
     @include margin_lr();
     @include mq(small_tablet) {
-      margin-top: 40px;
-      margin-bottom: 60px;
+      //margin-top: 40px;
+      //margin-bottom: 60px;
     }
     @include mq(small_laptop) {
-      margin-top: 50px;
+      //margin-top: 50px;
     }
     @include mq(large_laptop) {
-      margin-top: 70px;
-      margin-bottom: 80px;
+      //margin-top: 70px;
+      //margin-bottom: 80px;
     }
+  }
+}
+
+.alignleft,
+img.alignleft {
+  display: block;
+  float: left;
+  margin-right: 24px;
+  margin-top: 4px;
+  @include image();
+  @include mq(xlarge_mobile) {
+    margin: 20px auto 30px;
+    float: none;
+  }
+}
+.alignright,
+img.alignright {
+  display: block;
+  float: right;
+  margin-left: 24px;
+  margin-top: 4px;
+  @include image();
+  @include mq(xlarge_mobile) {
+    margin: 20px auto 30px;
+    float: none;
+  }
+}
+.aligncenter,
+.aligncenter img,
+img.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  @include image();
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+  margin-bottom: 12px;
+  @include image();
+  @include mq(xlarge_mobile) {
+    margin: 20px auto 30px;
+    float: none;
   }
 }

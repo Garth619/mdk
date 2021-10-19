@@ -4,7 +4,7 @@
 
     <h1 class='banner-title banner-title-large contact-title'><?php the_title();?></h1><!-- banner-title -->
 
-    <span id='contact-description'><?php the_field('contact_banner_description');?></span>
+    <span id='contact-description' class="content"><?php the_field('contact_banner_description');?></span>
     <!-- contact-description -->
 
   </div><!-- banner-content -->

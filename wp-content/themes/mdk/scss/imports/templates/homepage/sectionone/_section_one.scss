@@ -315,19 +315,35 @@ a#sec-one-button {
 
 .sec-one-single-slide {
   padding: 42px 0;
+  &:hover {
+    @include mq(small_laptop) {
+      span {
+        &.sec-one-single-title {
+          transform: translateY(0px);
+        }
+        &.sec-one-single-descrip {
+          transform: translateY(0px);
+        }
+      }
+      .sec-one-single-icon {
+        transform: translateY(0px);
+      }
+    }
+  }
   @include mq(small_tablet) {
     padding: 29px 16px 40px;
-    border-right: 1px solid #283243;
+    border-right: 1px solid #363636;
   }
   @include mq(small_laptop) {
     padding: 29px 30px 60px;
+    //transform: translateY(59px);
   }
   @include mq(large_laptop) {
     padding: 29px 40px 35px;
   }
   &:last-of-type {
     @include mq(small_tablet) {
-      border-right: 1px solid #283243;
+      border-right: 1px solid #363636;
     }
     @include mq(small_laptop) {
       border-right: none;
@@ -335,10 +351,12 @@ a#sec-one-button {
   }
   .sec-one-single-icon {
     position: relative;
+    transition: all 500ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
     @include margin_lr();
     @include box(39px, 37px);
     @include mq(small_laptop) {
       @include box(45px, 47px);
+      transform: translateY(10px);
     }
     img {
       width: 100%;
@@ -350,6 +368,7 @@ a#sec-one-button {
     display: block;
     &.sec-one-single-title {
       margin-top: 20px;
+      transition: all 500ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
       @include type(
         (
           size: 22px,
@@ -362,6 +381,7 @@ a#sec-one-button {
       @include mq(small_laptop) {
         margin-top: 25px;
         font-size: 24px;
+        transform: translateY(10px);
       }
       @include mq(small_monitor) {
         font-size: 24px;
@@ -370,6 +390,7 @@ a#sec-one-button {
     &.sec-one-single-descrip {
       margin-top: 10px;
       max-width: 326px;
+      transition: all 500ms cubic-bezier(0.17, 0.66, 0.34, 0.98);
       @include margin_lr();
       @include type(
         (
@@ -385,6 +406,7 @@ a#sec-one-button {
       @include mq(small_laptop) {
         margin-top: 15px;
         line-height: 25px;
+        transform: translateY(10px);
       }
     }
   }

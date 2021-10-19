@@ -66,18 +66,25 @@ body.internal-header.no-banner {
   }
 }
 
-.gform_body .gform_fields .gfield ::-webkit-input-placeholder {
-  color: #000;
-}
-.gform_body .gform_fields .gfield ::-moz-placeholder {
-  color: #000;
-}
-.gform_body .gform_fields .gfield :-moz-placeholder {
-  color: #000;
-}
-.gform_body .gform_fields .gfield :-ms-input-placeholder {
-  color: #000;
-}
-.gform_body .gform_fields .gfield ::-moz-placeholder {
-  opacity: 1;
+.gform_body {
+  .gform_fields {
+    .gfield {
+      .ginput_container {
+        input,
+        textarea,
+        select {
+          ::-webkit-input-placeholder {
+            color: #000;
+          }
+          ::-moz-placeholder {
+            color: #000;
+            opacity: 1;
+          }
+          :-moz-placeholder {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
 }

@@ -62,7 +62,7 @@ get_header();?>
 
             <span class='contact-info-content'><a
                 href='tel:+1<?php echo str_replace(['-', '(', ')', ' '], '', get_field('phone', 'option')); ?>'>
-                <span><?php the_field('phone', 'option');?></span>
+                <span><strong><?php the_field('phone', 'option');?></strong></span>
               </a><?php the_field('call_today_content', 'option');?></span>
             <!-- contact-info-subtitle -->
 

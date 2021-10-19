@@ -22,6 +22,9 @@ body {
         @media screen and (min-width: 675px) {
           padding: 16px 16px 0px;
         }
+        @include mq(small_laptop) {
+          padding: 29px 16px 0px;
+        }
         a {
           @media screen and (min-width: 675px) {
             width: 120px;
@@ -117,9 +120,6 @@ body {
       background: $bluedark;
       position: fixed;
       #header-left {
-        @media screen and (min-width: 675px) {
-          padding: 16px 16px 0px;
-        }
         a {
           @media screen and (min-width: 675px) {
             width: 120px;
@@ -216,7 +216,7 @@ body {
     }
     @include mq(large_laptop) {
       //padding-top: 214px / 100px * 100%;
-      width: 214px;
+      width: 235px;
     }
     img {
       width: 100%;
